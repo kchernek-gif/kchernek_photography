@@ -1,0 +1,128 @@
+/* Shared nav component — edit here, updates all pages */
+(function () {
+  var header = document.getElementById('siteHeader');
+  if (!header) return;
+
+  header.innerHTML = `
+    <div class="masthead">
+      <a href="/" class="logo-link">
+        <img src="/brand_assets/cropped_Black.png" alt="KC" class="logo-img">
+        <span class="site-name">Keith Chernek</span>
+      </a>
+      <p class="site-tagline">Editorial &#8212; Portrait &#8212; DFW</p>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/services.html">Services</a>
+
+        <div class="nav-dropdown" id="ddBooking">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/book-a-shoot/model-development.html">Model Development</a>
+            <a href="/commercial.html">Commercial &amp; Brand</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown" id="ddConnect">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/contact.html">Get in Touch</a>
+            <a href="https://meetup.com/dfwphotowalks" target="_blank" rel="noopener">DFW Photowalks &#8599;</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  `;
+
+  // ── Active state ──────────────────────────────────────────────────────────
+  var path = window.location.pathname;
+
+  header.querySelectorAll('.site-nav a[href]').forEach(function (link) {
+    try {
+      var linkPath = new URL(link.href, location.origin).pathname;
+      if (linkPath === path) link.classList.add('active');
+    } catch (e) { /* external links */ }
+  });
+
+  // Portfolio sub-pages: mark Portfolio link active
+  if (path.startsWith('/portfolio/')) {
+    var portfolioLink = header.querySelector('a[href="/portfolio.html"]');
+    if (portfolioLink) portfolioLink.classList.add('active');
+  }
+
+  // Mark dropdown trigger active when any child is active
+  header.querySelectorAll('.nav-dropdown').forEach(function (dd) {
+    if (dd.querySelector('a.active')) {
+      dd.querySelector('.nav-dropdown-trigger').classList.add('active');
+    }
+  });
+
+  // ── Dropdown logic ────────────────────────────────────────────────────────
+  function closeAllDropdowns() {
+    header.querySelectorAll('.nav-dropdown[data-open]').forEach(function (dd) {
+      dd.removeAttribute('data-open');
+      dd.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  header.querySelectorAll('.nav-dropdown-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var dd     = trigger.closest('.nav-dropdown');
+      var isOpen = dd.hasAttribute('data-open');
+      closeAllDropdowns();
+      if (!isOpen) {
+        dd.setAttribute('data-open', '');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) closeAllDropdowns();
+  });
+
+  // ── Hamburger ─────────────────────────────────────────────────────────────
+  var toggle  = document.getElementById('navToggle');
+  var siteNav = document.getElementById('siteNav');
+
+  toggle.addEventListener('click', function () {
+    var open = siteNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    if (!open) closeAllDropdowns();
+  });
+
+  // ── Escape key ────────────────────────────────────────────────────────────
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    closeAllDropdowns();
+    siteNav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+  });
+
+  // ── Scroll shrink — IntersectionObserver sentinel (no scroll listener) ────
+  // A 1px sentinel placed immediately after the header. When it exits the
+  // viewport (user has scrolled past the header), the .shrunk class is added.
+  var sentinel = document.createElement('div');
+  sentinel.setAttribute('aria-hidden', 'true');
+  sentinel.style.cssText = 'height:1px;pointer-events:none;visibility:hidden;';
+  header.insertAdjacentElement('afterend', sentinel);
+  new IntersectionObserver(function (entries) {
+    header.classList.toggle('shrunk', !entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(sentinel);
+}());

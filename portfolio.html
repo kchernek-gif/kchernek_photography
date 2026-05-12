@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Keith Chernek</title>
+  <meta name="description" content="Editorial and portrait photography portfolio by Keith Chernek, DFW.">
+  <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keith Chernek">
+  <meta property="og:title" content="Portfolio — Keith Chernek">
+  <meta property="og:description" content="Editorial and swimwear photography by Keith Chernek, based in Dallas–Fort Worth.">
+  <meta property="og:url" content="https://kchernek.com/portfolio.html">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <meta property="og:image:width" content="2160">
+  <meta property="og:image:height" content="1440">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfolio — Keith Chernek">
+  <meta name="twitter:description" content="Editorial and swimwear photography by Keith Chernek, based in Dallas–Fort Worth.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Category grid ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .category-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Overflow wrapper clips the image on hover scale */
+    .category-thumb {
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background-color: var(--text-muted);
+    }
+
+    .category-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      will-change: transform;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .category-link:hover .category-thumb img {
+      transform: scale(1.04);
+    }
+
+    .category-link:focus-visible .category-thumb {
+      outline: 2px solid var(--text-secondary);
+      outline-offset: 3px;
+    }
+
+    .category-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-top: 16px;
+    }
+
+    .category-count {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      .category-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader"></header>
+
+  <div class="page-wrap">
+
+    <div class="page-header">
+      <h1 class="page-title">Portfolio</h1>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="portfolio/editorial.html" class="category-link">
+        <div class="category-thumb">
+          <img
+            src="portfolio-images/EmptyName_3.jpg"
+            alt="Editorial photography by Keith Chernek"
+            loading="lazy"
+          >
+        </div>
+        <p class="category-label">Editorial</p>
+      </a>
+
+      <a href="portfolio/swimwear.html" class="category-link">
+        <div class="category-thumb">
+          <img
+            src="portfolio-images/Heloise_Kchernek_JR2026_1.jpg"
+            alt="Swimwear photography by Keith Chernek"
+            loading="lazy"
+          >
+        </div>
+        <p class="category-label">Swimwear</p>
+      </a>
+
+    </div>
+    <!-- Future categories (Digitals, Brand & Product) added here when content exists -->
+
+    <div class="page-cta page-cta--centered">
+      <p class="cta-prompt">Want work like this?</p>
+      <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
+    </div>
+
+  </div>
+
+  <footer data-component="footer"></footer>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/motion.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial — Keith Chernek</title>
+  <meta name="description" content="Editorial photography portfolio by Keith Chernek, DFW.">
+  <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keith Chernek">
+  <meta property="og:title" content="Editorial Portfolio — Keith Chernek">
+  <meta property="og:description" content="Editorial fashion photography by Keith Chernek. Studio and location sessions, Dallas–Fort Worth.">
+  <meta property="og:url" content="https://kchernek.com/portfolio/editorial.html">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <meta property="og:image:width" content="2160">
+  <meta property="og:image:height" content="1440">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Editorial Portfolio — Keith Chernek">
+  <meta name="twitter:description" content="Editorial fashion photography by Keith Chernek. Studio and location sessions, Dallas–Fort Worth.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 28px;
+    }
+
+    .project-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-thumb {
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background-color: var(--text-muted);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      will-change: transform;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .project-link:hover .project-thumb img {
+      transform: scale(1.04);
+    }
+
+    .project-link:focus-visible .project-thumb {
+      outline: 2px solid var(--text-secondary);
+      outline-offset: 3px;
+    }
+
+    .project-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-top: 14px;
+    }
+
+    .project-meta {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader"></header>
+
+  <div class="page-wrap">
+
+    <div class="page-header">
+      <h1 class="page-title">Editorial</h1>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- Studio Editorial (EmptyName series) -->
+      <!-- Link to individual project page when built -->
+      <a href="#" class="project-link">
+        <div class="project-thumb">
+          <img
+            src="../portfolio-images/EmptyName_3.jpg"
+            alt="Studio editorial"
+            loading="lazy"
+          >
+        </div>
+        <p class="project-label">Studio Editorial</p>
+      </a>
+
+      <!-- JR Workshop July 2024 — Day 1 (240726 series) -->
+      <a href="#" class="project-link">
+        <div class="project-thumb">
+          <img
+            src="../portfolio-images/240726_JR_WORKSHOP3306.jpg"
+            alt="JR Workshop — July 2024"
+            loading="lazy"
+          >
+        </div>
+        <p class="project-label">JR Workshop</p>
+        <p class="project-meta">July 2024</p>
+      </a>
+
+      <!-- JR Workshop July 2024 — Day 2 (240727 series) -->
+      <a href="#" class="project-link">
+        <div class="project-thumb">
+          <img
+            src="../portfolio-images/240727_JR_WORKSHOP0318.jpg"
+            alt="JR Workshop — July 2024"
+            loading="lazy"
+            style="object-position: center center;"
+          >
+        </div>
+        <p class="project-label">JR Workshop</p>
+        <p class="project-meta">July 2024 — II</p>
+      </a>
+
+      <!-- JR Workshop June 2025 (single image) -->
+      <a href="#" class="project-link">
+        <div class="project-thumb">
+          <img
+            src="../portfolio-images/20250621_JR_WORKSHOP_KEITH_CHERNEK0096_1.jpg"
+            alt="JR Workshop — June 2025"
+            loading="lazy"
+          >
+        </div>
+        <p class="project-label">JR Workshop</p>
+        <p class="project-meta">June 2025</p>
+      </a>
+
+    </div>
+
+    <div class="page-cta page-cta--centered">
+      <a href="../book-a-shoot/model-development.html" class="btn-primary">Plan a Shoot &#8594;</a>
+    </div>
+
+  </div>
+
+  <footer data-component="footer"></footer>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/motion.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>

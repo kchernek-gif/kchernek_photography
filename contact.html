@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Keith Chernek</title>
+  <meta name="description" content="Get in touch with Keith Chernek — DFW editorial and portrait photographer. Available for model development, brand photography, and creative collaborations.">
+  <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keith Chernek">
+  <meta property="og:title" content="Get in Touch — Keith Chernek">
+  <meta property="og:description" content="Plan a shoot or discuss a project. Based in Dallas–Fort Worth, available throughout DFW and for travel.">
+  <meta property="og:url" content="https://kchernek.com/contact.html">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <meta property="og:image:width" content="2160">
+  <meta property="og:image:height" content="1440">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Get in Touch — Keith Chernek">
+  <meta name="twitter:description" content="Plan a shoot or discuss a project. Based in Dallas–Fort Worth, available throughout DFW and for travel.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-body {
+      max-width: 560px;
+    }
+
+    .contact-intro {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text-primary);
+      margin-bottom: 40px;
+    }
+
+    .contact-intro a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-intro a:hover { color: var(--accent-rare); }
+
+    /* ── Form ── */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      font-family: var(--font-family);
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      background-color: var(--surface);
+      border: 1px solid var(--text-secondary);
+      border-radius: 0;
+      padding: 11px 14px;
+      transition: border-color 0.2s ease;
+      appearance: none;
+      width: 100%;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: var(--text-muted);
+      opacity: 1;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--text-primary);
+      box-shadow: 0 0 0 3px rgba(42, 38, 34, 0.06);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 148px;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background-color: var(--text-secondary);
+      color: #fff;
+      font-family: var(--font-family);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-submit:hover         { background-color: var(--text-primary); }
+    .btn-submit:active        { transform: scale(0.99); }
+    .btn-submit:focus-visible {
+      outline: 2px solid var(--text-primary);
+      outline-offset: 2px;
+    }
+
+    .response-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader"></header>
+
+  <div class="page-wrap">
+
+    <div class="page-header">
+      <h1 class="page-title">Let's Connect</h1>
+    </div>
+
+    <div class="contact-body">
+
+      <p class="contact-intro">For inquiries, project discussions, or to plan a shoot &#8212; reach out using the form below or directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.<br><br>Based in Dallas&#8211;Fort Worth. Available throughout DFW and for travel.</p>
+
+      <!-- Backend endpoint TBD — wire up before going live -->
+      <form class="contact-form" action="/submit-inquiry" method="post">
+
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Send Inquiry</button>
+
+      </form>
+
+      <p class="response-note">Response within 48 hours.</p>
+
+    </div>
+  </div>
+
+  <footer data-component="footer"></footer>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/motion.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>

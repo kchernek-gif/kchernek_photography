@@ -1,0 +1,18 @@
+# Dev dependencies
+node_modules/
+
+# Puppeteer screenshots and dev scripts (machine-specific paths)
+temporary screenshots/
+screenshot.mjs
+screenshot-mobile.mjs
+screenshot-interact.mjs
+
+# Reference images used during development only
+www.joeywrightphoto.com_test.png
+
+# Claude Code project files
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keith Chernek — Editorial &amp; Portrait Photography, DFW</title>
+  <meta name="description" content="Editorial and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.">
+  <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keith Chernek">
+  <meta property="og:title" content="Keith Chernek — Editorial &amp; Portrait Photography, DFW">
+  <meta property="og:description" content="Editorial and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.">
+  <meta property="og:url" content="https://kchernek.com/">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <meta property="og:image:width" content="2160">
+  <meta property="og:image:height" content="1440">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Keith Chernek — Editorial &amp; Portrait Photography, DFW">
+  <meta name="twitter:description" content="Editorial and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero {
+      width: 100%;
+      height: 85vh;
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-cta {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 14px 0;
+      white-space: nowrap;
+      transition: border-color 0.2s ease;
+    }
+
+    .hero-cta:hover        { border-color: #fff; }
+    .hero-cta:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 4px;
+    }
+
+    /* No gap between hero and home-cta, or home-cta and footer */
+    .home-cta {
+      text-align: center;
+      padding: 60px 4vw;
+      border-top: 1px solid var(--border);
+    }
+
+    footer { margin-top: 0; }
+
+    @media (max-width: 640px) {
+      .hero { height: 65vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader"></header>
+
+  <!-- Hero — placeholder; swap for final selected hero before any client-facing use -->
+  <section class="hero" aria-label="Hero">
+    <img
+      src="portfolio-images/EmptyName_3.jpg"
+      alt="Editorial portrait by Keith Chernek, DFW"
+      class="hero-img"
+    >
+    <a href="portfolio.html" class="hero-cta">View Portfolio &#8594;</a>
+  </section>
+
+  <section class="home-cta">
+    <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
+  </section>
+
+  <footer data-component="footer"></footer>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/motion.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>
