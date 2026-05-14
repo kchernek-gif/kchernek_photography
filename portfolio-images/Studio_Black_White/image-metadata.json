@@ -1,0 +1,167 @@
+{
+  "shoot": {
+    "folder": "Studio_Black_White",
+    "model": "Kalie",
+    "location": "Studio",
+    "city": "Dallas",
+    "state": "Texas",
+    "date": "March 2025",
+    "shoot_type": "Studio Editorial",
+    "wardrobe": "Not specified — update shoot-info before finalizing alt text",
+    "keywords": ["black and white photography", "studio editorial", "dallas photographer", "dallas texas photographer", "studio portrait", "editorial portrait", "model portfolio", "dfw photographer"]
+  },
+  "flags": {
+    "srgb_verified": false,
+    "wardrobe_missing": true,
+    "wardrobe_note": "Wardrobe field is blank. Alt text uses generic studio editorial language. Update shoot-info when wardrobe is confirmed.",
+    "sequence_note": "_DSC0012 and _DSC0039 appear after the camera counter reset past 9999. Placed last in sequence (images 15 and 16) to maintain shoot chronology."
+  },
+  "images": [
+    {
+      "original_filename": "_DSC9596.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-01.jpg",
+      "file_size_mb": 2.8,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white portrait of a model during a studio editorial session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9666.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-02.jpg",
+      "file_size_mb": 3.0,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white studio editorial portrait in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9677.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-03.jpg",
+      "file_size_mb": 3.0,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing in a black and white studio editorial shoot in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9679.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-04.jpg",
+      "file_size_mb": 2.9,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white portrait of a model during a studio editorial session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9682.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-05.jpg",
+      "file_size_mb": 2.9,
+      "dimensions": "2160x2700",
+      "alt_text": "Model during a black and white studio editorial photography session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9684.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-06.jpg",
+      "file_size_mb": 2.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white editorial portrait during a studio session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9719.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-07.jpg",
+      "file_size_mb": 2.9,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing during a black and white studio editorial shoot in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9750.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-08.jpg",
+      "file_size_mb": 2.8,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white studio portrait of a model during an editorial session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9760.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-09.jpg",
+      "file_size_mb": 2.8,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in a black and white editorial studio portrait session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9776.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-10.jpg",
+      "file_size_mb": 2.9,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white portrait during a studio editorial photography session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9907.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-11.jpg",
+      "file_size_mb": 3.0,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing in a black and white studio editorial session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9971.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-12.jpg",
+      "file_size_mb": 2.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white editorial portrait of a model during a studio session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9987.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-13.jpg",
+      "file_size_mb": 2.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Model during a black and white studio editorial shoot in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC9998.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-14.jpg",
+      "file_size_mb": 3.0,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white studio portrait during an editorial session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC0012.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-15.jpg",
+      "file_size_mb": 3.0,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in a black and white editorial portrait during a studio session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": "",
+      "note": "Camera counter reset — placed last in shoot sequence."
+    },
+    {
+      "original_filename": "_DSC0039.jpg",
+      "recommended_filename": "studio-editorial-black-white-dallas-texas-kalie-16.jpg",
+      "file_size_mb": 2.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Black and white editorial studio portrait from a session in Dallas, Texas.",
+      "title": "Studio Editorial — Dallas, TX",
+      "caption": "",
+      "note": "Camera counter reset — placed last in shoot sequence."
+    }
+  ]
+}

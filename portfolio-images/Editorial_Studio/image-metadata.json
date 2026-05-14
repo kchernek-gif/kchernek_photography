@@ -1,0 +1,160 @@
+{
+  "shoot": {
+    "folder": "Editorial_Studio",
+    "model": "Julia",
+    "location": "Studio",
+    "city": "Los Angeles",
+    "state": "California",
+    "date": "August 2025",
+    "shoot_type": "Editorial",
+    "wardrobe": "Tights, Guess",
+    "keywords": ["editorial photography", "studio editorial", "guess editorial", "model portfolio", "los angeles editorial photographer", "fashion editorial", "studio portrait", "dfw commercial photographer"]
+  },
+  "flags": {
+    "srgb_verified": false,
+    "all_oversized": true,
+    "oversized_note": "All 15 images are 2.6–4.9MB. Target is under 2MB. Re-export at 80% JPEG quality.",
+    "poor_filenames": true,
+    "poor_filenames_note": "All files named 'EmptyName' — camera/Lightroom placeholder with no description. Renaming required.",
+    "city_normalized": "shoot-info listed city as 'LA' — normalized to 'Los Angeles' in metadata.",
+    "wardrobe_incomplete": true,
+    "wardrobe_note": "Wardrobe field lists 'Tights, Guess,' with trailing comma — may be incomplete. Review and update."
+  },
+  "images": [
+    {
+      "original_filename": "EmptyName.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-01.jpg",
+      "file_size_mb": 2.8,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in editorial styling during a studio fashion shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_1.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-02.jpg",
+      "file_size_mb": 4.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model wearing tights during an editorial studio session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_2.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-03.jpg",
+      "file_size_mb": 3.9,
+      "dimensions": "2025x2700",
+      "alt_text": "Model posing during a studio editorial photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_3.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-04.jpg",
+      "file_size_mb": 2.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in editorial styling during a studio fashion shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_4.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-05.jpg",
+      "file_size_mb": 3.5,
+      "dimensions": "2025x2700",
+      "alt_text": "Model wearing editorial wardrobe during a studio session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_5.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-06.jpg",
+      "file_size_mb": 3.9,
+      "dimensions": "2025x2700",
+      "alt_text": "Model posing in tights during a studio editorial shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_6.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-07.jpg",
+      "file_size_mb": 2.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in studio editorial styling during a fashion photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_7.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-08.jpg",
+      "file_size_mb": 4.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model wearing editorial wardrobe during a studio fashion shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_8.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-09.jpg",
+      "file_size_mb": 4.7,
+      "dimensions": "2025x2700",
+      "alt_text": "Model posing during a studio editorial photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_9.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-10.jpg",
+      "file_size_mb": 2.9,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in editorial styling during a studio fashion photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_10.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-11.jpg",
+      "file_size_mb": 4.5,
+      "dimensions": "2025x2700",
+      "alt_text": "Model wearing tights and editorial wardrobe during a studio shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_11.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-12.jpg",
+      "file_size_mb": 4.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in editorial styling during a studio fashion shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_12.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-13.jpg",
+      "file_size_mb": 4.4,
+      "dimensions": "2025x2700",
+      "alt_text": "Model posing in editorial wardrobe during a studio photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_13.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-14.jpg",
+      "file_size_mb": 2.6,
+      "dimensions": "2025x2700",
+      "alt_text": "Model in studio editorial styling during a fashion shoot in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "EmptyName_14.jpg",
+      "recommended_filename": "editorial-studio-los-angeles-california-julia-15.jpg",
+      "file_size_mb": 2.5,
+      "dimensions": "2025x2700",
+      "alt_text": "Model wearing editorial wardrobe during a studio fashion photography session in Los Angeles, California.",
+      "title": "Studio Editorial — Los Angeles, CA",
+      "caption": ""
+    }
+  ]
+}

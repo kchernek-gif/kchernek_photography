@@ -1,0 +1,9 @@
+Model: Julia
+Location: Studio
+City: LA
+State: California
+Shoot Date: August 2025
+Shoot Type: Editorial
+Wardrobe / Styling: Tights, Guess, 
+Keywords:
+Notes:

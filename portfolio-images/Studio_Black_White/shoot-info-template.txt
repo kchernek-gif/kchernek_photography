@@ -1,0 +1,9 @@
+Model: Kalie
+Location: Studio
+City: Dallas
+State: Texas
+Shoot Date: March 2025
+Shoot Type: Studio Editorial
+Wardrobe / Styling:
+Keywords: Black and white, studio, 
+Notes:

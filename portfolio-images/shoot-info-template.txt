@@ -1,0 +1,9 @@
+Model:
+Location:
+City:
+State:
+Shoot Date:
+Shoot Type:
+Wardrobe / Styling:
+Keywords:
+Notes:

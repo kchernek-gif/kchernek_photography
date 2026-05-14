@@ -1,0 +1,168 @@
+{
+  "shoot": {
+    "folder": "Cowgirl-Swimwear",
+    "model": "Heloise",
+    "location": "Caster House",
+    "city": "Los Angeles",
+    "state": "California",
+    "date": "April 2026",
+    "shoot_type": "Commercial Swimwear",
+    "wardrobe": "Tecovas boots, cowboy hat, leopard print bikini",
+    "keywords": ["swimwear photography", "cowgirl editorial", "commercial swimwear", "los angeles photographer", "western swimwear", "Tecovas", "poolside editorial", "dfw commercial photographer"]
+  },
+  "flags": {
+    "srgb_verified": false,
+    "all_oversized": true,
+    "oversized_note": "All 16 images are 2.3–6.6MB. Target is under 2MB. Re-export at 80% JPEG quality.",
+    "missing_numbers": ["_15", "_16"],
+    "privacy_note": "Original filenames contain full last name. Removed in recommended filenames.",
+    "html_impact": "HTML references to these files must be updated after renaming."
+  },
+  "images": [
+    {
+      "original_filename": "Heloise_Kchernek_JR2026.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-01.jpg",
+      "file_size_mb": 4.9,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini and Tecovas boots posing during a commercial swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": "Cowgirl swimwear editorial, Los Angeles"
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_1.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-02.jpg",
+      "file_size_mb": 5.2,
+      "dimensions": "2160x2880",
+      "alt_text": "Model wearing a cowboy hat and leopard print bikini during a commercial swimwear shoot at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_2.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-03.jpg",
+      "file_size_mb": 5.4,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in western-inspired swimwear with cowboy hat during a commercial editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_3.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-04.jpg",
+      "file_size_mb": 5.4,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini and Tecovas boots at Caster House during a commercial swimwear editorial in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_4.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-05.jpg",
+      "file_size_mb": 4.8,
+      "dimensions": "2160x2880",
+      "alt_text": "Model wearing western swimwear and cowboy hat during a commercial editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_5.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-06.jpg",
+      "file_size_mb": 4.3,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini posing during a commercial swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_6.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-07.jpg",
+      "file_size_mb": 4.9,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in cowgirl-inspired swimwear at Caster House during a commercial editorial session in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_7.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-08.jpg",
+      "file_size_mb": 5.0,
+      "dimensions": "2160x2880",
+      "alt_text": "Model wearing Tecovas boots and a cowboy hat during a swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_8.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-09.jpg",
+      "file_size_mb": 5.6,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini and Tecovas during a commercial swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_9.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-10.jpg",
+      "file_size_mb": 5.8,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in western-inspired swimwear posing at Caster House during a commercial editorial in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_10.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-11.jpg",
+      "file_size_mb": 5.6,
+      "dimensions": "2160x2880",
+      "alt_text": "Model wearing a cowboy hat and leopard print swimwear at Caster House during a commercial editorial in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_11.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-12.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini and Tecovas boots posing during a swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_12.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-13.jpg",
+      "file_size_mb": 6.3,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in cowgirl swimwear at Caster House during a commercial editorial session in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_13.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-14.jpg",
+      "file_size_mb": 5.9,
+      "dimensions": "2160x2880",
+      "alt_text": "Model wearing a cowboy hat and leopard print bikini during a commercial swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_14.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-15.jpg",
+      "file_size_mb": 4.2,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in western-inspired swimwear posing during a commercial editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": ""
+    },
+    {
+      "original_filename": "Heloise_Kchernek_JR2026_17.jpg",
+      "recommended_filename": "cowgirl-swimwear-los-angeles-california-heloise-16.jpg",
+      "file_size_mb": 2.2,
+      "dimensions": "2160x2880",
+      "alt_text": "Model in leopard print bikini and Tecovas boots during a cowgirl swimwear editorial at Caster House in Los Angeles, California.",
+      "title": "Cowgirl Swimwear Editorial — Los Angeles, CA",
+      "caption": "",
+      "note": "Original numbered _17 — _15 and _16 not present, likely culled."
+    }
+  ]
+}

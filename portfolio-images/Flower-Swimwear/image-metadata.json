@@ -1,0 +1,163 @@
+{
+  "shoot": {
+    "folder": "Flower-Swimwear",
+    "model": "Lauren",
+    "location": "Poolside",
+    "city": "Dallas",
+    "state": "Texas",
+    "date": "June 2024",
+    "shoot_type": "Swimwear",
+    "wardrobe": "Not specified — review and update",
+    "keywords": ["swimwear photography", "poolside editorial", "dallas photographer", "dallas texas photographer", "swimwear editorial", "model portfolio", "dfw photographer"]
+  },
+  "flags": {
+    "srgb_verified": false,
+    "all_oversized": true,
+    "oversized_note": "All 15 images are 4.5–6.6MB. Target is under 2MB. Re-export at 80% JPEG quality.",
+    "poor_filenames": true,
+    "poor_filenames_note": "All files use camera default names (_DSC####). Renaming required.",
+    "wardrobe_missing": true,
+    "wardrobe_note": "Wardrobe / Styling field is blank in shoot-info. Update before finalizing alt text.",
+    "cover_image": "_DSC1453.jpg",
+    "cover_note": "shoot-info.txt designates _DSC1453 as gallery cover. Maps to swimwear-poolside-dallas-texas-lauren-11.jpg."
+  },
+  "images": [
+    {
+      "original_filename": "_DSC1389.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-01.jpg",
+      "file_size_mb": 4.9,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear posing poolside during an editorial session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1405.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-02.jpg",
+      "file_size_mb": 4.6,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear at a poolside location during a photography session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1413.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-03.jpg",
+      "file_size_mb": 4.4,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing in swimwear at a poolside editorial session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1416.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-04.jpg",
+      "file_size_mb": 4.4,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear poolside during an editorial photography session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1417.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-05.jpg",
+      "file_size_mb": 4.4,
+      "dimensions": "2160x2700",
+      "alt_text": "Model wearing swimwear during a poolside editorial shoot in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1421.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-06.jpg",
+      "file_size_mb": 4.5,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing poolside in swimwear during an editorial photography session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1422.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-07.jpg",
+      "file_size_mb": 4.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear at a poolside location during an editorial shoot in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1442.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-08.jpg",
+      "file_size_mb": 6.3,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear posing during an editorial poolside session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1448.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-09.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Model wearing swimwear poolside during an editorial photography session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1452.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-10.jpg",
+      "file_size_mb": 5.6,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear at a poolside editorial shoot in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1453.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-11.jpg",
+      "file_size_mb": 5.5,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing in swimwear poolside during an editorial session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": "Poolside swimwear editorial, Dallas",
+      "is_cover": true,
+      "cover_note": "Designated cover image in shoot-info.txt"
+    },
+    {
+      "original_filename": "_DSC1462.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-12.jpg",
+      "file_size_mb": 5.1,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear at a poolside location during an editorial shoot in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1473.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-13.jpg",
+      "file_size_mb": 5.3,
+      "dimensions": "2160x2700",
+      "alt_text": "Model posing in swimwear poolside during an editorial photography session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1485.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-14.jpg",
+      "file_size_mb": 5.2,
+      "dimensions": "2160x2700",
+      "alt_text": "Model wearing swimwear during a poolside editorial shoot in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC1494.jpg",
+      "recommended_filename": "swimwear-poolside-dallas-texas-lauren-15.jpg",
+      "file_size_mb": 5.1,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in swimwear posing during a poolside editorial session in Dallas, Texas.",
+      "title": "Swimwear Editorial — Dallas, TX",
+      "caption": ""
+    }
+  ]
+}
