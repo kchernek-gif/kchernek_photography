@@ -3,10 +3,22 @@
   var header = document.getElementById('siteHeader');
   if (!header) return;
 
+  // ── Skip navigation link ──────────────────────────────────────────────────
+  // Wire the first <main> on the page to #main-content so the skip link works
+  // without touching every HTML file.
+  var mainEl = document.querySelector('main');
+  if (mainEl && !mainEl.id) mainEl.id = 'main-content';
+
+  var skipLink = document.createElement('a');
+  skipLink.href = '#main-content';
+  skipLink.className = 'skip-nav';
+  skipLink.textContent = 'Skip to content';
+  document.body.insertBefore(skipLink, document.body.firstChild);
+
   header.innerHTML = `
     <div class="masthead">
       <a href="/" class="logo-link">
-        <img src="/brand_assets/cropped_Black.png" alt="KC" class="logo-img">
+        <img src="/brand_assets/cropped_Black.png" alt="" class="logo-img" aria-hidden="true">
         <span class="site-name">Keith Chernek</span>
       </a>
       <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
@@ -41,7 +53,7 @@
           </button>
           <div class="nav-dropdown-menu">
             <a href="/contact.html">Get in Touch</a>
-            <a href="https://meetup.com/dfwphotowalks" target="_blank" rel="noopener">DFW Photowalks &#8599;</a>
+            <a href="https://meetup.com/dfwphotowalks" target="_blank" rel="noopener noreferrer">DFW Photowalks &#8599;</a>
           </div>
         </div>
       </nav>

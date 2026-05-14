@@ -63,16 +63,16 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      will-change: transform;
       transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     .category-link:hover .category-thumb img {
+      will-change: transform;
       transform: scale(1.04);
     }
 
     .category-link:focus-visible .category-thumb {
-      outline: 2px solid var(--text-secondary);
+      outline: 2px solid var(--secondary-navy);
       outline-offset: 3px;
     }
 
@@ -180,5 +180,12 @@
   <script src="/components/nav.js"></script>
   <script src="/components/motion.js"></script>
   <script src="/components/footer.js"></script>
+  <script>
+    document.querySelectorAll('.category-thumb img').forEach(function (img) {
+      img.addEventListener('transitionend', function () {
+        img.style.willChange = 'auto';
+      });
+    });
+  </script>
 </body>
 </html>

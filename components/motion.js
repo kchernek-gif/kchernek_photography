@@ -11,6 +11,11 @@
     });
   }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
 
+  // Portfolio shoot pages: release GPU layer after each thumbnail hover transition
+  document.querySelectorAll('.project-thumb img').forEach(function (img) {
+    img.addEventListener('transitionend', function () { img.style.willChange = 'auto'; });
+  });
+
   // Portfolio/category pages: fade individual grid items with stagger
   Array.from(document.querySelectorAll('.project-grid > *, .category-grid > *'))
     .forEach(function (el, i) {

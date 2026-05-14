@@ -207,7 +207,7 @@
 
     <div class="contact-body">
 
-      <p class="contact-intro">For inquiries, project discussions, or to plan a shoot &#8212; reach out using the form below or directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.<br><br>Based in Dallas&#8211;Fort Worth. Available throughout DFW and for travel.</p>
+      <p class="contact-intro">For inquiries, project discussions, or to plan a shoot, reach out using the form below or directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.<br><br>Based in Dallas&#8211;Fort Worth. Available throughout DFW and for travel.</p>
 
       <!-- Success state — shown after submission, form hidden -->
       <div class="form-success" id="formSuccess" aria-live="polite">
@@ -229,6 +229,9 @@
         <!-- Email subject line in inbox -->
         <input type="hidden" name="_subject" value="New inquiry — kchernek.com">
 
+        <!-- No-JS fallback: Formspree redirects here after native POST -->
+        <input type="hidden" name="_next" value="https://kchernek.com/contact.html?success=1">
+
         <div class="form-field">
           <label for="name">Name</label>
           <input
@@ -236,6 +239,7 @@
             id="name"
             name="name"
             autocomplete="name"
+            maxlength="100"
             required
           >
         </div>
@@ -247,6 +251,7 @@
             id="email"
             name="email"
             autocomplete="email"
+            maxlength="254"
             required
           >
         </div>
@@ -256,6 +261,7 @@
           <textarea
             id="message"
             name="message"
+            maxlength="4000"
             required
           ></textarea>
         </div>
@@ -288,6 +294,14 @@
       var btn     = form ? form.querySelector('.btn-submit') : null;
 
       if (!form || !btn) return;
+
+      // No-JS path: Formspree redirects back with ?success=1
+      if (window.location.search.indexOf('success=1') !== -1) {
+        form.style.display = 'none';
+        note.style.display = 'none';
+        success.style.display = 'block';
+        return;
+      }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
