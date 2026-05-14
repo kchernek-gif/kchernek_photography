@@ -221,7 +221,7 @@ If in doubt about a motion choice, ask: would this animation look at home on a R
 
 ### Main navigation (top of every page)
 ```
-PORTFOLIO | SERVICES | BOOK A SHOOT ▾ | CONNECT ▾
+PORTFOLIO | SERVICES | ABOUT | BOOK A SHOOT ▾ | CONNECT ▾
 ```
 
 - No "Home" item — the logo serves as the home link
@@ -238,7 +238,6 @@ PORTFOLIO | SERVICES | BOOK A SHOOT ▾ | CONNECT ▾
 - DFW Photowalks (external link, opens in new window: https://meetup.com/dfwphotowalks)
 
 ### Hidden / not in main nav
-- About (exists, accessible at /about, not in main nav currently — under review)
 - Portfolio category sub-pages: Editorial, Swimwear (linked from within Portfolio page)
 - Future categories: Digitals, Brand & Product (added when content exists)
 
@@ -295,9 +294,9 @@ PORTFOLIO | SERVICES | BOOK A SHOOT ▾ | CONNECT ▾
 - Submit button text: "Send Inquiry" or "Get in Touch" (not "Submit")
 - Form must be wired to a real handler (Formspree, Resend, or Vercel serverless) before launch — non-negotiable
 
-### About (/about) — currently hidden from main nav, under review
+### About (/about)
 - Brief, brand-accessible bio
-- Eventually: self-portrait
+- Self-portrait: portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg
 - References Josh Ryan workshop as credibility anchor
 - Named credits: Walmart, FloSports, Andi Bagus, AvalTheBrand, "more than a dozen independent fashion magazines"
 - See content doc for current draft
@@ -328,7 +327,7 @@ PORTFOLIO | SERVICES | BOOK A SHOOT ▾ | CONNECT ▾
 
 ### Footer
 - Background: `--background` (#F3F1ED) — same as page
-- Tagline: "DFW fashion and lifestyle photography" (small, muted text)
+- Tagline: "DFW commercial fashion and lifestyle photography" (small, muted text)
 - Contact: keith@kchernek.com (mailto link)
 - Location: Irving, TX 75039
 - Social icons: Instagram + Threads (small, muted color; hover state = navy)

@@ -8,7 +8,7 @@
 
 ### Tagline (under logo)
 ```
-EDITORIAL — PORTRAIT — DFW
+FASHION — LIFESTYLE — DFW
 ```
 
 ### Hero CTA (optional)
@@ -18,12 +18,12 @@ View Portfolio →
 
 ### Footer tagline
 ```
-DFW editorial and portrait photography
+DFW commercial fashion and lifestyle photography
 ```
 
 ### Meta description (for SEO + link previews)
 ```
-Editorial and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.
+Commercial fashion and lifestyle, and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.
 ```
 
 ---
@@ -31,7 +31,7 @@ Editorial and portrait photographer based in DFW. Now booking digitals, editoria
 ## About page (currently hidden, but written)
 
 ```
-Hi, my name's Keith. I'm an editorial and portrait photographer based in Dallas–Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.
+Hi, my name's Keith. I'm a commercial fashion and portrait photographer based in Dallas–Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.
 
 I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.
 
@@ -53,7 +53,7 @@ Let's plan a shoot. [Reach out through the contact page](/contact).
 
 ### Intro paragraph
 ```
-Editorial and portrait photography based in Dallas–Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.
+Commercial fashion and lifestyle photography based in Dallas–Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.
 ```
 
 ### Service categories

@@ -4,7 +4,7 @@
   if (!el) return;
 
   el.innerHTML = [
-    '<p class="footer-tagline">DFW editorial and portrait photography</p>',
+    '<p class="footer-tagline">DFW commercial fashion and lifestyle photography</p>',
 
     '<div class="footer-social">',
 

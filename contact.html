@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Keith Chernek</title>
-  <meta name="description" content="Get in touch with Keith Chernek — DFW editorial and portrait photographer. Available for model development, brand photography, and creative collaborations.">
+  <title>Get in Touch | Keith Chernek Photography | DFW Commercial Fashion Photographer</title>
+  <meta name="description" content="Get in touch with Keith Chernek — DFW commercial fashion and lifestyle photographer. Available for model development, brand photography, and creative collaborations.">
   <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Keith Chernek">
@@ -18,6 +18,24 @@
   <meta name="twitter:title" content="Get in Touch — Keith Chernek">
   <meta name="twitter:description" content="Plan a shoot or discuss a project. Based in Dallas–Fort Worth, available throughout DFW and for travel.">
   <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Keith Chernek Photography",
+    "description": "Commercial fashion and lifestyle photographer based in Las Colinas, Irving, DFW.",
+    "url": "https://kchernek.com",
+    "email": "keith@kchernek.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Irving",
+      "addressRegion": "TX",
+      "postalCode": "75039",
+      "addressCountry": "US"
+    },
+    "areaServed": "Dallas-Fort Worth, TX"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -40,7 +58,7 @@
       transition: color 0.2s ease;
     }
 
-    .contact-intro a:hover { color: var(--accent-rare); }
+    .contact-intro a:hover { color: var(--secondary-navy); }
 
     /* ── Form ── */
     .contact-form {
@@ -84,11 +102,12 @@
       opacity: 1;
     }
 
-    .form-field input:focus,
-    .form-field textarea:focus {
-      outline: none;
-      border-color: var(--text-primary);
-      box-shadow: 0 0 0 3px rgba(42, 38, 34, 0.06);
+    .form-field input:focus-visible,
+    .form-field textarea:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      border-color: var(--secondary-navy);
+      box-shadow: none;
     }
 
     .form-field textarea {
@@ -99,7 +118,7 @@
     .btn-submit {
       display: block;
       width: 100%;
-      background-color: var(--text-secondary);
+      background-color: var(--secondary-navy);
       color: #fff;
       font-family: var(--font-family);
       font-size: 0.68rem;
@@ -114,10 +133,10 @@
       transition: background-color 0.2s ease;
     }
 
-    .btn-submit:hover         { background-color: var(--text-primary); }
+    .btn-submit:hover         { background-color: var(--secondary-navy-hover); }
     .btn-submit:active        { transform: scale(0.99); }
     .btn-submit:focus-visible {
-      outline: 2px solid var(--text-primary);
+      outline: 2px solid var(--secondary-navy);
       outline-offset: 2px;
     }
 
@@ -126,13 +145,61 @@
       color: var(--text-muted);
       margin-top: 14px;
     }
+
+    /* ── Form states ── */
+    .form-success {
+      display: none;
+      padding: 8px 0 40px;
+    }
+
+    .form-success-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .form-success-body {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+    }
+
+    .form-success-body a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .form-success-body a:hover { color: var(--secondary-navy); }
+
+    .form-error {
+      display: none;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-top: 12px;
+    }
+
+    .form-error a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .form-error a:hover { color: var(--secondary-navy); }
+
+    .btn-submit[disabled] {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
 
   <header class="site-header" id="siteHeader"></header>
 
-  <div class="page-wrap">
+  <main class="page-wrap">
 
     <div class="page-header">
       <h1 class="page-title">Let's Connect</h1>
@@ -142,8 +209,25 @@
 
       <p class="contact-intro">For inquiries, project discussions, or to plan a shoot &#8212; reach out using the form below or directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.<br><br>Based in Dallas&#8211;Fort Worth. Available throughout DFW and for travel.</p>
 
-      <!-- Backend endpoint TBD — wire up before going live -->
-      <form class="contact-form" action="/submit-inquiry" method="post">
+      <!-- Success state — shown after submission, form hidden -->
+      <div class="form-success" id="formSuccess" aria-live="polite">
+        <p class="form-success-heading">Message sent.</p>
+        <p class="form-success-body">I'll be in touch within 48 hours. If you need to reach me directly: <a href="mailto:keith@kchernek.com">keith@kchernek.com</a></p>
+      </div>
+
+      <!--
+        Formspree endpoint — replace YOUR_FORM_ID with the ID from formspree.io/forms
+        Example: https://formspree.io/f/xpzgkwqr
+      -->
+      <form class="contact-form" id="contactForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST">
+
+        <!-- Honeypot — bots fill this, humans don't; Formspree silently drops the submission -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- Email subject line in inbox -->
+        <input type="hidden" name="_subject" value="New inquiry — kchernek.com">
 
         <div class="form-field">
           <label for="name">Name</label>
@@ -178,17 +262,61 @@
 
         <button type="submit" class="btn-submit">Send Inquiry</button>
 
+        <!-- Error state — shown inline on fetch failure -->
+        <p class="form-error" id="formError" role="alert">
+          Something went wrong. Email me directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.
+        </p>
+
       </form>
 
-      <p class="response-note">Response within 48 hours.</p>
+      <p class="response-note" id="responseNote">Response within 48 hours.</p>
 
     </div>
-  </div>
+  </main>
 
   <footer data-component="footer"></footer>
 
   <script src="/components/nav.js"></script>
   <script src="/components/motion.js"></script>
   <script src="/components/footer.js"></script>
+  <script>
+    (function () {
+      var form    = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var error   = document.getElementById('formError');
+      var note    = document.getElementById('responseNote');
+      var btn     = form ? form.querySelector('.btn-submit') : null;
+
+      if (!form || !btn) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        error.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (res) {
+            if (res.ok) {
+              form.style.display = 'none';
+              note.style.display = 'none';
+              success.style.display = 'block';
+            } else {
+              throw new Error('submission failed');
+            }
+          })
+          .catch(function () {
+            error.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Send Inquiry';
+          });
+      });
+    }());
+  </script>
 </body>
 </html>

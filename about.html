@@ -3,49 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Keith Chernek</title>
-  <meta name="description" content="Keith Chernek is an editorial and portrait photographer based in Dallas–Fort Worth. Now booking digitals, editorial sessions, and brand visuals.">
+  <title>About Keith Chernek | DFW Commercial Fashion Photographer</title>
+  <meta name="description" content="Keith Chernek is a commercial fashion and lifestyle photographer based in Dallas–Fort Worth. Now booking digitals, editorial sessions, and brand visuals.">
   <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Keith Chernek">
   <meta property="og:title" content="About — Keith Chernek">
-  <meta property="og:description" content="Editorial and portrait photographer based in Dallas–Fort Worth. Shot for Walmart, FloSports, Andi Bagus, and AvalTheBrand.">
+  <meta property="og:description" content="Commercial fashion and lifestyle photographer based in Dallas–Fort Worth. Shot for Walmart, FloSports, Andi Bagus, and AvalTheBrand.">
   <meta property="og:url" content="https://kchernek.com/about.html">
-  <meta property="og:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
-  <meta property="og:image:width" content="2160">
-  <meta property="og:image:height" content="1440">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/Placeholder_images/240727_JR_WORKSHOP0433.jpg">
+  <meta property="og:image:width" content="2880">
+  <meta property="og:image:height" content="1920">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About — Keith Chernek">
-  <meta name="twitter:description" content="Editorial and portrait photographer based in Dallas–Fort Worth. Shot for Walmart, FloSports, Andi Bagus, and AvalTheBrand.">
-  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <meta name="twitter:description" content="Commercial fashion and lifestyle photographer based in Dallas–Fort Worth. Shot for Walmart, FloSports, Andi Bagus, and AvalTheBrand.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Placeholder_images/240727_JR_WORKSHOP0433.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Keith Chernek",
+    "jobTitle": "Commercial Fashion & Lifestyle Photographer",
+    "description": "Commercial fashion and portrait photographer based in Dallas-Fort Worth. Shot for Walmart, FloSports, Andi Bagus, and AvalTheBrand.",
+    "url": "https://kchernek.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Irving",
+      "addressRegion": "TX",
+      "postalCode": "75039",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.instagram.com/kchernek",
+      "https://www.threads.com/@kchernek"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Self-portrait placeholder ── */
-    .portrait-placeholder {
-      width: 320px;
-      height: 420px;
-      border: 1px dashed var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 48px;
+    /* ── Two-column about layout ── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 64px;
+      align-items: start;
     }
 
-    .portrait-placeholder span {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      opacity: 0.6;
+    .about-portrait {
+      display: block;
+      width: 380px;
+      height: auto;
     }
 
     /* ── Bio copy ── */
     .about-body {
-      max-width: 560px;
+      margin-bottom: 40px;
     }
 
     .about-body p {
@@ -63,53 +78,65 @@
       transition: color 0.2s ease;
     }
 
-    .about-body a:hover { color: var(--accent-rare); }
+    .about-body a:hover { color: var(--secondary-navy); }
 
-    @media (max-width: 640px) {
-      .portrait-placeholder {
+    @media (max-width: 768px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-portrait {
         width: 100%;
-        height: 300px;
+        max-width: 380px;
+        height: auto;
       }
     }
   </style>
 </head>
 <body>
 
-  <!--
-    This page is intentionally excluded from the main navigation per DESIGN_SYSTEM.md.
-    Accessible at /about — not linked from the nav.
-  -->
-
   <header class="site-header" id="siteHeader"></header>
 
-  <div class="page-wrap">
+  <main class="page-wrap">
 
     <div class="page-header">
-      <h1 class="page-title">About</h1>
+      <h1 class="page-title">The part where I talk about myself.</h1>
     </div>
 
-    <!-- Self-portrait — add img tag here before launch -->
-    <div class="portrait-placeholder" aria-hidden="true">
-      <span>Self-portrait</span>
+    <div class="about-layout">
+
+      <img
+        src="/portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg"
+        alt="Keith Chernek, commercial fashion photographer based in DFW"
+        class="about-portrait"
+        width="1023"
+        height="1138"
+        loading="eager"
+        decoding="async"
+      >
+
+      <div class="about-content">
+        <div class="about-body">
+          <p>Hi, my name&#8217;s Keith. I&#8217;m a commercial fashion and portrait photographer based in Dallas&#8211;Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.</p>
+
+          <p>I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.</p>
+
+          <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
+
+          <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
+
+          <p>Let&#8217;s plan a shoot. <a href="contact.html">Reach out through the contact page</a>.</p>
+        </div>
+
+        <div class="page-cta">
+          <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="about-body">
-      <p>Hi, my name&#8217;s Keith. I&#8217;m an editorial and portrait photographer based in Dallas&#8211;Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.</p>
-
-      <p>I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.</p>
-
-      <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
-
-      <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
-
-      <p>Let&#8217;s plan a shoot. <a href="contact.html">Reach out through the contact page</a>.</p>
-    </div>
-
-    <div class="page-cta page-cta--centered">
-      <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
-    </div>
-
-  </div>
+  </main>
 
   <footer data-component="footer"></footer>
 

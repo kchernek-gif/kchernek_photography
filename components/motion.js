@@ -1,6 +1,7 @@
 /* Scroll-triggered section fade-in — Intersection Observer */
 (function () {
   if (!window.IntersectionObserver) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {

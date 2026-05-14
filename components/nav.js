@@ -9,7 +9,7 @@
         <img src="/brand_assets/cropped_Black.png" alt="KC" class="logo-img">
         <span class="site-name">Keith Chernek</span>
       </a>
-      <p class="site-tagline">Editorial &#8212; Portrait &#8212; DFW</p>
+      <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
     </div>
 
     <div class="nav-row">
@@ -23,6 +23,7 @@
       <nav class="site-nav" id="siteNav" aria-label="Main navigation">
         <a href="/portfolio.html">Portfolio</a>
         <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
 
         <div class="nav-dropdown" id="ddBooking">
           <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">

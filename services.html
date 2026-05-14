@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Keith Chernek</title>
-  <meta name="description" content="Editorial and portrait photography services based in Dallas–Fort Worth. Model development, brand photography, and event coverage.">
+  <title>Photography Services | Keith Chernek Photography | DFW Commercial Fashion Photographer</title>
+  <meta name="description" content="Commercial fashion and lifestyle photography services based in Dallas–Fort Worth. Model development, brand photography, and event coverage.">
   <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Keith Chernek">
@@ -18,132 +18,91 @@
   <meta name="twitter:title" content="Photography Services — Keith Chernek">
   <meta name="twitter:description" content="Editorial portrait sessions, model development, brand photography, and event coverage. Based in Dallas–Fort Worth.">
   <meta name="twitter:image" content="https://kchernek.com/portfolio-images/Heloise_Kchernek_JR2026_17.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Keith Chernek Photography",
+    "description": "Commercial fashion and lifestyle photography services in Dallas-Fort Worth. Model development, brand photography, and event coverage.",
+    "url": "https://kchernek.com/services.html",
+    "email": "keith@kchernek.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Irving",
+      "addressRegion": "TX",
+      "postalCode": "75039",
+      "addressCountry": "US"
+    },
+    "areaServed": "Dallas-Fort Worth, TX",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Photography Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Model Development & Digitals"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand & Commercial Photography"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Event Coverage"}}
+      ]
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Service category grid ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+    /* ── Service rows ── */
+    .services-list {
       margin-bottom: 60px;
     }
 
     .service-block {
-      padding: 32px 40px 32px 0;
+      padding: 40px 0;
       border-top: 1px solid var(--border);
-    }
-
-    /* Right column gets left padding instead of right */
-    .service-block:nth-child(even) {
-      padding-left: 40px;
-      padding-right: 0;
-      border-left: 1px solid var(--border);
     }
 
     .service-heading {
-      font-size: 0.75rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-primary);
-      margin-bottom: 14px;
-      line-height: 1.4;
+      margin-bottom: 10px;
+      line-height: 1.3;
     }
 
     .service-desc {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       line-height: 1.75;
-      color: var(--text-primary);
+      color: var(--text-secondary);
     }
 
-    /* ── How I work ── */
+    /* ── Standalone process statement ── */
     .how-section {
       border-top: 1px solid var(--border);
-      padding-top: 40px;
-      margin-bottom: 48px;
-    }
-
-    .how-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+      padding-top: 64px;
+      margin-bottom: 64px;
     }
 
     .how-body {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      font-weight: 300;
       line-height: 1.8;
       color: var(--text-primary);
-      max-width: 560px;
+      max-width: 52ch;
     }
 
     /* ── Closing CTA ── */
     .services-cta {
       border-top: 1px solid var(--border);
       padding-top: 40px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .cta-label {
-      font-size: 0.9375rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      margin-right: 6px;
-    }
-
-    .btn-cta {
-      display: inline-block;
-      background-color: var(--text-secondary);
-      color: #fff;
-      font-family: var(--font-family);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 16px 24px;
-      border: none;
-      border-radius: 0;
-      white-space: nowrap;
-      transition: background-color 0.2s ease;
-    }
-
-    .btn-cta:hover         { background-color: var(--text-primary); }
-    .btn-cta:active        { transform: scale(0.99); }
-    .btn-cta:focus-visible {
-      outline: 2px solid var(--text-primary);
-      outline-offset: 2px;
     }
 
     /* ── Mobile ── */
     @media (max-width: 640px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
       .service-block {
         padding: 28px 0;
       }
 
-      .service-block:nth-child(even) {
-        padding-left: 0;
-        border-left: none;
-      }
-
-      .services-cta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .cta-label { margin-right: 0; }
     }
   </style>
 </head>
@@ -151,52 +110,47 @@
 
   <header class="site-header" id="siteHeader"></header>
 
-  <div class="page-wrap">
+  <main class="page-wrap">
 
     <div class="page-header">
       <h1 class="page-title">Photography &amp; Creative Services</h1>
-      <p class="page-intro">Editorial and portrait photography based in Dallas&#8211;Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.</p>
+      <p class="page-intro">Commercial fashion and lifestyle photography based in Dallas&#8211;Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.</p>
     </div>
 
     <!-- Service categories -->
-    <div class="services-grid">
+    <div class="services-list">
 
       <div class="service-block">
-        <h3 class="service-heading">Editorial Portrait Sessions</h3>
+        <h2 class="service-heading">Editorial Portrait Sessions</h2>
         <p class="service-desc">Considered styling, intentional lighting, and a clear point of view. For models building editorial range and creatives developing distinctive work.</p>
       </div>
 
       <div class="service-block">
-        <h3 class="service-heading">Model Development (Tests + Digitals)</h3>
+        <h2 class="service-heading">Model Development (Tests + Digitals)</h2>
         <p class="service-desc">Agency-ready digitals and editorial tests. Built to help models develop their books and submit competitively.</p>
       </div>
 
       <div class="service-block">
-        <h3 class="service-heading">Brand &amp; Product Photography</h3>
+        <h2 class="service-heading">Brand &amp; Product Photography</h2>
         <p class="service-desc">Lookbook, campaign, and content work for brands. Project-based scoping, deliverables matched to your needs.</p>
       </div>
 
       <div class="service-block">
-        <h3 class="service-heading">Event Coverage</h3>
+        <h2 class="service-heading">Event Coverage</h2>
         <p class="service-desc">Editorial event documentation. Past work includes coverage for FloSports.</p>
       </div>
 
     </div>
 
-    <!-- How I work -->
     <div class="how-section">
-      <p class="how-label">How I work</p>
-      <p class="how-body">I run shoots collaboratively. We plan the look, the location, and the shot list together. The result is images you actually want to use &#8212; not generic frames you tolerate.</p>
+      <p class="how-body">Every shoot is planned, not improvised. We agree on the look, the location, and the shot list before the day starts. You end up with images you actually want to use.</p>
     </div>
 
-    <!-- Closing CTA -->
     <div class="services-cta">
-      <span class="cta-label">Ready to plan a shoot?</span>
-      <a href="book-a-shoot/model-development.html" class="btn-cta">Book a Shoot &#8594;</a>
-      <a href="contact.html" class="btn-cta">Connect &#8594;</a>
+      <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
     </div>
 
-  </div>
+  </main>
 
   <footer data-component="footer"></footer>
 
