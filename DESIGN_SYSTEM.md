@@ -2,7 +2,48 @@
 
 **Site:** kchernek.com
 **Last updated:** May 2026
-**Purpose:** Single source of truth for all design decisions. Reference this document for any visual or structural work on the site.
+**Purpose:** Single source of truth for the site's current visual direction, strategic positioning, and implementation guardrails. This document is intended to guide both humans and AI-assisted tools (Claude Code, Codex, Cursor, polish plugins, design systems, etc.) while still allowing room for thoughtful aesthetic evolution.
+
+---
+
+# Design System Maturity
+
+This document defines the **current direction** of the site — not a permanently locked visual identity.
+
+Some aspects are considered foundational and stable:
+
+* Anti-pigeonhole positioning
+* Brand-accessible commercial aesthetic
+* Crawlability and SEO discipline
+* Audience positioning
+* Professional, restrained tone
+
+Other areas are intentionally open to refinement and exploration:
+
+* Typography pairings
+* Spacing rhythm
+* Motion polish
+* Layout density
+* Component styling
+* Color nuance
+* Image presentation systems
+* Micro-interactions
+* Homepage composition
+
+The goal is not to freeze the website visually. The goal is to prevent drift into aesthetics that conflict with the brand positioning.
+
+Thoughtful evolution is encouraged.
+
+---
+
+# Non-Negotiables
+
+1. The site must not pigeonhole the photographer into a single vertical.
+2. The site should feel closer to a contemporary fashion/lifestyle campaign landing page than a magazine, SaaS startup, or generic photographer template.
+3. Photography is always the primary visual element.
+4. Core navigation and business-critical information must remain crawlable and accessible.
+5. Copy should remain confident, restrained, commercial, and brand-facing.
+6. The website should communicate range, professionalism, and creative competence without overexplaining itself.
 
 ---
 
@@ -14,27 +55,79 @@
 - **Tagline:** `FASHION — LIFESTYLE — DFW` (em-dashes as separators, all-caps)
 - **Positioning:** Commercial Fashion & Lifestyle Photographer. Aspirational target: Josh Ryan × Guess kind of campaign work. Already producing pieces of this work for brands like Andi Bagus when opportunities arise.
 - **Geographic anchor:** Las Colinas / Irving / Dallas–Fort Worth
-- **Swimwear:** Treated as a portfolio category, never as a brand identifier
+
+The site should position Keith as:
+
+* commercially capable,
+* aesthetically current,
+* campaign-oriented,
+* and adaptable across multiple fashion/lifestyle verticals.
 
 ---
 
 ## Top-level guardrail: the anti-pigeonhole rule
 
-The site must not signal a single specialty visually. The chrome (palette, typography, layout, voice, motion) supports range across fashion verticals — apparel, swimwear, lingerie, beauty, accessories, lifestyle, beverage, lifestyle goods. A lingerie brand, a boot brand, a beauty brand, a swimwear brand, and a beverage brand should all see a photographer who could work with them.
+The site must not visually overcommit to:
 
-Specialty is communicated through portfolio content. The chrome of the site itself stays brand-accessible.
+* swimwear,
+* lingerie,
+* editorial publication aesthetics,
+* weddings,
+* fine art photography,
+* influencer culture,
+* or a single commercial vertical.
 
-When making any design decision, ask: **does this signal "I do X" too strongly?** If yes, soften it. This rule overrides all other rules.
+The chrome (layout, typography, color, spacing, motion, voice) should support range across fashion verticals:
+
+* apparel,
+* beauty,
+* accessories,
+* lifestyle,
+* beverage,
+* swimwear,
+* lingerie,
+* denim,
+* western,
+* and campaign-style work equally well.
+
+A lingerie brand, a boot brand, a beauty brand, a swimwear brand, and a beverage brand should all see a photographer who could work with them. 
+
+Portfolio imagery communicates specialization. The site framework itself should remain broadly brand-accessible.
+
+When making design decisions, ask:
+
+> Does this visually over-signal one niche?
+
+If yes, soften it.
 
 ---
 
 ## Aesthetic test
 
-Before accepting any design choice, ask: **does this look like it belongs on a contemporary fashion brand's campaign landing page, or does it look like it belongs in a literary fashion magazine?**
+Current direction:
 
-The site's reference points are Josh Ryan, Joey Wright, and Danny Batista — working commercial fashion and lifestyle photographers — and the campaign landing pages of brands they shoot for (Guess, Andi Bagus, Reformation, Buck Mason, Tecovas). The site is NOT trying to read like Document Journal, AnOther Magazine, or i-D. Those are publications. This is a working photographer's portfolio targeting brand and agency work.
+* warm-modern,
+* restrained,
+* campaign-oriented,
+* commercially polished,
+* photography-first,
+* quietly confident.
 
-If the output reads as austere-magazine, intellectual-publication, or art-school-restrained, it's overcorrected toward editorial publication aesthetic. Pull it back toward brand-campaign warmth.
+The visual language should feel at home beside:
+
+* fashion campaigns,
+* lookbook pages,
+* contemporary brand landing pages,
+* and creative agency portfolio sites.
+
+The site should avoid:
+
+* literary fashion publication aesthetics,
+* overly intellectual editorial minimalism,
+* generic tech startup aesthetics,
+* over-designed creative developer portfolios,
+* and trend-heavy UI gimmicks.
+
 
 If the output reads as SaaS-landing-page, tech-product, or YC-startup, it's drifted toward AI slop. Pull it back toward fashion-brand campaign.
 
@@ -49,13 +142,49 @@ If the output reads as SaaS-landing-page, tech-product, or YC-startup, it's drif
 | Josh Ryan | Aspirational aesthetic: campaign-photographer feel, light, mood |
 | Andi Bagus / Reformation / Buck Mason / Tecovas | Adjacent brand-campaign aesthetics to study for chrome treatments |
 
-Joey Wright's site is the **functional** reference, not the visual one. Keep his navigation and organization. Do not copy his palette, type, or specific layout details. The goal is to develop a visual identity distinct enough that someone visiting both sites wouldn't say "these look the same."
+Joey Wright's site is the **functional** reference, not the visual one. Keep his navigation and organization. Do not copy his palette, type, or specific layout details. References are directional, not prescriptive.
+
+The goal is not imitation.
+
+---
+
+# Visual Exploration Philosophy
+
+Design tools, polish systems, and AI-assisted workflows are encouraged to:
+
+* propose elevated refinements,
+* improve sophistication,
+* refine typography,
+* improve motion,
+* improve spacing,
+* improve responsive behavior,
+* and modernize presentation.
+
+However:
+
+* all exploration must preserve the strategic positioning of the site,
+* avoid SaaS drift,
+* avoid literary-editorial drift,
+* and preserve the anti-pigeonhole rule.
+
+Tools should be treated as creative collaborators, not enemies.
 
 ---
 
 ## Color palette
 
-Warm neutrals + navy secondary. No bright accent colors — the photography supplies any further color.
+Current implementation leans:
+
+* warm-neutral,
+* low-saturation,
+* restrained,
+* with dark navy accents.
+
+This palette is a starting direction, not an immutable identity.
+
+The photography should provide most of the emotional color.
+
+## Current Tokens
 
 ```css
 :root {
@@ -70,45 +199,56 @@ Warm neutrals + navy secondary. No bright accent colors — the photography supp
 }
 ```
 
-### Color rules
+## Color Guidance
 
-- Never use pure black (`#000`) for text. Use `--text-primary` (`#2A2622`).
-- Never use pure white (`#FFFFFF`) for the page background. Use `--background` (`#F3F1ED`).
-- Pure white only appears on card surfaces and form fields where contrast against the background is needed.
-- The current site leans too brown overall. The navy secondary is meant to break that up.
+* Avoid pure black body text.
+* Avoid pure white page backgrounds.
+* Avoid loud accent colors unless strategically justified.
+* Navy is intended as a restrained accent, not a dominant brand color.
+* The palette may evolve cooler, richer, or more contrast-heavy later if it improves campaign feel.
 
-### Where navy applies
-
-Navy is a confident accent, never a fill. Apply navy to:
-
-- Primary button fill on Inquire / Book / Contact / Send CTAs (replacing the all-brown button)
-- Link hover states (replacing whatever the current treatment is)
-- Active nav item indicator (small underline or dot)
-- Section dividers on long pages (thin 1px line, used sparingly)
-- Form input focus ring
-
-### Where navy does NOT apply
-
-- Body text or heading text
-- Large background areas
-- Card backgrounds
-- Image borders or frames
-- Hero element on the home page
-- Anywhere on the masthead
+---
 
 ### Rejected color choices
 
-- **Pure black (#000):** never for text. Use `--text-primary`.
-- **Pure white (#FFFFFF):** never for backgrounds. Use `--background`.
 - **Olive green** (#525C46 or similar): earlier iterations used olive; we moved away from it.
 - **Tech blues** (cobalt, cyan, primary blue): the navy is intentionally warm/deep. Bright blues read SaaS.
 - **Accent reds, oranges, mustards:** the photography provides warm color. Don't double up.
 
 ---
 
-## Typography
+# Typography
 
-Single font family: **Noto Sans** (testing alternatives is on the table — see polish playbook Phase 4). Available weights: 300 (Light), 400 (Regular), 700 (Bold).
+Current implementation uses:
+
+* Noto Sans
+* light-weight headlines
+* restrained uppercase utility typography
+* generous spacing
+
+Typography is still under active refinement.
+
+Future exploration may include:
+
+* cleaner display faces,
+* improved headline contrast,
+* or more premium campaign-oriented pairings.
+
+Avoid:
+
+* wedding-photographer typography,
+* literary-publication serif systems,
+* over-stylized fashion-magazine typography,
+* trendy startup typography systems.
+
+The goal is:
+
+* modern,
+* confident,
+* commercially polished,
+* and restrained.
+
+Suggested weights: 300 (Light), 400 (Regular), 700 (Bold).
 
 ```css
 :root {
@@ -116,7 +256,7 @@ Single font family: **Noto Sans** (testing alternatives is on the table — see 
 }
 ```
 
-If a paired display face is introduced for headings (under evaluation), it should be brand-campaign-coded — clean, confident, modern. NOT editorial-publication-coded (austere serifs) and NOT wedding-photographer-coded (Playfair, Cormorant, script). Candidates under evaluation: Söhne, GT America, Untitled Sans, Public Sans, Fraunces.
+If a paired display face is introduced for headings (under evaluation), it should be brand-campaign-coded — clean, confident, modern. NOT editorial-publication-coded (austere serifs) and NOT wedding-photographer-coded (Playfair, Cormorant, script).
 
 ### Type scale & treatments
 
@@ -183,7 +323,15 @@ If a paired display face is introduced for headings (under evaluation), it shoul
 
 ## Layout principles
 
-- **Background:** Warm off-white (`--background`), never pure white
+Current direction favors:
+
+* hero-led composition,
+* generous whitespace,
+* restrained UI density,
+* centered masthead structure,
+* and photography-first presentation.
+
+- **Background:** Warm off-white (`--background`)
 - **Whitespace:** Generous around masthead and between sections
 - **Borders:** Sharp corners on layout containers, cards, and images (border-radius: 0). Subtle radius (2-4px) acceptable on buttons and form inputs if it serves the brand-confident feel — test both, default to sharp.
 - **Header:** Centered logo + centered nav with thin top/bottom borders
@@ -196,24 +344,52 @@ If a paired display face is introduced for headings (under evaluation), it shoul
 - Nav reduces to hamburger or stacked items
 - Reduce padding proportionally
 
+However:
+
+* layout systems may evolve significantly as the site matures.
+
+The homepage should remain:
+
+* statement-oriented,
+* visually strong,
+* and uncluttered.
+
+But restrained supporting elements are allowed when they improve:
+
+* SEO,
+* crawlability,
+* orientation,
+* credibility,
+* or conversion.
+
+Visual restraint should not come at the expense of usability.
+
 ---
 
-## Motion & interaction
+# Motion Philosophy
 
-Motion vocabulary: **confident-commercial**. Restrained but not austere. Should feel like a polished brand campaign landing page (Reformation, Buck Mason), not a SaaS micro-interaction and not an editorial publication.
+Motion should feel:
 
-- **Header behavior:** Sticky, shrinks on scroll
-- **Section entry animations:** Subtle fade or fade-and-rise on scroll. No "fly in from below" SaaS pattern. No bouncy springs.
-- **Hero parallax:** Allowed sparingly on hero sections only
-- **Hover states:** Subtle color shift (warm-neutral → navy), 150-200ms ease-out. No scale-up bouncy effects.
-- **Image lazy-load:** Fade-in only, 200-300ms.
-- **Lightbox:** Crossfade, no swipe-flip or 3D rotation.
-- **No autoplay** except video heroes when intentional
-- **No 3D background graphics** (Three.js, Spline) — wrong product type
-- **No GSAP scroll-driven fly-in animations** — SaaS-coded
-- **No bouncy animations** — keep motion intentional
+* subtle,
+* intentional,
+* polished,
+* campaign-oriented,
+* and calm.
 
-If in doubt about a motion choice, ask: would this animation look at home on a Reformation campaign landing page? If yes, ship it. If it's something you'd see on Stripe or Vercel, cut it.
+Good references:
+
+* Reformation
+* Buck Mason
+* premium creative agency sites
+
+Bad references:
+
+* Stripe-style SaaS microinteractions
+* aggressive scroll choreography
+* bouncing animations
+* overproduced GSAP demos
+
+Motion exists to support elegance, not demand attention.
 
 ---
 
@@ -343,6 +519,34 @@ PORTFOLIO | SERVICES | ABOUT | BOOK A SHOOT ▾ | CONNECT ▾
 - **Project organization:** Each portfolio piece is a project, not a floating image
 - **Captions on portfolio thumbnails:** Model name + brand. Nothing else.
 - **Underlying alt text on <img> tags:** Descriptive (see SEO section)
+
+---
+
+# SEO & AEO Philosophy
+
+SEO and AI crawlability are core infrastructure, not afterthoughts.
+
+The site should be understandable to:
+
+* humans,
+* Google,
+* AI crawlers,
+* answer engines,
+* and accessibility tools.
+
+## Core Rules
+
+* Important text must exist in semantic HTML.
+* Navigation should remain crawlable without JavaScript.
+* Images require descriptive filenames and alt text.
+* Each page should clearly communicate:
+
+  * who it is for,
+  * what it offers,
+  * where it operates,
+  * and how to inquire.
+* Portfolio pages should include short crawlable descriptions.
+* Do not rely solely on imagery to communicate services.
 
 ---
 
@@ -500,63 +704,49 @@ Four primary visitor types, in priority order:
 
 ---
 
-## Plugin & tool integration
+# Plugin & Tool Guidance
 
-When working with polish-oriented plugins, design tools, or other Claude Code extensions (Taste Skill, Impeccable, Emil Kowalski skill, frontend-design, shadcn-style component generators, animation libraries):
+Design plugins, polish systems, and AI tools are encouraged to:
 
-### Rules of engagement
+* improve refinement,
+* propose elevated interactions,
+* improve typography,
+* improve galleries,
+* improve responsive polish,
+* improve accessibility,
+* and modernize execution quality.
 
-- **This document is authoritative for ALL design tokens.** Colors, fonts, spacing, border-radius, motion, layout patterns — all derive from this doc and `.impeccable.md`. If a tool's defaults conflict with this doc, the doc wins.
-- **Override the plugin's defaults explicitly in the prompt.** Don't assume a tool will read this document on its own. Tell it: "Use only the tokens defined in DESIGN_SYSTEM.md. Replace any default colors, fonts, or design choices with the values from this document."
-- **Tools propose, this document approves.** Plugins are useful for generating options, not making final decisions. Always ask for 2-3 proposals when invoking a polish tool, then pick the one that fits the system.
+They should NOT:
 
-### Where plugins ARE useful
+* impose generic SaaS aesthetics,
+* add unnecessary trend effects,
+* overcomplicate the interface,
+* or overpower the photography.
 
-- Micro-interactions: hover states, focus rings, subtle transitions
-- Complex UI components: image galleries, lightboxes, carousels, image-grid systems
-- Form input refinement
-- Loading states
-- Accessibility improvements (ARIA, keyboard nav, focus management)
-- Animation timing refinement (within the constraints of the motion rules above)
-- SEO audits (alt text, meta tags, schema markup, file naming)
+When using tools:
 
-### Where plugins are NOT useful
-
-- Foundational layout (they'll impose their own grid system)
-- Typography choices (they'll switch to Inter or system defaults)
-- Color palette (they'll add accent colors that don't belong)
-- Navigation patterns (they'll restyle to tech-SaaS conventions)
-- Page architecture (already defined here)
-- Brand voice (they'll drift toward generic marketing copy)
-
-### Reject these trendy patterns
-
-Polish-oriented tools are often trained on currently-fashionable design trends. Reject these unless explicitly requested:
-
-- ❌ Soft gradients (especially purple-to-blue or pastel)
-- ❌ Glassmorphism / frosted backgrounds
-- ❌ Bouncy or spring-based micro-animations
-- ❌ Neon-on-dark accents
-- ❌ Generic SaaS landing page patterns (hero with floating phone mockup, three-feature-card grids, gradient hero text)
-- ❌ Bright accent colors (tech-blue CTAs, green success states with the wrong green)
-- ❌ Wedding-photographer-coded type (Playfair Display, Cormorant — wrong vertical entirely)
-- ❌ Three.js or Spline 3D background graphics
-- ❌ GSAP scroll-driven fly-in animations
-- ❌ shadcn/ui rounded-card aesthetic
-- ❌ "As featured in" logo walls with grayscale brand marks
-- ❌ Big stat numbers with glowing accents
-
-### Reject these editorial-publication patterns
-
-Some polish tools may overcorrect from "AI slop" into "literary fashion magazine" — that's also wrong for this site. Reject:
-
-- ❌ Austere maximalist whitespace that erases brand-confidence
-- ❌ Intellectual-publication serif body type (Tiempos Text used for paragraphs, etc.)
-- ❌ Tiny-caption-as-art-statement treatments
-- ❌ Magazine-page-mimicry layouts (folio numbers, drop caps, masthead numerals)
-- ❌ Tone that reads as art school over commercial
+* preserve strategic direction,
+* but allow visual evolution.
 
 ---
+
+# Pre-Merge Checklist
+
+Before shipping:
+
+* One H1 per page
+* Semantic navigation exists
+* Meta title + description exist
+* Images have descriptive alt text
+* Mobile layout tested
+* No obvious SaaS patterns
+* No literary-editorial overcorrection
+* CTA language matches brand voice
+* Core pages remain crawlable without JS
+* Photography remains dominant visual element
+
+---
+
 
 ## Image assets
 
@@ -605,7 +795,7 @@ Every image on the site should be intentional before launch. The masthead, hero,
 
 Every page on the site ends with a clear next-step CTA — but CTAs are calibrated to the audience for that page, not blanket-applied.
 
-### Rules
+### Suggestions
 
 - **Content pages end with a CTA section.** Most pages have one.
 - **Some exceptions are acceptable.** If a page (e.g., About) reads better without a hard CTA at the bottom because the work itself is the CTA, that's allowed. The earlier "no exceptions" rule was overcorrected from SaaS conversion thinking.
@@ -686,12 +876,18 @@ These map directly to the aspiring-model audience's "unsure about" list from the
 
 ---
 
-## Signature design moves
+# Guiding Principle
 
-This section documents the deliberate, repeated design choices that make the site visually distinctive — not just consistent. Populate as moves are decided and implemented.
+If rules conflict, prioritize in this order:
 
-- **Navy as confident accent:** the warm-neutral palette is broken up by a single deep warm navy used as the primary button fill, link hover state, and section divider. Navy never appears as body text, large background, or hero treatment.
-- **[Distinctive move from Phase 3 of polish playbook — to be added when implemented]**
-- **[Typography pair, if introduced from Phase 4 — to be added when implemented]**
+1. Clear commercial positioning
+2. Crawlability and usability
+3. Anti-pigeonhole flexibility
+4. Photography presentation
+5. Visual restraint
+6. Decorative polish
 
-Every signature move must pass the anti-pigeonhole test before being added to this list.
+The site should ultimately feel like:
+
+> a contemporary fashion/lifestyle photographer capable of handling real commercial work — not a template, not a magazine, and not a startup landing page.
+

@@ -59,7 +59,7 @@
 
     .capabilities-list {
       list-style: none;
-      font-size: 0.9375rem;
+      font-size: 1rem;
       line-height: 2.0;
       color: var(--text-primary);
       margin-bottom: 28px;
@@ -71,7 +71,7 @@
     }
 
     .clients-note {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       line-height: 1.75;
       color: var(--text-primary);
       padding-top: 24px;
@@ -117,7 +117,7 @@
     }
 
     .step-desc {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--text-primary);
     }
@@ -132,7 +132,7 @@
     }
 
     .cta-text {
-      font-size: 0.9375rem;
+      font-size: 1rem;
       line-height: 1.7;
       color: var(--text-primary);
     }
@@ -152,11 +152,11 @@
       border-radius: 0;
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.15s var(--ease-out);
     }
 
     .btn-cta:hover         { background-color: var(--secondary-navy-hover); }
-    .btn-cta:active        { transform: scale(0.99); }
+    .btn-cta:active        { transform: scale(0.99); transition: transform 0.08s var(--ease-out); }
     .btn-cta:focus-visible {
       outline: 2px solid var(--secondary-navy);
       outline-offset: 2px;

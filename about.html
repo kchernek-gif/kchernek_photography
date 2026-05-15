@@ -44,22 +44,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Two-column about layout ── */
-    .about-layout {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
+    /* ── Portrait: prominent, top of page, not a headshot box ── */
     .about-portrait {
       display: block;
-      width: 380px;
+      width: 100%;
+      max-width: 480px;
       height: auto;
+      margin-bottom: 48px;
     }
 
     /* ── Bio copy ── */
     .about-body {
+      max-width: 60ch;
       margin-bottom: 40px;
     }
 
@@ -75,32 +71,15 @@
     .about-body a {
       color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.15s var(--ease-out);
     }
 
     .about-body a:hover { color: var(--secondary-navy); }
 
-    @media (max-width: 900px) {
-      .about-portrait {
-        width: 300px;
-      }
+    .about-cta { max-width: 560px; }
 
-      .about-layout {
-        gap: 40px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .about-portrait {
-        width: 100%;
-        max-width: 380px;
-        height: auto;
-      }
+    @media (max-width: 640px) {
+      .about-portrait { max-width: 100%; }
     }
   </style>
 </head>
@@ -114,36 +93,31 @@
       <h1 class="page-title">The part where I talk about myself.</h1>
     </div>
 
-    <div class="about-layout">
+    <img
+      src="/portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg"
+      alt="Keith Chernek, commercial fashion photographer based in DFW"
+      class="about-portrait"
+      width="1023"
+      height="1138"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    >
 
-      <img
-        src="/portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg"
-        alt="Keith Chernek, commercial fashion photographer based in DFW"
-        class="about-portrait"
-        width="1023"
-        height="1138"
-        loading="eager"
-        decoding="async"
-      >
+    <div class="about-body">
+      <p>Hi, my name&#8217;s Keith. I&#8217;m a commercial fashion and portrait photographer based in Dallas&#8211;Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.</p>
 
-      <div class="about-content">
-        <div class="about-body">
-          <p>Hi, my name&#8217;s Keith. I&#8217;m a commercial fashion and portrait photographer based in Dallas&#8211;Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.</p>
+      <p>I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.</p>
 
-          <p>I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.</p>
+      <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
 
-          <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
+      <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener noreferrer">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
 
-          <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener noreferrer">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
+      <p>Let&#8217;s plan a shoot. <a href="contact.html">Reach out through the contact page</a>.</p>
+    </div>
 
-          <p>Let&#8217;s plan a shoot. <a href="contact.html">Reach out through the contact page</a>.</p>
-        </div>
-
-        <div class="page-cta">
-          <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
-        </div>
-      </div>
-
+    <div class="about-cta page-cta">
+      <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
     </div>
 
   </main>

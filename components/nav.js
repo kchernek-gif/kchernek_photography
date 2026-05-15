@@ -17,11 +17,13 @@
 
   header.innerHTML = `
     <div class="masthead">
-      <a href="/" class="logo-link">
-        <img src="/brand_assets/cropped_Black.png" alt="" class="logo-img" aria-hidden="true">
-        <span class="site-name">Keith Chernek</span>
-      </a>
-      <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
+      <div class="masthead-inner">
+        <a href="/" class="logo-link">
+          <img src="/brand_assets/cropped_Black.png" alt="" class="logo-img" aria-hidden="true">
+          <span class="site-name">Keith Chernek</span>
+        </a>
+        <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
+      </div>
     </div>
 
     <div class="nav-row">
@@ -74,6 +76,12 @@
   if (path.startsWith('/portfolio/')) {
     var portfolioLink = header.querySelector('a[href="/portfolio.html"]');
     if (portfolioLink) portfolioLink.classList.add('active');
+  }
+
+  // Book a Shoot sub-pages: mark Book a Shoot dropdown trigger active
+  if (path.startsWith('/book-a-shoot/')) {
+    var bookingTrigger = header.querySelector('#ddBooking .nav-dropdown-trigger');
+    if (bookingTrigger) bookingTrigger.classList.add('active');
   }
 
   // Mark dropdown trigger active when any child is active
@@ -129,13 +137,13 @@
   });
 
   // ── Scroll shrink — IntersectionObserver sentinel (no scroll listener) ────
-  // A 1px sentinel placed immediately after the header. When it exits the
-  // viewport (user has scrolled past the header), the .shrunk class is added.
+  // Negative rootMargin (-80px top) fires ~80px before the sentinel reaches
+  // the viewport edge, so the collapse starts well before content is hidden.
   var sentinel = document.createElement('div');
   sentinel.setAttribute('aria-hidden', 'true');
   sentinel.style.cssText = 'height:1px;pointer-events:none;visibility:hidden;';
   header.insertAdjacentElement('afterend', sentinel);
   new IntersectionObserver(function (entries) {
     header.classList.toggle('shrunk', !entries[0].isIntersecting);
-  }, { threshold: 0 }).observe(sentinel);
+  }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' }).observe(sentinel);
 }());

@@ -37,20 +37,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Category grid ── */
-    .category-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-    }
-
     .category-link {
       display: block;
       text-decoration: none;
       color: inherit;
     }
 
-    /* Overflow wrapper clips the image on hover scale */
+    /* ── Overflow wrapper clips image on hover scale ── */
     .category-thumb {
       display: block;
       overflow: hidden;
@@ -58,10 +51,16 @@
       background-color: var(--text-muted);
     }
 
+    /* Lead shoot: landscape crop for campaign-page presence */
+    .category-thumb--wide {
+      aspect-ratio: 3 / 2;
+    }
+
     .category-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
       transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -93,12 +92,28 @@
       margin-top: 4px;
     }
 
+    /* ── Lead shoot: full-width ── */
+    .portfolio-lead {
+      display: block;
+      margin-bottom: 32px;
+    }
+
+    /* ── Supporting shoots: 3-column ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
     /* ── Mobile ── */
     @media (max-width: 640px) {
-      .category-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+      .portfolio-lead { margin-bottom: 40px; }
+      .category-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── Tablet: 3-col still works, but tighten gap ── */
+    @media (max-width: 768px) and (min-width: 641px) {
+      .category-grid { gap: 16px; }
     }
   </style>
 </head>
@@ -112,20 +127,22 @@
       <h1 class="page-title">Portfolio</h1>
     </div>
 
-    <div class="category-grid">
+    <!-- Lead shoot — rotate to newest / strongest work as portfolio grows -->
+    <a href="portfolio/cowgirl-swimwear.html" class="portfolio-lead category-link">
+      <div class="category-thumb category-thumb--wide">
+        <img
+          src="portfolio-images/Cowgirl-Swimwear/cowgirl-swimwear-los-angeles-california-heloise-01.jpg"
+          alt="Cowgirl swimwear editorial by Keith Chernek, Los Angeles"
+          fetchpriority="high"
+          width="2160" height="2880"
+        >
+      </div>
+      <p class="category-label">Cowgirl Swimwear</p>
+      <p class="category-count">Los Angeles, 2026</p>
+    </a>
 
-      <a href="portfolio/cowgirl-swimwear.html" class="category-link">
-        <div class="category-thumb">
-          <img
-            src="portfolio-images/Cowgirl-Swimwear/cowgirl-swimwear-los-angeles-california-heloise-01.jpg"
-            alt="Cowgirl swimwear editorial by Keith Chernek, Los Angeles"
-            loading="lazy"
-            width="2160" height="2880"
-          >
-        </div>
-        <p class="category-label">Cowgirl Swimwear</p>
-        <p class="category-count">Los Angeles, 2026</p>
-      </a>
+    <!-- Supporting shoots -->
+    <div class="category-grid">
 
       <a href="portfolio/editorial.html" class="category-link">
         <div class="category-thumb">

@@ -62,11 +62,17 @@
       display: block;
     }
 
-    .hero-cta {
+    .hero-links {
       position: absolute;
       bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 40px;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-cta {
       font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -76,7 +82,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       padding: 14px 0;
       white-space: nowrap;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.15s var(--ease-out);
     }
 
     .hero-cta:hover        { border-color: #fff; }
@@ -85,17 +91,12 @@
       outline-offset: 4px;
     }
 
-    /* No gap between hero and home-cta, or home-cta and footer */
-    .home-cta {
-      text-align: center;
-      padding: 60px 4vw;
-      border-top: 1px solid var(--border);
-    }
-
     footer { margin-top: 0; }
 
     @media (max-width: 640px) {
       .hero { height: 65vh; }
+      .hero-links { left: 20px; right: 20px; bottom: 28px; }
+      .hero-cta { min-height: 44px; display: inline-flex; align-items: center; padding: 0; }
     }
   </style>
 </head>
@@ -113,12 +114,12 @@
       class="hero-img"
       width="2880"
       height="1920"
+      fetchpriority="high"
     >
-    <a href="portfolio.html" class="hero-cta">View Portfolio &#8594;</a>
-  </section>
-
-  <section class="home-cta">
-    <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
+    <div class="hero-links">
+      <a href="portfolio.html" class="hero-cta">View Portfolio &#8594;</a>
+      <a href="book-a-shoot/model-development.html" class="hero-cta">Book a Shoot &#8594;</a>
+    </div>
   </section>
 
   </main>

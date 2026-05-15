@@ -19,7 +19,7 @@
   // Portfolio/category pages: fade individual grid items with stagger
   Array.from(document.querySelectorAll('.project-grid > *, .category-grid > *'))
     .forEach(function (el, i) {
-      el.style.transitionDelay = Math.min(i * 0.08, 0.32) + 's';
+      el.style.transitionDelay = Math.min(i * 0.07, 0.21) + 's';
       el.classList.add('fade-in');
       io.observe(el);
     });
