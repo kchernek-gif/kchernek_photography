@@ -1,6 +1,8 @@
 # CLAUDE.md — Frontend Website Rules
 
-This file loads automatically at the start of every Claude Code session in this repo. Treat it as the floor of constraints, not the ceiling.
+This file loads automatically at the start of every Claude Code session in this repo.
+
+This project is an evolving functional first draft, not a finalized brand identity. Design docs encode current direction and strategic positioning. When a request asks for visual exploration or refinement, treat the docs as guardrails, not as locks. Ask whether the request is exploration (new direction worth trying), refinement (improving execution within current direction), or production cleanup (fixing bugs or violations). Reflect that classification back before proceeding. If a proposed change violates a Non-Negotiable, surface the conflict; if it violates only a Current Default, propose it as an option and let the user decide.
 
 ---
 
@@ -10,7 +12,7 @@ The site must not signal a single specialty visually. The chrome (palette, typog
 
 Specialty is communicated through portfolio content, not through site aesthetics.
 
-When making any design decision, ask: **does this signal "I do X" too strongly?** If yes, soften it. This rule overrides everything else in this document.
+When making any design decision, ask: **does this signal "I do X" too strongly?** If yes, soften it. This is a strong guardrail. When a design decision raises an anti-pigeonhole concern, surface the conflict; don't silently resolve it.
 
 ---
 
@@ -127,14 +129,14 @@ If the output reads as SaaS-landing-page, tech-product, or YC-startup → drifte
 
 ---
 
-## Palette (must use, never invent)
+## Palette
 
 ```css
 --background:            #F3F1ED;  /* Warm off-white page background */
 --surface:               #FFFFFF;  /* Card surfaces only */
 --text-primary:          #2A2622;  /* Body text, headlines */
 --text-secondary:        #6B6359;  /* Card headers, prices */
---text-muted:            #9A9088;  /* Taglines, captions, metadata */
+--text-muted:            #706A63;  /* Taglines, captions, metadata */
 --border:                rgba(42, 38, 34, 0.14);
 --secondary-navy:        #1E2A38;  /* Primary button fill, link hovers, dividers */
 --secondary-navy-hover:  #2A3A4C;
@@ -148,11 +150,11 @@ If the output reads as SaaS-landing-page, tech-product, or YC-startup → drifte
 
 ---
 
-## Typography (must use, never invent)
+## Typography
 
 - **Body, nav, UI:** Noto Sans (weights 300, 400, 700)
-- **Headings:** Noto Sans currently. A paired display face is under evaluation. Until that's resolved, do not introduce a second font.
-- Never use: Inter, Manrope, Plus Jakarta Sans, Geist, Bricolage Grotesque, Playfair Display, Cormorant Garamond, Times New Roman, Georgia, system defaults
+- **Headings:** Noto Sans currently — single-family system. See DESIGN_SYSTEM.md > Typography for display-face status and approval requirements.
+- Default away from: Inter, Manrope, Plus Jakarta Sans, Geist, Bricolage Grotesque, Playfair Display, Cormorant Garamond, Times New Roman, Georgia, system defaults. Introduce only with explicit user approval.
 
 See `DESIGN_SYSTEM.md` for the full type scale and treatments.
 
@@ -169,7 +171,7 @@ Confident-commercial. Restrained but not austere. Should feel like a polished br
 - Sticky header with subtle background treatment on scroll
 - `prefers-reduced-motion` respected on every animation
 
-**No:**
+**Avoid (require explicit approval and a brand-campaign-coded justification):**
 - Bouncy or spring-based animations (no overshoot, no elastic)
 - "Fly in from below" SaaS scroll animations
 - GSAP scroll-driven entry animations
@@ -200,9 +202,9 @@ No exceptions.
 
 ---
 
-## Reject these patterns (AI slop)
+## Flag these patterns (AI slop)
 
-Polish-oriented tools may suggest these. Reject:
+Polish-oriented tools may suggest these. They conflict with current direction — flag them before applying. Introducing any requires explicit user approval.
 
 - ❌ Inter font or any other AI-default sans
 - ❌ Purple/blue/teal SaaS-style gradients
@@ -223,9 +225,9 @@ Polish-oriented tools may suggest these. Reject:
 
 ---
 
-## Reject these patterns (editorial publication overcorrection)
+## Flag these patterns (editorial publication overcorrection)
 
-Some skills overcorrect from "AI slop" into "literary fashion magazine." Also wrong for this site. Reject:
+Some skills overcorrect from "AI slop" into "literary fashion magazine." Also wrong for this site — flag them before applying. Introducing any requires explicit user approval.
 
 - ❌ Austere maximalist whitespace that erases brand-confidence
 - ❌ Intellectual serif body type
@@ -313,7 +315,7 @@ Rules:
 
 - Do not migrate to Tailwind, React, or any framework
 - Do not introduce shadcn/ui or any component library
-- Do not introduce gradients, glassmorphism, or 3D background graphics
+- Default away from gradients, glassmorphism, and 3D background graphics; introduce only with explicit user approval and a brand-campaign-coded justification
 - Do not introduce a second font without explicit user approval
 - Do not introduce accent colors beyond navy without explicit user approval
 - Do not improve a reference design — match it

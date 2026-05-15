@@ -84,7 +84,7 @@ This system explicitly rejects: SaaS landing-page patterns, literary fashion pub
 - Warm neutrals throughout; Campaign Denim is the only accent and it earns every appearance
 - Sharp edges and flat surfaces — no radius on cards, images, or containers
 - Large light headings paired with small bold uppercase labels
-- Motion is opacity-only; no translating, flying, or bouncing
+- Motion defaults to opacity-only fades; translating, flying, and bouncing require explicit user approval
 - Forms and booking flows feel like a creative brief, not a software subscription
 
 ## 2. Colors: The Warm Studio Palette
@@ -115,7 +115,7 @@ The palette reads as the inside of a photography studio at golden hour: warm off
 ## 3. Typography
 
 **Body and UI Font:** Noto Sans (weights 300, 400, 700 via Google Fonts)
-**Display Font:** Noto Sans — evaluation complete. After eliminating the full reflex-reject list, no remaining Google Fonts serif candidate improved the system without introducing editorial-publication coding. The single-family approach is the right call; commitment is through scale (clamp to 3rem) and tracking (0.02em on H1), not a second typeface.
+**Display Font:** Noto Sans — single-family system. After eliminating the full reflex-reject list, no remaining Google Fonts serif candidate improved the system without introducing editorial-publication coding. The single-family approach is the right call; commitment is through scale (clamp to 3rem) and tracking (0.02em on H1), not a second typeface. A second family is permitted as future exploration with explicit user approval; see DESIGN_SYSTEM.md > Typography.
 
 **Character:** A single sans family across all registers, differentiated entirely by weight and scale. The pattern is binary: either large + light + sentence-case (H1, package names, prices) or small + bold + uppercase + letter-spaced (labels, nav, buttons, section headers). There is no middle ground. This creates confident hierarchy without introducing a second face.
 
@@ -133,7 +133,7 @@ The palette reads as the inside of a photography studio at golden hour: warm off
 ### Named Rules
 **The Two-Register Rule.** Every typographic element is either large + light + sentence-case, or small + bold + uppercase. Nothing in between. A 1rem weight-600 subheading is a violation of this rule. The contrast between the registers is what creates hierarchy.
 
-**The No Serif Rule.** Playfair Display, Cormorant Garamond, and all script faces are prohibited. They signal wedding photographer or editorial publication — both wrong registers for a working commercial fashion photographer.
+**The No Serif Rule.** Playfair Display, Cormorant Garamond, and all script faces should not be introduced without explicit user approval — they signal wedding photographer or editorial publication, both wrong registers for a working commercial fashion photographer.
 
 ## 4. Elevation
 
@@ -149,7 +149,7 @@ Shadows appear in exactly two contexts:
 ### Named Rules
 **The Flat-By-Default Rule.** Surfaces are flat at rest. No card shadows, no hover lifts, no decorative blur or glass effects. Depth is created by composition and typography, not by simulated light. If you are reaching for `box-shadow`, ask whether border-top or whitespace accomplishes the same spatial separation.
 
-**The No Glassmorphism Rule.** Backdrop-filter, frosted glass, translucent panels: never. These patterns signal SaaS tools and AI-generated design.
+**The No Glassmorphism Rule.** Backdrop-filter, frosted glass, translucent panels: avoid by default. These patterns signal SaaS tools and AI-generated design.
 
 ## 5. Components
 
@@ -226,18 +226,18 @@ Used for dedicated booking flows (Digitals and Editorial Test). Context panel le
 - **Do** write form labels in the Label style: uppercase, weight 700, Chalk Dust. Mark optional fields with a `.field-note` span (weight 400, no uppercase, no letter-spacing) inline in the label.
 - **Do** anchor booking option comparisons with a border-top (`2px solid Dried Ink`), not a card surface. The photography site is not a SaaS pricing page.
 - **Do** let the hero image carry all the visual weight on the homepage. Both CTAs live inside the image; the page goes hero → footer with no intermediate bands.
-- **Do** treat the Two-Register Rule as law: every text element is either display/headline/price (large, light, sentence case) or label/title/nav (small, bold, uppercase). Nothing lives between them.
+- **Do** treat the Two-Register Rule as the current preference: every text element is either display/headline/price (large, light, sentence case) or label/title/nav (small, bold, uppercase). Departing requires explicit user approval.
 
 ### Don't:
 - **Don't** use Inter, Manrope, Plus Jakarta Sans, or any other AI-default sans. Noto Sans only, or a deliberate campaign-coded display face introduced with explicit approval.
 - **Don't** use purple, blue, or teal SaaS-style gradients. The only blue in this system is Campaign Denim, and it is never a gradient.
 - **Don't** use glassmorphism, neumorphism, frosted backgrounds, or `backdrop-filter` for any decorative purpose.
 - **Don't** use rounded cards, soft decorative shadows, or nested cards. The shadcn/ui and Stripe-pricing aesthetic is an explicit anti-reference.
-- **Don't** create isolated CTA sections between the hero and the footer on the homepage. The hero carries the CTAs.
+- **Avoid** creating isolated CTA sections between the hero and the footer on the homepage; the current composition carries both CTAs inside the hero. Departing requires explicit user approval.
 - **Don't** use all-caps weight-700 labels for service names or package names. Those get the sentence-case weight-300 or weight-400 headline treatment.
-- **Don't** animate translateY. The fly-in-from-below pattern is SaaS scroll-choreography. Fade in with opacity only.
+- **Don't** animate translateY. The fly-in-from-below pattern is SaaS scroll-choreography. Default to opacity-only fades.
 - **Don't** set `will-change: transform` globally on gallery thumbnails. Scope it to hover; every thumbnail getting its own GPU layer on page load is a memory cost without any benefit.
 - **Don't** use `transition-all`. Specify exact properties: `transition: background-color 0.2s ease`, `transition: opacity 0.6s ease`, etc.
-- **Don't** use em dashes in body copy (—). Use commas, colons, semicolons, or periods.
+- **Don't** use em dashes outside their defined contexts. See DESIGN_SYSTEM.md > Em-dash policy.
 - **Don't** use SaaS CTA language: "Get Started," "Sign Up," "Book Now!" Use: "Book a Shoot," "View Portfolio," "Send Inquiry," "Request Booking."
 - **Don't** signal a single fashion vertical through the chrome. If a design choice makes the site read as "swimwear photographer" or "lingerie photographer" instead of "commercial fashion and lifestyle photographer," it violates the anti-pigeonhole rule and must be revised.

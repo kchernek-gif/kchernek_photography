@@ -36,6 +36,50 @@ Thoughtful evolution is encouraged.
 
 ---
 
+# Preference Tiers
+
+Every rule in this design system belongs to one of three tiers. When a request conflicts with a rule, the response depends on which tier the rule is in.
+
+## Tier 1 — Non-Negotiable
+
+Violating these breaks the strategic positioning of the site. Surface the conflict and stop; do not silently apply.
+
+- Anti-pigeonhole positioning. The site framework must not over-signal one fashion vertical. Specialization is communicated through portfolio content.
+- Campaign-feel over magazine, SaaS, or template aesthetic.
+- Photography is the primary visual element. Decoration frames the work, never competes with it.
+- Core navigation and business-critical info must remain crawlable as plain HTML and accessible without JavaScript.
+- Brand voice is confident, restrained, commercial, partner-to-brands. No exclamation points, no folksy DFW framings, no motivational rhymes.
+
+## Tier 2 — Strong Preference
+
+These reflect current direction. Departing requires explicit user approval and a brand-campaign-coded justification.
+
+- Warm-neutral palette with Campaign Denim as the only accent.
+- Sharp corners across containers, images, and cards. Subtle radius (2-4px max) only on small form inputs.
+- Flat-by-default surfaces. No decorative shadows on cards. Two allowed shadows: scroll-state header, form input contrast.
+- Motion limited to opacity, GPU-composited transform, IntersectionObserver-driven fades. No GSAP, no scroll-driven flying entries, no spring/bounce.
+- Em-dash policy per the DESIGN_SYSTEM.md > Em-dash policy section.
+- Noto Sans single-family typography system.
+
+## Tier 3 — Current Default
+
+These are the current implementation but are open to refinement. Propose alternatives as options; don't reject as violations.
+
+- Specific spacing values, line heights, letter spacings, and the type scale.
+- Homepage composition (single hero, two CTAs, no intermediate bands).
+- Specific copy in CONTENT.md, beyond the voice rules.
+- Portfolio gallery layout density and grid choices.
+- Microinteraction timings and hover-state details.
+- Imagegen and ImageGallery schema field selections.
+
+## How to use these tiers in a Claude Code session
+
+- "This violates Tier 1 — surfacing for your decision." → Stop and ask.
+- "This crosses Tier 2 — proposing it as an option." → Show both the current approach and the alternative, let the user pick.
+- "This is a Tier 3 default — here's the change." → Apply it.
+
+---
+
 # Non-Negotiables
 
 1. The site must not pigeonhole the photographer into a single vertical.
@@ -192,7 +236,7 @@ The photography should provide most of the emotional color.
   --surface:           #FFFFFF;  /* Pure white — card surfaces */
   --text-primary:      #2A2622;  /* Deep warm brown-black — body text, headlines */
   --text-secondary:    #6B6359;  /* Warm medium brown — buttons, card headers, prices */
-  --text-muted:        #9A9088;  /* Warm tan-gray — taglines, captions, metadata */
+  --text-muted:        #706A63;  /* Warm tan-gray — taglines, captions, metadata */
   --border:            rgba(42, 38, 34, 0.14);  /* Subtle warm brown border */
   --secondary-navy:    #1E2A38;  /* Deep warm navy — link hovers, button accents, dividers */
   --secondary-navy-hover: #2A3A4C;  /* Slightly lighter navy for hover states */
@@ -256,7 +300,7 @@ Suggested weights: 300 (Light), 400 (Regular), 700 (Bold).
 }
 ```
 
-If a paired display face is introduced for headings (under evaluation), it should be brand-campaign-coded — clean, confident, modern. NOT editorial-publication-coded (austere serifs) and NOT wedding-photographer-coded (Playfair, Cormorant, script).
+Current state: Noto Sans single-family system across all weights and registers. A paired display face is not currently in use. Introducing a second family is permitted as a future exploration if motivated by a specific design need, requires explicit user approval before implementation, and must be brand-campaign-coded (not editorial-publication-coded, not wedding-photographer-coded).
 
 ### Type scale & treatments
 
@@ -647,11 +691,17 @@ Confident, professional, partner-to-brands. Speaks to brands and agencies as pee
 - ❌ Childhood-camera origin stories
 - ❌ "Aspire to inspire" or any motivational rhyme
 - ❌ "And more" at the end of a client list
-- ❌ Overusing em-dashes (they read as AI-generated when overused)
+- ❌ Em-dash overuse in body copy — see Em-dash policy below
 - ❌ "Book Now!" or any CTA with an exclamation point
 - ❌ "Y'all" or folksy DFW framings
 - ❌ Self-effacing phrases ("just trying my best," "hoping to," "would love to")
 - ❌ "Premium," "luxury," "exclusive" — these signal trying too hard
+
+## Em-dash policy
+
+Em-dashes are reserved for the brand tagline (FASHION — LIFESTYLE — DFW) and equivalent typographic separators in brand chrome. In body copy, CTAs, descriptions, and form labels, use commas, colons, semicolons, or sentence breaks instead. The reason: overused em-dashes read as AI-generated.
+
+---
 
 ### Named clients/collaborators (real, defensible)
 
@@ -814,7 +864,7 @@ Every page on the site ends with a clear next-step CTA — but CTAs are calibrat
 | Services | Book a Shoot | Connect |
 | Model Development | Request Booking (per card) | Connect |
 | Commercial & Brand | Get in Touch | — |
-| About (when visible) | Connect | Book a Shoot |
+| About | Connect | Book a Shoot |
 | Connect | Form is the CTA | — |
 
 ### CTA language library

@@ -28,7 +28,7 @@ Commercial fashion, lifestyle, and portrait photographer based in DFW. Now booki
 
 ---
 
-## About page (currently hidden, but written)
+## About page
 
 ```
 Hi, my name's Keith. I'm a commercial fashion and portrait photographer based in Dallas–Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.
@@ -323,7 +323,7 @@ Have a question I didn't cover? [Reach out](/contact) and I'll answer directly.
 - After capabilities: `Discuss Your Project →`
 - After process: `Get in Touch →` (these can be the same button repeated)
 
-### About page (when visible)
+### About page
 - End of page: `Let's Connect →`
 
 ### Connect page

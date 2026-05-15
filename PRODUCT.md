@@ -30,7 +30,7 @@ The site must not signal a single specialty visually. The chrome should support 
 - Josh Ryan x Guess campaign work for aspirational aesthetic
 - Andi Bagus, Reformation, Buck Mason, Tecovas campaign imagery for adjacent aesthetics
 
-## Reject as wrong context
+## Flag as wrong context — these conflict with current direction
 
 - Inter font (AI slop)
 - Purple/blue/teal SaaS-style gradients
@@ -51,7 +51,7 @@ The site must not signal a single specialty visually. The chrome should support 
 - Subtle hover state on portfolio thumbnails (scale 1.04, GPU-composited)
 - Opacity fade-in on scroll (IntersectionObserver, no translateY)
 - Sticky header with shadow treatment on scroll
-- Nothing else animates
+- Other motion patterns require explicit user approval and a brand-campaign-coded justification
 
 ## Palette
 
@@ -62,12 +62,12 @@ The site must not signal a single specialty visually. The chrome should support 
 ## Typography
 
 - Body, nav, UI: clean confident sans, currently Noto Sans (open to testing alternatives)
-- Headings: Noto Sans weight 300, clamp(1.8rem, 3.5vw, 3rem), letter-spacing 0.02em. Single-family system confirmed — display face evaluation complete, no second family introduced.
+- Headings: Noto Sans weight 300, clamp(1.8rem, 3.5vw, 3rem), letter-spacing 0.02em. Noto Sans single-family system. A second display face is not currently in use; future exploration is permitted with explicit user approval. See DESIGN_SYSTEM.md > Typography.
 - Service names, package names: sentence-case at 1.35–1.5rem / weight 400 — statements, not category labels
 
 ## Voice
 
-Confident, professional, partner-to-brands. Speaks to brands and agencies as peers. Project-focused, not personality-focused. No exclamation points, no "Book Now!" energy. No em dashes.
+Confident, professional, partner-to-brands. Speaks to brands and agencies as peers. Project-focused, not personality-focused. No exclamation points, no "Book Now!" energy. See DESIGN_SYSTEM.md > Em-dash policy.
 
 ## Quality bar
 

@@ -1,3 +1,7 @@
+ARCHIVED. This document captured the initial build sequence from commit 1b457ee through approximately commit e6985f4. The project has since evolved and the steps below describe a previous state. Retained for historical reference only. Do not follow these steps for current work. Refer instead to DESIGN_SYSTEM.md, CONTENT.md, and EDITORIAL_PORTFOLIO_SEO_STRATEGY.md.
+
+---
+
 # Keith Chernek Website — Claude Code Workflow
 
 **Purpose:** Step-by-step prompts to use with Claude Code in VS Code. Build the site incrementally, one prompt per step. Reference `DESIGN_SYSTEM.md` and `CONTENT.md` for any decisions.
