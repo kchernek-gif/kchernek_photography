@@ -76,9 +76,19 @@ body {
 
 .site-header.shrunk::after { opacity: 1; }
 
-/* Grid-row collapse: content fades first (0.2s), space closes behind it (0.35s) */
+/*
+  Collapse:  content fades out first (0.3s, no delay),
+             then height closes (0.5s ease-in-out).
+  Expand:    height opens first (0.5s ease-in-out),
+             then content fades in (0.25s, 0.2s delay — starts mid-open).
+  Both directions use the rule set that applies in that state.
+*/
 .site-header.shrunk .masthead      { grid-template-rows: 0fr; }
-.site-header.shrunk .masthead-inner { opacity: 0; }
+.site-header.shrunk .masthead-inner {
+  opacity: 0;
+  /* Collapse: opacity goes first, no delay */
+  transition: opacity 0.3s var(--ease-out);
+}
 
 /* ── Masthead ── */
 .masthead {
@@ -87,13 +97,15 @@ body {
   display: grid;
   grid-template-rows: 1fr;
   overflow: hidden;
+  /* Same duration for both collapse and expand */
   transition: grid-template-rows 0.5s var(--ease-inout);
 }
 
 .masthead-inner {
   min-height: 0;
   overflow: hidden;
-  transition: opacity 0.3s var(--ease-out);
+  /* Expand: delay so content appears after height is partially open */
+  transition: opacity 0.25s var(--ease-out) 0.2s;
 }
 
 /* Spacing lives on children so overflow:hidden can clip them cleanly on collapse */

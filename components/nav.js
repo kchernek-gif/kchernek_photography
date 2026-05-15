@@ -136,14 +136,25 @@
     toggle.setAttribute('aria-label', 'Open navigation');
   });
 
-  // ── Scroll shrink — IntersectionObserver sentinel (no scroll listener) ────
-  // Negative rootMargin (-80px top) fires ~80px before the sentinel reaches
-  // the viewport edge, so the collapse starts well before content is hidden.
-  var sentinel = document.createElement('div');
-  sentinel.setAttribute('aria-hidden', 'true');
-  sentinel.style.cssText = 'height:1px;pointer-events:none;visibility:hidden;';
-  header.insertAdjacentElement('afterend', sentinel);
-  new IntersectionObserver(function (entries) {
-    header.classList.toggle('shrunk', !entries[0].isIntersecting);
-  }, { threshold: 0, rootMargin: '-80px 0px 0px 0px' }).observe(sentinel);
+  // ── Scroll shrink — passive scroll listener + rAF ───────────────────────
+  // Single threshold: collapse when scrollY > 40px, expand when scrollY <= 40px.
+  // No lock — CSS transitions handle mid-animation reversals naturally.
+  // rAF batching (one check per frame) is sufficient to prevent jank.
+  var THRESHOLD  = 40;
+  var rafPending = false;
+
+  function applyScrollState() {
+    header.classList.toggle('shrunk', window.scrollY > THRESHOLD);
+    rafPending = false;
+  }
+
+  // Apply correct state immediately (handles reloads at scrolled position)
+  applyScrollState();
+
+  window.addEventListener('scroll', function () {
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(applyScrollState);
+    }
+  }, { passive: true });
 }());

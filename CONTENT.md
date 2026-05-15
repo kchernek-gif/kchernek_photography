@@ -23,7 +23,7 @@ DFW commercial fashion and lifestyle photography
 
 ### Meta description (for SEO + link previews)
 ```
-Commercial fashion and lifestyle, and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.
+Commercial fashion, lifestyle, and portrait photographer based in DFW. Now booking digitals, editorial sessions, and brand visuals.
 ```
 
 ---
