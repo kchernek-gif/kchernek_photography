@@ -621,6 +621,55 @@ footer {
   }
 }
 
+/* ── Homepage Carousel ── */
+.homepage-carousel {
+  width: 100%;
+  padding: clamp(48px, 6vw, 96px) 0;
+  background-color: var(--background);
+}
+
+.carousel-track {
+  display: flex;
+  gap: clamp(12px, 1.5vw, 20px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 15vw;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: clamp(280px, 70vw, 900px);
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 85vw;
+  }
+  .carousel-track {
+    scroll-padding-inline: 7.5vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+}
+
 /* ─── Editorial project pages ──────────────────────────────────────── */
 
 /* Section-level rhythm */
@@ -702,6 +751,85 @@ details[open] .page-details-chevron {
 
 @media (prefers-reduced-motion: reduce) {
   .page-details-chevron { transition: none; }
+}
+
+/* ── Form page: context column additions ── */
+.context-tailored {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+  font-style: italic;
+}
+
+.context-subhead {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 32px 0 16px 0;
+}
+
+/* ── Form add-ons block ── */
+.form-addons {
+  padding: 24px;
+  border: 1px solid var(--border);
+  background-color: var(--tint-warm);
+}
+
+.addons-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.addons-intro {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+.addon-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.addon-option:first-of-type {
+  border-top: none;
+}
+
+.addon-option input[type="checkbox"] {
+  margin-top: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.addon-option label {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  flex: 1;
+}
+
+.addon-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.addon-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
 /* Two-image row */

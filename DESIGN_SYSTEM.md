@@ -80,6 +80,68 @@ These are the current implementation but are open to refinement. Propose alterna
 
 ---
 
+### Photography Density (Tier 2 Suggestion)
+
+A photography portfolio site should let photography do meaningful visual work on every primary page. Text-only or card-only layouts are appropriate for utility pages (privacy, terms, sitemap) but should be the exception for marketing pages, not the default.
+
+This is a **suggestion, not a rule** — there are good reasons to deviate (a deliberate minimal transition page, a page that's intentionally text-forward because the content is the point, etc.). When a page is going to be text-heavy or card-heavy, the reason should be deliberate, not accidental.
+
+**Funnel-position calibration:**
+
+- **Top of funnel** (homepage, portfolio, portfolio sub-pages): photography is the primary content. Multiple images per page. Above-the-fold image presence is required, not optional. Carousels, galleries, and full-bleed image sections are appropriate.
+- **Mid-funnel** (services, about, brand work): images and text balance. At least one significant image-led section per page. Alternating image/text blocks or hero+strip patterns are appropriate.
+- **Bottom of funnel** (booking pages, contact, model development): conversion is the priority. Photography supports the conversion path (one or two reassuring images, examples of past work in a collapsed area) but does not displace the offer or form.
+
+When a page has no category-specific imagery yet, use the closest-matching shoot image and mark it as a placeholder in an HTML comment that names what should replace it. This keeps the audit infrastructure happy while making substitution intent explicit. Example:
+
+```html
+<!-- PLACEHOLDER: Using cowgirl-swimwear-heloise-08 here as a stand-in.
+     Should be replaced with an image specifically representing model
+     development sessions (clean digitals look, single model, neutral
+     background). Replace when a model-development-specific shoot lands. -->
+<picture>
+  ...
+</picture>
+```
+
+The audit script (`scripts/check-placeholders.mjs`) does not flag these because the actual `src` references real production images. The comment marks intent for future cleanup.
+
+---
+
+### Carousel Pattern
+
+A horizontal image strip with native CSS scroll-snap, peek-from-edge spacing, and no auto-advance. Used on the homepage between the hero and footer. Reusable on any page where photography should land as variety and invitation rather than a single hero.
+
+**Mechanics (current implementation):**
+- Container is full-bleed (no horizontal page padding) so partial images peek from the viewport edges
+- Each image is contained in a `<picture>` element matching the portfolio sub-page pattern (WebP+JPG, 800w/1200w/1600w variants)
+- The track uses `display: flex`, `overflow-x: auto`, `scroll-snap-type: x mandatory`, `scroll-padding-inline` for the peek effect
+- Each image item uses `scroll-snap-align: center` so manual scroll lands on a centered image
+- Native browser scrollbar is hidden (`scrollbar-width: none; ::-webkit-scrollbar { display: none }`) — the carousel implies its own continuation via the peek effect
+- Vertical container padding uses existing spacing tokens
+- Image aspect ratio is preserved per source (no forced cropping)
+- Images use existing `<picture>` markup with WebP+JPG sources per the portfolio sub-page convention
+
+**What's not in the current implementation (deferred to future phases):**
+- Auto-advance (would require a small JS layer ~30 lines)
+- Dot indicators or progress markers
+- Keyboard arrow navigation (the natural scroll behavior is keyboard-accessible via Tab + arrow keys on Mac, but explicit arrow controls could be added)
+- Pause-on-hover (related to auto-advance)
+- Lazy-loading non-active images (browser handles natively for `loading="lazy"` attributes)
+
+**Where to use this pattern:**
+- Homepage (current implementation)
+- Model Development page — inside or below the "Details" collapse, NOT above the cards (the page is bottom-of-funnel)
+- Services page — alongside or instead of alternating image/text blocks, when category-specific imagery becomes available
+- Brand Work page — alongside a separate brand-logo strip (when client logo permissions land)
+
+**Where NOT to use this pattern:**
+- Portfolio sub-pages (already use grid-based galleries with intentional section composition)
+- Contact page (single image is more appropriate; carousels here distract from form completion)
+- About page (single portrait is more appropriate)
+
+---
+
 # Non-Negotiables
 
 1. The site must not pigeonhole the photographer into a single vertical.

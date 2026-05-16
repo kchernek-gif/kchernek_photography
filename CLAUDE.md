@@ -336,6 +336,28 @@ Globally installed at `~/.claude/skills/impeccable/`. Project context lives at `
 
 ---
 
+## Future work (queued, awaiting assets or asset-readiness)
+
+These items are documented but not yet ready to implement. Each is unblocked when its prerequisite assets are in place.
+
+**Auto-advancing homepage carousel.** Current homepage carousel is manual-scroll only. Adding auto-advance, pause-on-hover, and dot indicators is a future phase. Prerequisite: confirm visitor behavior on the manual carousel (does the engagement justify the JS complexity?). Estimated work: ~120 lines of JS in a new `components/carousel.js`, ~30 lines of CSS additions for indicator dots.
+
+**Model Development carousel.** Add a horizontal-scroll image strip inside or below the existing "Details" collapse on `book-a-shoot/model-development.html`. Uses the same pattern as the homepage carousel. Drawn from existing portfolio imagery. The carousel is bottom-of-funnel by placement — it supports the decision rather than driving it. Prerequisite: a future decision on whether to lift it into the visible page area or keep it inside the collapse. Estimated work: ~45 minutes.
+
+**Services page alternating blocks.** Replace the current text-and-card-heavy layout on `services.html` with alternating image/text 50/50 blocks for each service category. Each block needs a category-specific image (model development, commercial, editorial, brand). Until category-specific imagery exists, use placeholder images per the documented convention. Prerequisite: confirm which images stand in for which category, document with HTML comments. Estimated work: ~90 minutes.
+
+**Brand Work page.** A dedicated `brand-work.html` (or refresh of `commercial.html`) with a hero image, an image strip showing brand collaboration work, and a brand-logo strip showing recognizable clients. Prerequisites: signed permission to display client logos, plus 3–5 brand-collaboration images (some may exist in the cowgirl/swimwear folders if those were brand campaigns). Estimated work: ~3 hours.
+
+**Reviews/testimonials section.** A subtle review or testimonial display near booking CTAs. Reduces visitor hesitation at the decision moment. Prerequisites: 4–5 strong, specific testimonials with named clients/models (not generic praise). Until then, this stays unbuilt. Implementation will be a small bordered block with quote and attribution, not a marquee or popup. Estimated work: ~60 minutes once content exists.
+
+**Brand logo strip.** A muted scrolling strip of recognizable client logos (Walmart, FloSports, Andi Bagus, AvalTheBrand, Caster House, etc.) near the bottom of the Brand Work page or homepage. Prerequisites: written permission for commercial use of each logo, optimized SVG or PNG logo files. Estimated work: ~45 minutes once assets exist.
+
+**About page imagery.** The About page currently uses minimal supporting imagery. Adding 1–2 BTS images or environmental shots (Keith working on set, gear, the studio space) would strengthen the page. Prerequisite: shoot BTS or environmental imagery; current portrait stays as the lead. Estimated work: ~30 minutes once images exist.
+
+**Photography Density audit pass.** Once 2–3 of the above land, run a structured audit comparing the current state of every primary page against the Photography Density Suggestion. Identify pages still lacking image-led sections. Decide which to address next. Estimated work: ~60 minutes audit and variable implementation per finding.
+
+---
+
 ## Hard rules
 
 - Do not migrate to Tailwind, React, or any framework
