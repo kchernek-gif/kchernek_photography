@@ -624,8 +624,9 @@ footer {
 /* ── Homepage Carousel ── */
 .homepage-carousel {
   width: 100%;
-  padding: clamp(48px, 6vw, 96px) 0;
+  padding: 0;
   background-color: var(--background);
+  position: relative;
 }
 
 .carousel-track {
@@ -647,20 +648,53 @@ footer {
   flex: 0 0 auto;
   scroll-snap-align: center;
   width: clamp(280px, 70vw, 900px);
+  height: calc(100dvh - 44px);
+  overflow: hidden;
 }
 
 .carousel-item img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
+
+/* ── Carousel arrows ── */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(243, 241, 237, 0.88);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color 0.15s var(--ease-out), background-color 0.15s var(--ease-out);
+}
+
+.carousel-arrow:hover         { color: var(--secondary-navy); background-color: rgba(243, 241, 237, 0.98); }
+.carousel-arrow:active        { opacity: 0.7; }
+.carousel-arrow:focus-visible { outline: 2px solid var(--secondary-navy); outline-offset: 2px; }
+
+.carousel-arrow--prev { left: 16px; }
+.carousel-arrow--next { right: 16px; }
 
 @media (max-width: 768px) {
   .carousel-item {
     width: 85vw;
+    height: 70dvh;
   }
   .carousel-track {
     scroll-padding-inline: 7.5vw;
+  }
+  .carousel-arrow {
+    display: none;
   }
 }
 

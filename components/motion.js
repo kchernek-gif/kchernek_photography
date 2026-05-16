@@ -1,3 +1,19 @@
+/* ── Homepage carousel: arrow navigation ── */
+(function () {
+  var track = document.getElementById('carouselTrack');
+  if (!track) return;
+  document.querySelectorAll('.carousel-arrow').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = track.querySelector('.carousel-item');
+      if (!item) return;
+      var gap = parseFloat(getComputedStyle(track).gap) || 16;
+      var amount = item.offsetWidth + gap;
+      var dir = btn.classList.contains('carousel-arrow--prev') ? -1 : 1;
+      track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+    });
+  });
+}());
+
 /* Scroll-triggered section fade-in — Intersection Observer */
 (function () {
   if (!window.IntersectionObserver) return;
