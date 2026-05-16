@@ -88,14 +88,26 @@
   });
 
   // ── Scroll shrink — passive scroll listener + rAF ───────────────────────
-  // Single threshold: collapse when scrollY > 40px, expand when scrollY <= 40px.
-  // No lock — CSS transitions handle mid-animation reversals naturally.
-  // rAF batching (one check per frame) is sufficient to prevent jank.
-  var THRESHOLD  = 40;
-  var rafPending = false;
+  // Hysteresis: shrink at scrollY > 60, expand at scrollY < 20.
+  // scroll-anchor is suppressed on <html> for 600ms around each toggle so the
+  // header height change cannot feed back into scrollY during the transition.
+  var SHRINK_AT   = 60;
+  var EXPAND_AT   = 20;
+  var rafPending  = false;
+  var anchorTimer = null;
+
+  function suppressAnchor() {
+    document.documentElement.style.overflowAnchor = 'none';
+    clearTimeout(anchorTimer);
+    anchorTimer = setTimeout(function () {
+      document.documentElement.style.overflowAnchor = '';
+    }, 600);
+  }
 
   function applyScrollState() {
-    header.classList.toggle('shrunk', window.scrollY > THRESHOLD);
+    var shrunk = header.classList.contains('shrunk');
+    if (!shrunk && window.scrollY > SHRINK_AT) { suppressAnchor(); header.classList.add('shrunk'); }
+    if (shrunk  && window.scrollY < EXPAND_AT) { suppressAnchor(); header.classList.remove('shrunk'); }
     rafPending = false;
   }
 
