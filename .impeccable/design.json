@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-14T00:00:00Z",
+  "title": "Design System: Keith Chernek Photography",
+  "extensions": {
+    "colorMeta": {
+      "pre-dawn-linen":       { "role": "neutral",   "displayName": "Pre-Dawn Linen",       "canonical": "#F3F1ED", "tonalRamp": ["#2C2A28","#3E3B38","#555149","#6C685F","#847F77","#9D9891","#B8B3AD","#D3CFC9","#EBE8E4","#F3F1ED"] },
+      "surface-white":        { "role": "neutral",   "displayName": "Surface White",         "canonical": "#FFFFFF", "tonalRamp": ["#2A2622","#3D3935","#514D49","#66615C","#7C7671","#939088","#ABADA8","#C5C3C0","#DDDBD9","#FFFFFF"] },
+      "dried-ink":            { "role": "neutral",   "displayName": "Dried Ink",             "canonical": "#2A2622", "tonalRamp": ["#0D0C0B","#1A1815","#2A2622","#3D3835","#514D49","#66615C","#7C7671","#939088","#ABADA8","#C5C3C0"] },
+      "film-grain":           { "role": "neutral",   "displayName": "Film Grain",            "canonical": "#6B6359", "tonalRamp": ["#1C1A18","#2E2B27","#413D38","#554F4A","#6B6359","#807A72","#97918B","#ADA9A3","#C6C2BD","#E0DDD9"] },
+      "chalk-dust":           { "role": "neutral",   "displayName": "Chalk Dust",            "canonical": "#706A63", "tonalRamp": ["#252220","#383431","#4B4743","#5E5A56","#74706B","#9A9088","#ADA9A4","#C3C0BC","#D9D6D3","#EDECEA"] },
+      "campaign-denim":       { "role": "primary",   "displayName": "Campaign Denim",        "canonical": "#1E2A38", "tonalRamp": ["#070D13","#0F1820","#1E2A38","#2C3D51","#3B516A","#4C6584","#617A97","#7B93AB","#98ADBF","#B8C8D6"] },
+      "campaign-denim-hover": { "role": "primary",   "displayName": "Campaign Denim Hover",  "canonical": "#2A3A4C", "tonalRamp": ["#0A1218","#151F29","#2A3A4C","#3A506A","#4B6685","#5F7D9E","#7796B5","#93AFCA","#B3CADB","#D4E3EE"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Page titles (H1) only. Large, light, sentence-case. Examples: 'Model Development.' 'Portfolio.' 'Let’s Connect.'" },
+      "headline": { "displayName": "Headline", "purpose": "Package and session names within booking flows. Subordinate to Display but same light-sentence-case logic." },
+      "title":    { "displayName": "Title",    "purpose": "Section headings (H2). Small, bold, uppercase. Examples: 'Questions.' 'Important Info.'" },
+      "body":     { "displayName": "Body",     "purpose": "All prose, descriptions, FAQ answers. Max line length 65-75ch." },
+      "label":    { "displayName": "Label",    "purpose": "Navigation links, button text, form labels, gallery captions. Most compact voice in the system." }
+    },
+    "shadows": [
+      { "name": "header-scroll", "value": "0 4px 16px rgba(42, 38, 34, 0.08)", "purpose": "Sticky header drop shadow on scroll. Applied via ::after pseudo-element, opacity-transitioned. GPU-composited." }
+    ],
+    "motion": [
+      { "name": "standard", "value": "0.2s ease", "purpose": "State transitions: hover color shifts, dropdown open/close." },
+      { "name": "fade-in",  "value": "opacity 0.6s ease", "purpose": "Scroll-triggered section reveal. Opacity only — no translateY." },
+      { "name": "scale-hover", "value": "transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Portfolio thumbnail image scale on hover (scale 1.04). will-change scoped to :hover, cleared on transitionend." }
+    ],
+    "breakpoints": [
+      { "name": "mobile",  "value": "640px",  "note": "Nav collapses to hamburger, grids collapse to 1 column." },
+      { "name": "tablet",  "value": "768px",  "note": "About layout collapses to 1 column, info-grid collapses to 2 columns, inquiry layout collapses to 1 column." },
+      { "name": "tablet-lg", "value": "900px", "note": "About portrait shrinks to 300px wide, gap reduces." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Navy fill, white uppercase text, sharp corners. Used for all primary booking and inquiry CTAs.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Book a Shoot →</a>",
+      "css": ".ds-btn-primary { display: inline-block; background-color: #1E2A38; color: #fff; font-family: 'Noto Sans', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 16px 28px; border: none; border-radius: 0; cursor: pointer; transition: background-color 0.2s ease; white-space: nowrap; } .ds-btn-primary:hover { background-color: #2A3A4C; } .ds-btn-primary:active { transform: scale(0.99); } .ds-btn-primary:focus-visible { outline: 2px solid #1E2A38; outline-offset: 2px; }"
+    },
+    {
+      "name": "Hero Ghost CTA",
+      "kind": "button",
+      "refersTo": "hero-cta",
+      "description": "White text link overlaid on the hero image. No background — border-bottom indicates interactivity. Used for in-image CTAs only.",
+      "html": "<a href=\"#\" class=\"ds-hero-cta\">View Portfolio →</a>",
+      "css": ".ds-hero-cta { font-family: 'Noto Sans', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.5); padding: 14px 0; white-space: nowrap; transition: border-color 0.2s ease; } .ds-hero-cta:hover { border-color: #fff; } .ds-hero-cta:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }"
+    },
+    {
+      "name": "Form Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Sharp-cornered inputs on warm linen background. Film Grain border signals editability. Focus shifts border and outline to Campaign Denim.",
+      "html": "<div class=\"ds-form-field\"><label class=\"ds-field-label\" for=\"ds-input\">Email</label><input class=\"ds-input\" id=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></div>",
+      "css": ".ds-form-field { display: flex; flex-direction: column; gap: 7px; } .ds-field-label { font-family: 'Noto Sans', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9A9088; } .ds-input { font-family: 'Noto Sans', sans-serif; font-size: 0.9375rem; line-height: 1.5; color: #2A2622; background-color: #fff; border: 1px solid #6B6359; border-radius: 0; padding: 11px 14px; transition: border-color 0.2s ease; appearance: none; width: 100%; } .ds-input::placeholder { color: #9A9088; opacity: 1; } .ds-input:focus-visible { outline: 2px solid #1E2A38; outline-offset: 2px; border-color: #1E2A38; }"
+    },
+    {
+      "name": "Form Select",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Same style as text input with custom SVG chevron in Film Grain. Appearance reset for cross-browser consistency.",
+      "html": "<div class=\"ds-form-field\"><label class=\"ds-field-label\" for=\"ds-select\">Location Preference</label><select class=\"ds-select\" id=\"ds-select\"><option value=\"\" disabled selected>Select one</option><option>Studio</option><option>Outdoor DFW</option><option>Open to suggestions</option></select></div>",
+      "css": ".ds-form-field { display: flex; flex-direction: column; gap: 7px; } .ds-field-label { font-family: 'Noto Sans', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9A9088; } .ds-select { font-family: 'Noto Sans', sans-serif; font-size: 0.9375rem; line-height: 1.5; color: #2A2622; background-color: #fff; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B6359'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 14px center; border: 1px solid #6B6359; border-radius: 0; padding: 11px 36px 11px 14px; appearance: none; cursor: pointer; width: 100%; transition: border-color 0.2s ease; } .ds-select:focus-visible { outline: 2px solid #1E2A38; outline-offset: 2px; border-color: #1E2A38; }"
+    },
+    {
+      "name": "Session Option",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The anti-SaaS booking comparison unit. No card surface — anchored by a 2px Dried Ink border-top. Package name at Headline scale, price at Price scale.",
+      "html": "<div class=\"ds-session-option\"><h2 class=\"ds-option-name\">Digitals</h2><ul class=\"ds-features\"><li>1-Hour Session</li><li>15 Lightly retouched images</li><li>Online gallery delivery</li></ul><div class=\"ds-option-price\">Starting at $300</div><p class=\"ds-option-desc\">Agency-standard reference images. The truth, well captured.</p><a href=\"#\" class=\"ds-btn-primary\" style=\"display:block;text-align:center\">Book Digitals →</a></div>",
+      "css": ".ds-session-option { border-top: 2px solid #2A2622; padding-top: 28px; } .ds-option-name { font-family: 'Noto Sans', sans-serif; font-size: 1.5rem; font-weight: 300; letter-spacing: 0; color: #2A2622; margin-bottom: 24px; line-height: 1.2; } .ds-features { list-style: none; font-family: 'Noto Sans', sans-serif; font-size: 0.875rem; line-height: 2; color: #2A2622; margin-bottom: 24px; padding: 0; } .ds-features li::before { content: '\\2014\\00A0'; color: #9A9088; } .ds-option-price { font-family: 'Noto Sans', sans-serif; font-size: 1.85rem; font-weight: 300; letter-spacing: -0.01em; color: #6B6359; padding-top: 20px; margin-bottom: 20px; border-top: 1px solid rgba(42,38,34,0.14); } .ds-option-desc { font-family: 'Noto Sans', sans-serif; font-size: 0.875rem; line-height: 1.75; color: #2A2622; margin-bottom: 28px; }"
+    },
+    {
+      "name": "Inquiry Layout",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Two-column booking flow layout. Context (price, what's included, back link) sticks on the left; form anchored by border-top on the right. Collapses to single column at 768px.",
+      "html": "<div class=\"ds-inquiry-layout\"><div class=\"ds-session-context\"><div class=\"ds-context-price\">Starting at $600</div><p style=\"font-size:0.9375rem;line-height:1.8;color:#2A2622\">What to expect from this session.</p><a href=\"#\" class=\"ds-back-link\">← Back to Model Development</a></div><div class=\"ds-inquiry-form\"><p style=\"font-size:0.9375rem;color:#6B6359\">Form goes here</p></div></div>",
+      "css": ".ds-inquiry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; align-items: start; } .ds-session-context { position: sticky; top: 120px; } .ds-context-price { font-family: 'Noto Sans', sans-serif; font-size: 1.85rem; font-weight: 300; letter-spacing: -0.01em; color: #6B6359; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(42,38,34,0.14); } .ds-back-link { font-family: 'Noto Sans', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #9A9088; text-decoration: none; transition: color 0.2s ease; } .ds-back-link:hover { color: #1E2A38; } .ds-inquiry-form { border-top: 2px solid #2A2622; padding-top: 28px; } @media (max-width: 768px) { .ds-inquiry-layout { grid-template-columns: 1fr; gap: 48px 0; } .ds-session-context { position: static; } }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Top navigation links. Small, bold, uppercase. Active and hover state: Campaign Denim. Focus ring: 2px Campaign Denim outline.",
+      "html": "<nav class=\"ds-site-nav\"><a href=\"#\" class=\"ds-nav-link\">Portfolio</a><a href=\"#\" class=\"ds-nav-link ds-nav-active\">Services</a><a href=\"#\" class=\"ds-nav-link\">About</a></nav>",
+      "css": ".ds-site-nav { display: flex; align-items: center; gap: 0; } .ds-nav-link { font-family: 'Noto Sans', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2A2622; text-decoration: none; padding: 2px 10px; transition: color 0.2s ease; } .ds-nav-link:hover { color: #1E2A38; } .ds-nav-active { color: #1E2A38; } .ds-nav-link:focus-visible { outline: 2px solid #1E2A38; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Reference Board",
+    "overview": "Brands and agencies read this site the way a creative director reads a mood board. The aesthetic signals capability before a word is read. Every visual decision is a casting choice: does this look like it belongs beside a Guess campaign brief, an Andi Bagus lookbook, or a Reformation product page?\n\nThe system is warm-neutral in tone and deliberately restrained in decoration. Color comes almost entirely from the photography. The typography is confident and light. The chrome is intentionally vertical-agnostic: a swimwear brand, a boot brand, a beauty brand, and a beverage brand should all see a photographer capable of shooting their campaign.\n\nThis system explicitly rejects: SaaS landing-page patterns, literary fashion publication austerity, wedding photographer type treatments, generic AI tool defaults, and any pattern that signals a single fashion vertical more strongly than the portfolio content does.",
+    "keyCharacteristics": [
+      "Photography-first: decoration exists to frame work, not to compete with it",
+      "Warm neutrals throughout; Campaign Denim is the only accent",
+      "Sharp edges and flat surfaces throughout",
+      "Large light headings paired with small bold uppercase labels",
+      "Motion is opacity-only; no translating, flying, or bouncing",
+      "Forms and booking flows feel like a creative brief, not a software subscription"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule",      "body": "Campaign Denim appears on less than 10% of any surface. It is reserved for: button fill, link hover, focus rings, active nav state. Its rarity is the point.", "section": "colors" },
+      { "name": "The No Pure Tone Rule",   "body": "No pure black (#000) for text — use Dried Ink. No pure white (#FFF) for backgrounds — use Pre-Dawn Linen or Surface White.", "section": "colors" },
+      { "name": "The Two-Register Rule",   "body": "Every typographic element is either display/headline/price (large, light, sentence case) or label/title/nav (small, bold, uppercase). Nothing in between.", "section": "typography" },
+      { "name": "The No Serif Rule",       "body": "Playfair Display, Cormorant Garamond, and all script faces are prohibited. They signal wedding photographer or editorial publication.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule","body": "Surfaces are flat at rest. No card shadows, no hover lifts, no decorative blur. Depth is created by composition and typography, not simulated light.", "section": "elevation" },
+      { "name": "The No Glassmorphism Rule","body": "Backdrop-filter, frosted glass, translucent panels: never. These patterns signal SaaS tools and AI-generated design.", "section": "elevation" }
+    ],
+    "dos": [
+      "Use Pre-Dawn Linen (#F3F1ED) as the page background, never pure white",
+      "Use Dried Ink (#2A2622) for all primary text, never pure black",
+      "Keep Campaign Denim to ≤10% of any surface: buttons, link hovers, focus rings, active nav only",
+      "Use sharp corners (border-radius: 0) on all containers, images, cards, and buttons",
+      "Animate only opacity and transform, never layout properties",
+      "Scope will-change to the hover state; clear it on transitionend",
+      "Anchor booking options with border-top (2px solid Dried Ink), not a card surface",
+      "Let the hero image carry all visual weight on the homepage"
+    ],
+    "donts": [
+      "Don't use Inter, Manrope, Plus Jakarta Sans, or any AI-default sans. Noto Sans only.",
+      "Don't use purple, blue, or teal SaaS-style gradients",
+      "Don't use glassmorphism, frosted backgrounds, or backdrop-filter for decoration",
+      "Don't use rounded cards, soft decorative shadows, or nested cards",
+      "Don't create isolated CTA sections between the hero and the footer",
+      "Don't use all-caps weight-700 labels for service names or package names",
+      "Don't animate translateY. Fade in with opacity only.",
+      "Don't set will-change: transform globally on gallery thumbnails",
+      "Don't use transition-all. Specify exact properties.",
+      "Don't use em dashes in body copy. Use commas, colons, semicolons, or periods.",
+      "Don't use SaaS CTA language: Get Started, Sign Up, Book Now!",
+      "Don't signal a single fashion vertical through the chrome"
+    ]
+  }
+}
