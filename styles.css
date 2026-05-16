@@ -580,7 +580,7 @@ footer {
 
   /* Sub-menu: static, full-width panel — reset desktop animation */
   .nav-dropdown-menu {
-    display: block;
+    display: none;
     width: 100%;
     position: static;
     transform: none;
@@ -591,18 +591,12 @@ footer {
     min-width: unset;
     background: var(--tint-warm);
     padding: 0;
-    /* Override: revert to display-based show/hide on mobile */
     opacity: 1;
-    visibility: hidden;
-    pointer-events: none;
-    transition: visibility 0s;
   }
 
   .nav-dropdown[data-open] .nav-dropdown-menu {
+    display: block;
     transform: none;
-    visibility: visible;
-    pointer-events: auto;
-    transition: visibility 0s;
   }
 
   .nav-dropdown-menu a {
