@@ -827,9 +827,24 @@ This is the canonical source for any image used on the site. When working with i
 
 When the eventual image isn't yet chosen, use a placeholder from the `portfolio-images` folder that approximates the intended aesthetic:
 
-- **Homepage hero:** Use the strongest brand-campaign-coded image currently in the folder. Replace `EmptyName_3.jpg` urgently.
+- **Homepage hero:** Use the strongest brand-campaign-coded image currently in the folder.
 - **Portfolio thumbnails:** Use whatever's available; final selection happens during the cull
 - **Project galleries:** Empty for now; populate when project image sets are ready
+
+`portfolio-images/Placeholder_images/` may remain in the repo as a temporary reference and working asset pool while the design direction is still evolving.
+
+Production pages should not directly reference this folder. Any image selected from this pool for a live page must first be renamed, optimized, moved into the appropriate production image folder, and added through the standard image pipeline.
+
+This folder is allowed for exploration, not final delivery.
+
+# Brand Assets
+
+This folder contains current and exploratory logo/brand files. Not all files are used in production.
+
+Currently used production asset:
+- `cropped_Black.png`
+
+Other files are retained as reference assets while the visual identity remains open for refinement.
 
 ### When referencing images in prompts
 
