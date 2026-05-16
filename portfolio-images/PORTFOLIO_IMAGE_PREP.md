@@ -19,27 +19,43 @@ The goal is:
 
 Portfolio images are organized by individual photoshoots.
 
+## Source vs Variants
+
+Each shoot folder has two levels:
+
+- **`source/`** — contains originals, `shoot-info.txt`, and `image-metadata.json`. Committed to git for now; may be excluded later if repo size becomes a problem (see Phase 9 deliberation).
+- **Shoot folder root** — contains pipeline-generated variants (`-800w`, `-1200w`, `-1600w` in `.jpg` and `.webp`). Never edit these by hand; regenerate via `npm run images:shoots`.
+
+Rules:
+- Production HTML always references variants at the shoot folder root, never originals in `source/`.
+- The pipeline is idempotent — re-running `npm run images:shoots` is safe. Existing variants are skipped automatically.
+- New shoot images go in `source/` before running the pipeline, not at the root.
+
 Example:
 
 ```text
-portfolio-photos/
-
+portfolio-images/
   PORTFOLIO_IMAGE_PREP.md
-  shoot-info-template.txt
 
-  western-swimwear-fort-worth-2025/
-    shoot-info.txt
-    IMG_4451.jpg
-    IMG_4452.jpg
-
-  studio-model-digitals-dallas-2025/
-    shoot-info.txt
-    DSC_1123.jpg
+  Cowgirl-Swimwear/
+    source/
+      shoot-info.txt
+      image-metadata.json
+      cowgirl-swimwear-los-angeles-california-heloise-01.jpg
+      cowgirl-swimwear-los-angeles-california-heloise-02.jpg
+      ...
+    cowgirl-swimwear-los-angeles-california-heloise-01-800w.jpg
+    cowgirl-swimwear-los-angeles-california-heloise-01-800w.webp
+    cowgirl-swimwear-los-angeles-california-heloise-01-1200w.jpg
+    cowgirl-swimwear-los-angeles-california-heloise-01-1200w.webp
+    cowgirl-swimwear-los-angeles-california-heloise-01-1600w.jpg
+    cowgirl-swimwear-los-angeles-california-heloise-01-1600w.webp
+    ...
 ```
 
-Each shoot folder should contain:
-- final exported website-ready images
-- a `shoot-info.txt` metadata file
+Each shoot folder contains:
+- `source/` — originals + metadata
+- Width-suffixed variants for each original (6 files per image: 3 widths × jpg + webp)
 
 ---
 

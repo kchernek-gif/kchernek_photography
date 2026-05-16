@@ -27,6 +27,7 @@ stack-translation rule that applies. The full SKILL.md for each skill lives in i
 | stitch-design-taste | taste-skill | Leonxlnx/taste-skill |
 | emil-design-eng | standalone | emilkowalski/skill |
 | impeccable | standalone | pbakaus/impeccable — globally installed at `~/.claude/skills/impeccable/`; not a repo-local skill folder |
+| kchernek-shoot-onboard | local (project workflow) | n/a |
 
 ---
 
@@ -117,6 +118,14 @@ this repo lives at `.impeccable/design.json`. Slash commands (`/impeccable audit
 `/impeccable arrange`, `/impeccable typeset`, `/impeccable polish`) are available when the
 global install is active. Invoke for systematic polish passes; skip `/animate`, `/delight`,
 `/colorize`, `/bolder` — wrong aesthetic for this site.
+
+---
+
+---
+
+## Project-specific workflow skills
+
+**kchernek-shoot-onboard** — New shoot onboarding protocol. Invoke when the user has placed raw images and a `shoot-info.txt` in a `source/` sub-folder under `portfolio-images/` and wants to prepare that shoot for the website. Covers: validate shoot-info, propose canonical SEO filenames, rename source files via `git mv`, generate `image-metadata.json` with varied alt text, and run `npm run images:shoots` to produce responsive variants. Trigger phrase: "onboard the new shoot at portfolio-images/\<folder-name\>/" or "process the [shoot name] images." Do not invoke for retouching, HTML page creation, or pipeline-only re-runs on already-named files.
 
 ---
 

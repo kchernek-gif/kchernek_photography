@@ -90,6 +90,12 @@
       "sourceType": "local",
       "skillPath": ".agents/skills/kchernek-website-director/SKILL.md",
       "computedHash": "cce9e1928fac7f5777992cc6417df4a973db648a5eefcb67b366d5db3094cb01"
+    },
+    "kchernek-shoot-onboard": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/kchernek-shoot-onboard/SKILL.md",
+      "computedHash": "1b72de516b7876c5de1e623e25883b9cf5eb3bce8f356b522ca53a5dc3261985"
     }
   }
 }

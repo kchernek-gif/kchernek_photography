@@ -26,7 +26,7 @@ for (const folder of FOLDERS) {
 
   try {
     const stats = await processImages({
-      sourceDir:       dir,
+      sourceDir:       join(dir, 'source'),
       outputDir:       dir,
       widths:          [800, 1200, 1600],
       jpgQuality:      80,
