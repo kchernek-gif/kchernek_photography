@@ -413,6 +413,23 @@ untitled-edit-final-final.jpg
 
 ---
 
+## Responsive image variants
+
+Phase 7.5 (May 2026) added responsive WebP/JPEG variants for all four portfolio
+shoot folders using the `npm run images:shoots` pipeline. Each source image
+generates six variants: 800w, 1200w, and 1600w in both JPEG (quality 80) and
+WebP (quality 78). Portfolio sub-page `<img>` elements are wrapped in `<picture>`
+elements with a WebP source (preferred by modern browsers), a JPEG fallback
+source, and a `src` fallback pointing to the 1200w JPEG. The `sizes` attribute
+is set by layout class: `ep-single` → `100vw`; `ep-pair`, `ep-duo-l`,
+`ep-duo-r` → `(min-width: 640px) 50vw, 100vw`; `ep-trio` →
+`(min-width: 640px) 33vw, 100vw`. Page weight dropped from 46–82 MB to under
+2 MB per page at desktop width — roughly a 30–100× reduction. To add a new
+shoot folder, run `npm run images:shoots` and apply the same `<picture>` markup
+pattern to the sub-page HTML.
+
+---
+
 # Metadata Recommendations
 
 Each project/gallery should ideally support:

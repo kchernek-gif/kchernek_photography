@@ -38,6 +38,7 @@ export async function processImages(config) {
     dryRun = false,
     skipExisting = true,
     preserveSubdirs = false,
+    sourceFilter = null,
   } = config;
 
   let totalSourceProcessed = 0;
@@ -49,6 +50,10 @@ export async function processImages(config) {
     const ext = extname(sourcePath).toLowerCase();
     if (!SOURCE_EXTENSIONS.has(ext)) {
       console.log(`  skip (not an image): ${relative(sourceDir, sourcePath)}`);
+      continue;
+    }
+
+    if (sourceFilter && !sourceFilter(sourcePath)) {
       continue;
     }
 
@@ -120,4 +125,6 @@ export async function processImages(config) {
   if (!dryRun) {
     console.log(`Total size: ${formatBytes(totalBytes)}`);
   }
+
+  return { totalSourceProcessed, totalOutputWritten, totalOutputSkipped, totalBytes };
 }

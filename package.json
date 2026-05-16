@@ -15,7 +15,8 @@
     "images:hero": "node scripts/images-hero.mjs",
     "images:carousel": "node scripts/images-carousel.mjs",
     "images:portfolio": "node scripts/images-portfolio.mjs",
-    "images:all": "node scripts/images-hero.mjs && node scripts/images-carousel.mjs && node scripts/images-portfolio.mjs"
+    "images:shoots": "node scripts/images-shoots.mjs",
+    "images:all": "node scripts/images-hero.mjs && node scripts/images-carousel.mjs && node scripts/images-portfolio.mjs && node scripts/images-shoots.mjs"
   },
   "keywords": [],
   "author": "",
