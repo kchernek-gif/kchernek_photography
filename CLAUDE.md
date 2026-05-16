@@ -20,11 +20,15 @@ When making any design decision, ask: **does this signal "I do X" too strongly?*
 
 Read these before writing or changing anything visual:
 
-1. **`DESIGN_SYSTEM.md`** — single source of truth for tokens, type, layout, voice, palette, motion, page model
-2. **`.impeccable.md`** (if present) — Impeccable's project context, includes the same constraints in a different format
-3. **This file (`CLAUDE.md`)** — floor of behaviors for every session
+1. **`DESIGN_SYSTEM.md`** — single source of truth for tokens, type, layout, palette, motion, page model, preference tiers
+2. **`VOICE.md`** — single source of truth for brand voice, sentence-level tone, and copywriting moves
+3. **`.impeccable.md`** (if present) — Impeccable's project context
+4. **This file (`CLAUDE.md`)** — floor of behaviors for every session
 
-If these documents conflict, surface the conflict explicitly rather than silently picking one.
+If these documents conflict, surface the conflict explicitly rather than silently picking one. General resolution:
+- VOICE.md wins on tone and sentence-level voice
+- DESIGN_SYSTEM.md wins on visual, structural, and strategic positioning
+- CLAUDE.md wins on environment, stack, and session-level behaviors
 
 ---
 

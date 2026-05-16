@@ -674,6 +674,8 @@ Do NOT use folksy framings: "y'all," "deep in the heart of," "Big D."
 
 ## Brand voice
 
+Voice direction lives in VOICE.md. The rules below cover what the voice avoids — the negatives that prevent off-brand drift. For the positive direction — sentence-level moves, the audience-calibrated dial, signature tics, and the relationship between length and emphasis — see VOICE.md. When the docs conflict on tone or sentence-level construction, VOICE.md wins.
+
 Confident, professional, partner-to-brands. Speaks to brands and agencies as peers, not as a hopeful supplicant. Project-focused, not personality-focused.
 
 ### What we say
