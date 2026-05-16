@@ -1,11 +1,9 @@
-/* Shared nav component — edit here, updates all pages */
+/* Site nav — behavior only. Markup is static in each HTML page (see partials/nav.html). */
 (function () {
   var header = document.getElementById('siteHeader');
   if (!header) return;
 
   // ── Skip navigation link ──────────────────────────────────────────────────
-  // Wire the first <main> on the page to #main-content so the skip link works
-  // without touching every HTML file.
   var mainEl = document.querySelector('main');
   if (mainEl && !mainEl.id) mainEl.id = 'main-content';
 
@@ -14,53 +12,6 @@
   skipLink.className = 'skip-nav';
   skipLink.textContent = 'Skip to content';
   document.body.insertBefore(skipLink, document.body.firstChild);
-
-  header.innerHTML = `
-    <div class="masthead">
-      <div class="masthead-inner">
-        <a href="/" class="logo-link">
-          <img src="/brand_assets/cropped_Black.png" alt="" class="logo-img" aria-hidden="true">
-          <span class="site-name">Keith Chernek</span>
-        </a>
-        <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
-      </div>
-    </div>
-
-    <div class="nav-row">
-      <button class="nav-toggle" id="navToggle"
-              aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
-
-      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-
-        <div class="nav-dropdown" id="ddBooking">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-            Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="/book-a-shoot/model-development.html">Model Development</a>
-            <a href="/commercial.html">Commercial &amp; Brand</a>
-          </div>
-        </div>
-
-        <div class="nav-dropdown" id="ddConnect">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-            Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="/contact.html">Get in Touch</a>
-            <a href="https://meetup.com/dfwphotowalks" target="_blank" rel="noopener noreferrer">DFW Photowalks &#8599;</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  `;
 
   // ── Active state ──────────────────────────────────────────────────────────
   var path = window.location.pathname;
