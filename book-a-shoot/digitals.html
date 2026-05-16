@@ -62,7 +62,11 @@
       align-items: start;
     }
 
-    /* ── Left: context ── */
+    /* ── Left: context disclosure ── */
+    .context-disclosure { display: block; }
+    .context-summary    { display: none; }
+    .context-chevron    { transition: transform 0.2s var(--ease-out); flex-shrink: 0; }
+
     .session-context {
       position: sticky;
       top: 120px;
@@ -275,11 +279,28 @@
     }
 
     @media (max-width: 768px) {
-      .inquiry-layout {
-        grid-template-columns: 1fr;
-        gap: 48px 0;
+      .inquiry-layout { grid-template-columns: 1fr; gap: 0; }
+      .inquiry-form-wrap { order: -1; margin-bottom: 40px; }
+      .session-context  { position: static; }
+      .context-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        cursor: pointer;
+        list-style: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
       }
-      .session-context { position: static; }
+      .context-summary::-webkit-details-marker { display: none; }
+      .context-disclosure[open] .context-chevron { transform: rotate(180deg); }
+      .context-disclosure[open] .session-context { padding-top: 24px; }
+      .context-disclosure .context-subhead       { display: none; }
     }
   </style>
 </head>
@@ -343,26 +364,38 @@
     <div class="inquiry-layout">
 
       <!-- Left column: what's included + context -->
-      <div class="session-context">
+      <details class="context-disclosure" open>
+        <summary class="context-summary">
+          <span class="context-summary-label">What&#8217;s included</span>
+          <svg class="context-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="session-context">
 
-        <div class="context-price">Starting at $300</div>
+          <div class="context-price">Starting at $300</div>
 
-        <p class="context-body">Agency-standard digitals are simple: show up looking like yourself. We&#8217;ll shoot a clean series in neutral wardrobe: what every reputable agency asks for. No elaborate styling, no heavy retouching. Well-lit, honest reference images.</p>
+          <p class="context-body">Agency-standard digitals are the entry point into modeling. This package delivers what every reputable agency asks for: clean, well-lit reference images that show you as you are. No heavy retouching, no styling tricks. Just the truth, well lit.</p>
 
-        <ul class="context-list">
-          <li>1-Hour Session</li>
-          <li>Natural makeup (provided by model)</li>
-          <li>Multiple wardrobe changes (jeans, swim, neutrals)</li>
-          <li>Agency-standard poses (front, side, profile, smile, full body)</li>
-          <li>15 Lightly retouched images</li>
-          <li>Online gallery delivery within 7 days</li>
-        </ul>
+          <p class="context-tailored">Tailored for agency submissions, agency model refresh, or commercial submissions.</p>
 
-        <p class="context-body">50% deposit secures your date. Final payment is due day of shoot. A friend or representative is always welcome on set.</p>
+          <h3 class="context-subhead">What&#8217;s included</h3>
+          <ul class="context-list">
+            <li>1-hour session</li>
+            <li>Natural makeup (provided by model)</li>
+            <li>Multiple wardrobe changes (jeans, swim, neutrals)</li>
+            <li>Agency-standard poses (front, side, profile, smile, full body)</li>
+            <li>1 commercial personality video</li>
+            <li>1 walking video</li>
+            <li>15 lightly retouched images</li>
+            <li>Custom comp card layout</li>
+            <li>Online gallery delivery within 7 days</li>
+          </ul>
 
-        <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
+          <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
 
-      </div>
+        </div>
+      </details>
 
       <!-- Right column: form -->
       <div class="inquiry-form-wrap">
@@ -427,6 +460,43 @@
               <option value="Yes, I have some experience">Yes, I have some experience</option>
               <option value="Yes, I have existing agency digitals">Yes, I have existing agency digitals</option>
             </select>
+          </div>
+
+          <div class="form-addons">
+            <h3 class="addons-heading">Optional add-ons (we&#8217;ll talk through these)</h3>
+            <p class="addons-intro">These are optional. Check anything you&#8217;d like to discuss — final scope and quote get confirmed together before any deposit.</p>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonStudio" name="addons[]" value="Studio Space (approx $147)">
+              <label for="addonStudio">
+                <span class="addon-name">Studio space</span>
+                <span class="addon-desc">Controlled lighting in a rented studio for a clean, agency-ready look. Approx $147.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonHMU" name="addons[]" value="Professional Hair &amp; Makeup (approx $225)">
+              <label for="addonHMU">
+                <span class="addon-name">Professional hair &amp; makeup</span>
+                <span class="addon-desc">Industry-standard HMU artist for the session. Recommended if you don&#8217;t have a trusted artist already. Approx $225.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonLook" name="addons[]" value="Additional Look (approx $75)">
+              <label for="addonLook">
+                <span class="addon-name">Additional look</span>
+                <span class="addon-desc">Adds one styled wardrobe change beyond the standard three. Approx $75.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonComp" name="addons[]" value="Custom Comp Card Refresh (approx $50, free for returning clients)">
+              <label for="addonComp">
+                <span class="addon-name">Custom comp card refresh</span>
+                <span class="addon-desc">Refresh your existing comp card with new digitals. Approx $50, or free if I shot your digitals previously.</span>
+              </label>
+            </div>
           </div>
 
           <div class="form-field">
@@ -496,6 +566,19 @@
   <script src="/components/nav.js"></script>
   <script src="/components/motion.js"></script>
   <script>
+    (function () {
+      var disc = document.querySelector('.context-disclosure');
+      if (disc) {
+        var mq = window.matchMedia('(max-width: 768px)');
+        function syncDisc(e) {
+          if (e.matches) { disc.removeAttribute('open'); }
+          else            { disc.setAttribute('open', ''); }
+        }
+        syncDisc(mq);
+        mq.addEventListener('change', syncDisc);
+      }
+    }());
+
     (function () {
       var form    = document.getElementById('contactForm');
       var success = document.getElementById('formSuccess');

@@ -62,7 +62,11 @@
       align-items: start;
     }
 
-    /* ── Left: context ── */
+    /* ── Left: context disclosure ── */
+    .context-disclosure { display: block; }
+    .context-summary    { display: none; }
+    .context-chevron    { transition: transform 0.2s var(--ease-out); flex-shrink: 0; }
+
     .session-context {
       position: sticky;
       top: 120px;
@@ -261,11 +265,28 @@
     }
 
     @media (max-width: 768px) {
-      .inquiry-layout {
-        grid-template-columns: 1fr;
-        gap: 48px 0;
+      .inquiry-layout { grid-template-columns: 1fr; gap: 0; }
+      .inquiry-form-wrap { order: -1; margin-bottom: 40px; }
+      .session-context  { position: static; }
+      .context-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        cursor: pointer;
+        list-style: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
       }
-      .session-context { position: static; }
+      .context-summary::-webkit-details-marker { display: none; }
+      .context-disclosure[open] .context-chevron { transform: rotate(180deg); }
+      .context-disclosure[open] .session-context { padding-top: 24px; }
+      .context-disclosure .context-subhead       { display: none; }
     }
 
     .field-note {
@@ -335,29 +356,36 @@
     <div class="inquiry-layout">
 
       <!-- Left column: what's included + context -->
-      <div class="session-context">
+      <details class="context-disclosure" open>
+        <summary class="context-summary">
+          <span class="context-summary-label">What&#8217;s included</span>
+          <svg class="context-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="session-context">
 
-        <div class="context-price">Starting at $600</div>
+          <div class="context-price">Starting at $600</div>
 
-        <p class="context-body">Every editorial test starts with a planning conversation. We&#8217;ll align on the look, location, wardrobe, and shot list before the day starts, so when we&#8217;re on set, we&#8217;re executing, not figuring it out.</p>
+          <p class="context-body">Editorial tests are for models building creative range. Where digitals show who you are, editorial tests show what you can do. Sessions are planned in advance with shared mood references, wardrobe direction, and shot list. Output is portfolio-grade editorial work — fully retouched and ready for your book.</p>
 
-        <p class="context-body">Professional hair and makeup is included. Typically 3&#8211;4 looks over 2 hours, 15 fully retouched images delivered to an online proof gallery.</p>
+          <p class="context-tailored">Tailored for expanding portfolio range and creating editorial work that holds up commercially.</p>
 
-        <ul class="context-list">
-          <li>2-Hour Session</li>
-          <li>Professional Hair &amp; Makeup included</li>
-          <li>3&#8211;4 Styled looks, planned in advance</li>
-          <li>Studio, outdoor, or location of your choice</li>
-          <li>Shared mood references and shot list</li>
-          <li>15 Fully retouched images</li>
-          <li>Online proof gallery within 7 days</li>
-        </ul>
+          <h3 class="context-subhead">What&#8217;s included</h3>
+          <ul class="context-list">
+            <li>2-hour session</li>
+            <li>Professional hair &amp; makeup</li>
+            <li>3&#8211;4 styled looks with planned wardrobe</li>
+            <li>Location-based (studio, outdoor, or chosen environment)</li>
+            <li>Pre-shoot planning call with mood references</li>
+            <li>15 fully retouched images</li>
+            <li>Online proof gallery</li>
+          </ul>
 
-        <p class="context-body">50% deposit secures your date. Final payment is due day of shoot. A friend or representative is always welcome on set.</p>
+          <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
 
-        <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
-
-      </div>
+        </div>
+      </details>
 
       <!-- Right column: form -->
       <div class="inquiry-form-wrap">
@@ -446,6 +474,35 @@
             </select>
           </div>
 
+          <div class="form-addons">
+            <h3 class="addons-heading">Optional add-ons (we&#8217;ll talk through these)</h3>
+            <p class="addons-intro">These are optional. Check anything you&#8217;d like to discuss — final scope and quote get confirmed together before any deposit.</p>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonHour" name="addons[]" value="Additional Hour (approx $150)">
+              <label for="addonHour">
+                <span class="addon-name">Additional hour</span>
+                <span class="addon-desc">Extra time for more setups or styling experimentation. Approx $150.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonLocation" name="addons[]" value="Additional Location (approx $100)">
+              <label for="addonLocation">
+                <span class="addon-name">Additional location</span>
+                <span class="addon-desc">Adds a second shooting location with travel between. Approx $100, may vary by distance.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonWardrobe" name="addons[]" value="Pre-shoot Wardrobe Consultation (approx $75)">
+              <label for="addonWardrobe">
+                <span class="addon-name">Pre-shoot wardrobe consultation</span>
+                <span class="addon-desc">One-on-one call to plan looks, mood references, and styling direction before shoot day. Approx $75.</span>
+              </label>
+            </div>
+          </div>
+
           <div class="form-field">
             <label for="dates">Preferred date range <span class="field-note">(optional)</span></label>
             <input
@@ -513,6 +570,19 @@
   <script src="/components/nav.js"></script>
   <script src="/components/motion.js"></script>
   <script>
+    (function () {
+      var disc = document.querySelector('.context-disclosure');
+      if (disc) {
+        var mq = window.matchMedia('(max-width: 768px)');
+        function syncDisc(e) {
+          if (e.matches) { disc.removeAttribute('open'); }
+          else            { disc.setAttribute('open', ''); }
+        }
+        syncDisc(mq);
+        mq.addEventListener('change', syncDisc);
+      }
+    }());
+
     (function () {
       var form    = document.getElementById('contactForm');
       var success = document.getElementById('formSuccess');
