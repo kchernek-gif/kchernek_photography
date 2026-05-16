@@ -17,11 +17,11 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 12px 20px;
-  translate: 0 -110%;
-  transition: translate 0.15s var(--ease-out);
+  transform: translateY(-200%);
+  transition: transform 0.15s var(--ease-out);
 }
 
-.skip-nav:focus { translate: 0 0; }
+.skip-nav:focus { transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) { .skip-nav { transition: none; } }
 
