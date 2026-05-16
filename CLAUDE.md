@@ -22,8 +22,10 @@ Read these before writing or changing anything visual:
 
 1. **`DESIGN_SYSTEM.md`** — single source of truth for tokens, type, layout, palette, motion, page model, preference tiers
 2. **`VOICE.md`** — single source of truth for brand voice, sentence-level tone, and copywriting moves
-3. **`.impeccable.md`** (if present) — Impeccable's project context
+3. **`.impeccable/design.json`** — Impeccable's project context file for this repo. Impeccable is globally installed at `~/.claude/skills/impeccable/`; its slash commands (`/impeccable audit`, `/impeccable arrange`, `/impeccable typeset`, `/impeccable polish`) are available when that global install is active.
 4. **This file (`CLAUDE.md`)** — floor of behaviors for every session
+5. **`.agents/SKILLS_INVENTORY.md`** — skill purposes, invocation guidance, and stack-translation rules for each installed skill
+6. **`.agents/skills/kchernek-website-director/SKILL.md`** — project director skill (added Phase 5; see Task 5)
 
 If these documents conflict, surface the conflict explicitly rather than silently picking one. General resolution:
 - VOICE.md wins on tone and sentence-level voice
@@ -34,6 +36,7 @@ If these documents conflict, surface the conflict explicitly rather than silentl
 
 ## Always do first
 
+- At session start, invoke the kchernek-website-director skill. It loads the authoritative documents, classifies the request, and applies the right preference tier framework. This is the default protocol for any work on this repo.
 - Read `DESIGN_SYSTEM.md` before any visual or structural change. The document is authoritative.
 - Check the `brand_assets/` folder for logos, color guides, style guides, and images. If real assets exist, use them. Never use placeholders where real assets are available.
 - When using polish-oriented skills (frontend-design, Taste Skill, Impeccable, Emil Kowalski), constrain them explicitly to the tokens and rules in `DESIGN_SYSTEM.md`. Skills propose, the design system approves.
@@ -301,17 +304,35 @@ When user prompts are vague ("use a good image"), ask which specific file rather
 
 ## Skills available in this project
 
-Three design skills are installed. Use them deliberately, not automatically.
+13 design and design-adjacent skills are installed in `.agents/skills/`. Impeccable is additionally installed globally at `~/.claude/skills/impeccable/`. They are tools, not autopilots.
 
-- **Taste Skill (default variant)** — for "does this feel hand-built?" reviews and reference-driven redesigns
-- **Impeccable** — for systematic polish passes via slash commands (`/impeccable audit`, `/impeccable arrange`, `/impeccable typeset`, `/impeccable polish`)
-- **Emil Kowalski skill** — for motion, transitions, micro-interactions
+See `.agents/SKILLS_INVENTORY.md` for the full list, source attribution, invocation guidance, and stack-translation rules for each skill.
 
-Rules:
-1. Skills are invoked by explicit instruction in the user's prompt. Do not auto-activate them on every UI change.
-2. Skills must respect `DESIGN_SYSTEM.md` and `.impeccable.md`. If a skill suggestion contradicts those documents, treat it as drift, not new information.
-3. Do not introduce new fonts, new colors, new border-radius values, or new motion patterns without explicit user approval.
-4. Skip Impeccable's `/animate`, `/delight`, `/colorize`, `/bolder` commands — wrong aesthetic for this site.
+### Stack-translation rule (applies to every skill)
+
+This project is hand-written HTML + vanilla CSS + vanilla JS components. It does **not** use Tailwind, React, Next.js, GSAP, shadcn, or any build step. CLAUDE.md hard rule.
+
+When a skill's suggestions assume one of those frameworks, do not introduce the framework. Translate the principle to the actual stack:
+
+- Tailwind utility classes → CSS rules in `styles.css` using existing design tokens
+- React components → corresponding markup in HTML pages + behavior in `/components/*.js`
+- GSAP / scroll-driven motion → IntersectionObserver-driven opacity fades per DESIGN_SYSTEM.md Tier 2
+
+If a skill's suggestion cannot be translated cleanly (e.g., it depends on a build step), surface the issue rather than silently rejecting or applying.
+
+### Skill activation rules
+
+- Skills are invoked by explicit user instruction. Do not auto-activate them.
+- Skill suggestions must respect Preference Tiers in DESIGN_SYSTEM.md:
+  - Tier 1 (Non-Negotiable): conflict stops the work, surfaces to user.
+  - Tier 2 (Strong Preference): conflict gets proposed as an option, user decides.
+  - Tier 3 (Current Default): apply if the user approved the skill invocation; show diff.
+- When two skills disagree, the user picks. Do not silently resolve.
+- Skills do not edit VOICE.md, DESIGN_SYSTEM.md, or any authoritative document. They suggest visual or code changes only.
+
+### Impeccable
+
+Globally installed at `~/.claude/skills/impeccable/`. Project context lives at `.impeccable/design.json`. Slash commands (`/impeccable audit`, `/impeccable arrange`, `/impeccable typeset`, `/impeccable polish`) are available when the global install is active. Skip `/animate`, `/delight`, `/colorize`, `/bolder` — wrong aesthetic for this site.
 
 ---
 
@@ -327,5 +348,5 @@ Rules:
 - Do not stop after one screenshot pass
 - Do not use `transition-all`
 - Do not use default Tailwind colors anywhere (we're not using Tailwind, but in case any tool reaches for `bg-indigo-500` style colors, reject)
-- Do not commit `.impeccable.md` changes without surfacing what changed
+- Do not commit `.impeccable/design.json` changes without surfacing what changed
 - Do not auto-rename or auto-move files without confirming with the user

@@ -84,6 +84,12 @@
       "sourceType": "github",
       "skillPath": "plugin/skills/impeccable/SKILL.md",
       "computedHash": "87912c330e92dec6a402d92f730b360109d5d421ea630fed23c90663f8888d10"
+    },
+    "kchernek-website-director": {
+      "source": "local",
+      "sourceType": "local",
+      "skillPath": ".agents/skills/kchernek-website-director/SKILL.md",
+      "computedHash": "cce9e1928fac7f5777992cc6417df4a973db648a5eefcb67b366d5db3094cb01"
     }
   }
 }
