@@ -16,3 +16,7 @@ www.joeywrightphoto.com_test.png
 # OS files
 .DS_Store
 Thumbs.db
+
+# Image pipeline source files (commit selectively; large shoots may be local-only)
+# Default: source files are NOT committed; only optimized pipeline outputs are.
+portfolio-images/_source/
