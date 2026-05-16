@@ -39,24 +39,33 @@
     ]
   }
   </script>
+  <link rel="dns-prefetch" href="https://instagram.com">
+  <link rel="dns-prefetch" href="https://www.threads.com">
+  <link rel="dns-prefetch" href="https://meetup.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Portrait: prominent, top of page, not a headshot box ── */
+    /* ── Two-column layout: portrait left, bio right ── */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 0 72px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
     .about-portrait {
       display: block;
       width: 100%;
-      max-width: 480px;
       height: auto;
-      margin-bottom: 48px;
     }
 
     /* ── Bio copy ── */
     .about-body {
-      max-width: 60ch;
-      margin-bottom: 40px;
+      padding-top: 4px;
     }
 
     .about-body p {
@@ -64,6 +73,7 @@
       line-height: 1.8;
       color: var(--text-primary);
       margin-bottom: 1.5em;
+      text-wrap: pretty;
     }
 
     .about-body p:last-child { margin-bottom: 0; }
@@ -77,6 +87,14 @@
     .about-body a:hover { color: var(--secondary-navy); }
 
     .about-cta { max-width: 560px; }
+
+    @media (max-width: 768px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 36px 0;
+      }
+      .about-portrait { max-width: 380px; }
+    }
 
     @media (max-width: 640px) {
       .about-portrait { max-width: 100%; }
@@ -140,27 +158,27 @@
       <h1 class="page-title">The part where I talk about myself.</h1>
     </div>
 
-    <img
-      src="/portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg"
-      alt="Keith Chernek, commercial fashion photographer based in DFW"
-      class="about-portrait"
-      width="1023"
-      height="1138"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    >
+    <div class="about-layout">
+      <img
+        src="/portfolio-images/about/keith-chernek-photographer-portrait-dfw.jpg"
+        alt="Keith Chernek, commercial fashion photographer based in DFW"
+        class="about-portrait"
+        width="1023"
+        height="1138"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
 
-    <div class="about-body">
-      <p>Hi, my name&#8217;s Keith. I&#8217;m a commercial fashion and portrait photographer based in Dallas&#8211;Fort Worth. My work focuses on capturing genuine moments and creating photos that feel intentional, whether through styling, motivated lighting, or a cohesive vision.</p>
+      <div class="about-body">
+        <p>Commercial fashion and portrait photographer based in Dallas&#8211;Fort Worth. I work with models, brands, and agencies that know what they want and need someone who can execute.</p>
 
-      <p>I shoot model portfolios (tests and digitals), brand visuals, and work with creative collaborators who want to make something come to life.</p>
+        <p>I shoot model portfolios (tests and digitals), brand visuals, and creative content for collaborators with a clear vision.</p>
 
-      <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
+        <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
 
-      <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener noreferrer">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
-
-      <p>Let&#8217;s plan a shoot. <a href="contact.html">Reach out through the contact page</a>.</p>
+        <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener noreferrer">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
+      </div>
     </div>
 
     <div class="about-cta page-cta">

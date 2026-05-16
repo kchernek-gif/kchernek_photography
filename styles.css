@@ -5,11 +5,11 @@
 /* ── Skip navigation ── */
 .skip-nav {
   position: absolute;
-  top: -100%;
+  top: 16px;
   left: 16px;
   z-index: 9999;
   background-color: var(--secondary-navy);
-  color: #fff;
+  color: var(--text-on-dark);
   font-family: var(--font-family);
   font-size: 0.68rem;
   font-weight: 700;
@@ -17,10 +17,13 @@
   text-transform: uppercase;
   text-decoration: none;
   padding: 12px 20px;
-  transition: top 0.15s ease;
+  translate: 0 -110%;
+  transition: translate 0.15s var(--ease-out);
 }
 
-.skip-nav:focus { top: 16px; }
+.skip-nav:focus { translate: 0 0; }
+
+@media (prefers-reduced-motion: reduce) { .skip-nav { transition: none; } }
 
 .sr-only {
   position: absolute;
@@ -46,6 +49,7 @@
   --shadow-warm:    rgba(42, 38, 34, 0.08);
   --secondary-navy:        #1E2A38;
   --secondary-navy-hover:  #2A3A4C;
+  --text-on-dark:          #FFFFFF;
   --font-family:    'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width:      1035px;
   --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
@@ -53,7 +57,14 @@
 }
 
 /* ── Base ── */
-html { font-size: 16px; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 body {
   font-family: var(--font-family);
@@ -62,6 +73,19 @@ body {
   line-height: 1.7;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle grain overlay — breaks digital flatness on the linen background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
 }
 
 /* ── Site Header ── */
@@ -139,7 +163,7 @@ body {
 }
 
 .site-name {
-  font-size: 2.2rem;
+  font-size: clamp(1.55rem, 5vw, 2.2rem);
   font-weight: 300;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -333,6 +357,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-primary);
   margin-bottom: 16px;
+  text-wrap: balance;
 }
 
 .page-intro {
@@ -340,6 +365,7 @@ body {
   line-height: 1.75;
   color: var(--text-primary);
   max-width: 60ch;
+  text-wrap: pretty;
 }
 
 /* ── Placeholder state (pages not yet built) ── */
@@ -370,15 +396,14 @@ body {
   justify-content: center;
   color: var(--text-muted);
   text-decoration: none;
-  opacity: 0.7;
-  transition: opacity 0.15s var(--ease-out), color 0.15s var(--ease-out);
+  transition: color 0.15s var(--ease-out);
 }
 
-.footer-social a:hover         { opacity: 1; color: var(--secondary-navy); }
+.footer-social a:hover         { color: var(--secondary-navy); }
 .footer-social a:focus-visible {
   outline: 2px solid var(--secondary-navy);
   outline-offset: 3px;
-  opacity: 1;
+  color: var(--secondary-navy);
 }
 
 footer {
@@ -387,6 +412,8 @@ footer {
   padding: 40px 4vw;
   text-align: center;
   margin-top: 60px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 160px;
 }
 
 .footer-tagline {
@@ -394,18 +421,18 @@ footer {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-bottom: 14px;
 }
 
 .footer-contact {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   line-height: 2.0;
 }
 
 .footer-contact a {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s var(--ease-out);
 }
@@ -419,16 +446,15 @@ footer {
 
 .footer-copy {
   font-size: 0.65rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   margin-top: 20px;
-  opacity: 0.7;
 }
 
 /* ── Global primary button ── */
 .btn-primary {
   display: inline-block;
   background-color: var(--secondary-navy);
-  color: #fff;
+  color: var(--text-on-dark);
   font-family: var(--font-family);
   font-size: 0.68rem;
   font-weight: 700;
@@ -443,7 +469,7 @@ footer {
   transition: background-color 0.15s var(--ease-out);
 }
 
-.btn-primary:hover         { background-color: var(--secondary-navy-hover); color: #fff; }
+.btn-primary:hover         { background-color: var(--secondary-navy-hover); color: var(--text-on-dark); }
 .btn-primary:active        { transform: scale(0.99); transition: transform 0.08s var(--ease-out); }
 .btn-primary:focus-visible {
   outline: 2px solid var(--secondary-navy);
@@ -508,8 +534,6 @@ footer {
 /* ── Mobile ── */
 @media (max-width: 640px) {
   .project-grid { grid-template-columns: 1fr; gap: 40px; }
-  /* Site name: scale down to avoid wrapping */
-  .site-name { font-size: 1.55rem; }
 
   /* Hamburger: visible, full-width so bars center correctly */
   .nav-toggle { display: flex; width: 100%; }

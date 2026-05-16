@@ -45,9 +45,13 @@
     }
   }
   </script>
+  <link rel="dns-prefetch" href="https://instagram.com">
+  <link rel="dns-prefetch" href="https://www.threads.com">
+  <link rel="dns-prefetch" href="https://meetup.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ── Service rows ── */
@@ -67,6 +71,7 @@
       color: var(--text-primary);
       margin-bottom: 10px;
       line-height: 1.3;
+      text-wrap: balance;
     }
 
     .service-desc {
@@ -78,8 +83,17 @@
     /* ── Standalone process statement ── */
     .how-section {
       border-top: 1px solid var(--border);
-      padding-top: 60px;
+      padding-top: 48px;
       margin-bottom: 60px;
+    }
+
+    .how-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 28px;
     }
 
     .how-body {
@@ -88,12 +102,16 @@
       line-height: 1.8;
       color: var(--text-primary);
       max-width: 52ch;
+      text-wrap: pretty;
     }
 
     /* ── Closing CTA ── */
     .services-cta {
       border-top: 1px solid var(--border);
       padding-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     /* ── Mobile ── */
@@ -189,11 +207,13 @@
     </div>
 
     <div class="how-section">
+      <h2 class="how-label">Process</h2>
       <p class="how-body">Every shoot is planned, not improvised. We agree on the look, the location, and the shot list before the day starts. You end up with images you actually want to use.</p>
     </div>
 
     <div class="services-cta">
       <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
+      <a href="commercial.html" class="btn-primary">Commercial &amp; Brand &#8594;</a>
     </div>
 
   </main>
