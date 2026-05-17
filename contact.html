@@ -61,6 +61,16 @@
       margin: 0;
       border-top: 2px solid var(--text-primary);
       padding-top: 18px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-proof picture {
+      flex: 1;
+      min-height: 240px;
+      overflow: hidden;
+      display: block;
     }
 
     .contact-proof picture,
@@ -70,9 +80,9 @@
     }
 
     .contact-proof img {
-      aspect-ratio: 4 / 5;
+      height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center 18%;
     }
 
     .contact-proof figcaption {
@@ -302,8 +312,13 @@
       .contact-proof {
         order: -1;
         max-width: 520px;
+        align-self: auto;
+      }
+      .contact-proof picture {
+        flex: none;
       }
       .contact-proof img {
+        height: auto;
         aspect-ratio: 16 / 10;
       }
     }
