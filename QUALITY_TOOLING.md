@@ -59,7 +59,7 @@ Then run: `npm run ci:links`
 
 **Not part of CI.** The Lighthouse MCP Server is a local tool that exposes Lighthouse results to Claude so you can ask questions like "why is this page slow?" or "what's causing the accessibility score to drop?" directly in conversation.
 
-It is not installed by default. See the [Lighthouse MCP Server docs](https://github.com/google/lighthouse) if you want to set it up for local dev sessions.
+It is not installed by default. See the [Lighthouse MCP Server docs](https://github.com/GoogleChrome/lighthouse) if you want to set it up for local dev sessions.
 
 ---
 

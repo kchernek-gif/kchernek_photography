@@ -13,6 +13,10 @@ www.joeywrightphoto.com_test.png
 # Claude Code project files
 .claude/
 
+# Impeccable skill — full Astro project with its own git history,
+# installed globally at ~/.claude/skills/impeccable/. Not tracked here.
+.agents/skills/impeccable/
+
 # OS files
 .DS_Store
 Thumbs.db
