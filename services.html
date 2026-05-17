@@ -55,13 +55,63 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* ── Service rows ── */
+    .services-layout {
+      display: grid;
+      gap: clamp(48px, 7vw, 84px);
+    }
+
+    .services-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .services-panel--reverse {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    }
+
+    .services-panel--reverse .service-media {
+      order: 2;
+    }
+
+    .service-media {
+      min-width: 0;
+    }
+
+    .service-media picture,
+    .service-media img {
+      display: block;
+      width: 100%;
+    }
+
+    .service-media img {
+      aspect-ratio: 4 / 5;
+      height: auto;
+      object-fit: cover;
+      background-color: var(--tint-warm);
+    }
+
+    .service-media--process img {
+      object-position: center bottom;
+    }
+
+    .services-panel-content {
+      min-width: 0;
+    }
+
     .services-list {
-      margin-bottom: 60px;
+      display: grid;
     }
 
     .service-block {
-      padding: 40px 0;
+      padding: 30px 0;
       border-top: 1px solid var(--border);
+    }
+
+    .service-block:first-child {
+      padding-top: 0;
+      border-top: 0;
     }
 
     .service-heading {
@@ -74,6 +124,28 @@
       text-wrap: balance;
     }
 
+    .service-heading a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+    }
+
+    .service-heading a:hover {
+      color: var(--secondary-navy);
+      border-color: var(--secondary-navy);
+    }
+
+    .service-heading a:active {
+      color: var(--secondary-navy-hover);
+      border-color: var(--secondary-navy-hover);
+    }
+
+    .service-heading a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 4px;
+    }
+
     .service-desc {
       font-size: 1rem;
       line-height: 1.75;
@@ -82,9 +154,7 @@
 
     /* ── Standalone process statement ── */
     .how-section {
-      border-top: 1px solid var(--border);
-      padding-top: 48px;
-      margin-bottom: 60px;
+      max-width: 52ch;
     }
 
     .how-label {
@@ -108,20 +178,41 @@
     /* ── Closing CTA ── */
     .services-cta {
       border-top: 1px solid var(--border);
-      padding-top: 40px;
+      padding-top: 32px;
+      margin-top: 36px;
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
 
     /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .services-panel,
+      .services-panel--reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .services-panel--reverse .service-media {
+        order: 0;
+      }
+
+      .service-media img {
+        aspect-ratio: 5 / 6;
+      }
+    }
+
     @media (max-width: 640px) {
       .service-block {
         padding: 28px 0;
       }
 
+      .services-cta .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
+  <script defer src="/components/analytics.js"></script>
 </head>
 <body>
 
@@ -181,39 +272,87 @@
       <p class="page-intro">Commercial fashion and lifestyle photography based in Dallas&#8211;Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.</p>
     </div>
 
-    <!-- Service categories -->
-    <div class="services-list">
+    <div class="services-layout">
+      <section class="services-panel" aria-labelledby="service-categories-heading">
+        <figure class="service-media">
+          <picture>
+            <source type="image/webp" srcset="
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.webp 800w,
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.webp 1200w,
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.webp 1600w"
+              sizes="(min-width: 768px) 45vw, 100vw">
+            <source type="image/jpeg" srcset="
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.jpg 800w,
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg 1200w,
+                portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.jpg 1600w"
+              sizes="(min-width: 768px) 45vw, 100vw">
+            <img
+              src="portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg"
+              alt="Makeup artist preparing model Carmen during a studio test shoot in Dallas, Texas"
+              width="2160" height="2700"
+              loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
-      <div class="service-block">
-        <h2 class="service-heading">Editorial Portrait Sessions</h2>
-        <p class="service-desc">Considered styling, intentional lighting, and a clear point of view. For models building editorial range and creatives developing distinctive work.</p>
-      </div>
+        <div class="services-panel-content">
+          <h2 class="sr-only" id="service-categories-heading">Service categories</h2>
+          <div class="services-list">
+            <div class="service-block">
+              <h3 class="service-heading"><a href="book-a-shoot/editorial-test.html">Editorial Portrait Sessions</a></h3>
+              <p class="service-desc">Considered styling, intentional lighting, and a clear point of view. For models building editorial range and creatives developing distinctive work.</p>
+            </div>
 
-      <div class="service-block">
-        <h2 class="service-heading">Model Development (Tests + Digitals)</h2>
-        <p class="service-desc">Agency-ready digitals and editorial tests. Built to help models develop their books and submit competitively.</p>
-      </div>
+            <div class="service-block">
+              <h3 class="service-heading"><a href="book-a-shoot/model-development.html">Model Development (Tests + Digitals)</a></h3>
+              <p class="service-desc">Agency-ready digitals and editorial tests. Built to help models develop their books and submit competitively.</p>
+            </div>
 
-      <div class="service-block">
-        <h2 class="service-heading">Brand &amp; Product Photography</h2>
-        <p class="service-desc">Lookbook, campaign, and content work for brands. Project-based scoping, deliverables matched to your needs.</p>
-      </div>
+            <div class="service-block">
+              <h3 class="service-heading"><a href="commercial.html">Brand &amp; Product Photography</a></h3>
+              <p class="service-desc">Lookbook, campaign, and content work for brands. Project-based scoping, deliverables matched to your needs.</p>
+            </div>
 
-      <div class="service-block">
-        <h2 class="service-heading">Event Coverage</h2>
-        <p class="service-desc">Editorial event documentation. Past work includes coverage for FloSports.</p>
-      </div>
+            <div class="service-block">
+              <h3 class="service-heading"><a href="contact.html">Event Coverage</a></h3>
+              <p class="service-desc">Editorial event documentation. Past work includes coverage for FloSports.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    </div>
+      <section class="services-panel services-panel--reverse" aria-labelledby="services-process-heading">
+        <figure class="service-media service-media--process">
+          <picture>
+            <source type="image/webp" srcset="
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-800w.webp 800w,
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.webp 1200w,
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1600w.webp 1600w"
+              sizes="(min-width: 768px) 45vw, 100vw">
+            <source type="image/jpeg" srcset="
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-800w.jpg 800w,
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.jpg 1200w,
+                portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1600w.jpg 1600w"
+              sizes="(min-width: 768px) 45vw, 100vw">
+            <img
+              src="portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.jpg"
+              alt="Model Hannah on a studio set with lighting equipment during a black and white test shoot in Dallas, Texas"
+              width="2160" height="2700"
+              loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
-    <div class="how-section">
-      <h2 class="how-label">Process</h2>
-      <p class="how-body">Every shoot is planned, not improvised. We agree on the look, the location, and the shot list before the day starts. You end up with images you actually want to use.</p>
-    </div>
+        <div class="services-panel-content">
+          <div class="how-section">
+            <h2 class="how-label" id="services-process-heading">Process</h2>
+            <p class="how-body">Every shoot is planned, not improvised. We agree on the look, the location, and the shot list before the day starts. You end up with images you actually want to use.</p>
+          </div>
 
-    <div class="services-cta">
-      <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
-      <a href="commercial.html" class="btn-primary">Commercial &amp; Brand &#8594;</a>
+          <div class="services-cta">
+            <a href="book-a-shoot/model-development.html" class="btn-primary">Book a Shoot &#8594;</a>
+            <a href="commercial.html" class="btn-primary">Commercial &amp; Brand &#8594;</a>
+          </div>
+        </div>
+      </section>
     </div>
 
   </main>

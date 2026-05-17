@@ -1,0 +1,107 @@
+{
+  "shoot": {
+    "folder": "Commercial-Brand",
+    "model": "Dilara",
+    "location": "Crandon Beach",
+    "city": "Miami",
+    "state": "Florida",
+    "date": "April 2024",
+    "shoot_type": "Sunscreen brand swimwear",
+    "wardrobe": "Blue bikini, stylish transparent visor, towel to match brand colors",
+    "keywords": [
+      "sunscreen brand photography",
+      "swimwear brand photography",
+      "commercial swimwear shoot",
+      "miami brand photography",
+      "beach campaign photography"
+    ]
+  },
+  "flags": {
+    "srgb_verified": true,
+    "wardrobe_missing": false,
+    "keywords_note": "shoot-info Keywords field was blank. Keywords derived from shoot type, location, and visible commercial context."
+  },
+  "images": [
+    {
+      "original_filename": "_DSC2231.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-01.jpg",
+      "file_size_mb": 5.6,
+      "dimensions": "2160x2700",
+      "alt_text": "Model reclining on a striped towel with sunscreen product and visor during a brand shoot at Crandon Beach in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2250.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-02.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Sunscreen product and blue visor on a striped towel during a commercial swimwear brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2273.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-03.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Model seated on a beach towel wearing a blue visor during a sunscreen brand swimwear shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2299.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-04.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Close portrait of model in blue swimwear and visor during a beach brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2346.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-05.jpg",
+      "file_size_mb": 6.5,
+      "dimensions": "2160x2700",
+      "alt_text": "Model seated on a beach towel with sunscreen product during a commercial swimwear brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2362.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-06.jpg",
+      "file_size_mb": 6.1,
+      "dimensions": "2160x2700",
+      "alt_text": "Close-up of sunscreen product against blue swimwear during a beach brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2367.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-07.jpg",
+      "file_size_mb": 5.7,
+      "dimensions": "2160x2700",
+      "alt_text": "Standing model holding sunscreen product with a striped towel during a swimwear brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2377.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-08.jpg",
+      "file_size_mb": 5.6,
+      "dimensions": "2160x2700",
+      "alt_text": "Model in blue swimwear with towel and sunscreen product during a beach brand shoot in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2466_full.jpg",
+      "recommended_filename": "sunscreen-brand-swimwear-miami-florida-dilara-09.jpg",
+      "file_size_mb": 5.4,
+      "dimensions": "2700x1800",
+      "alt_text": "Horizontal beach campaign image for a sunscreen brand shoot at Crandon Beach in Miami, Florida.",
+      "title": "Sunscreen Brand Swimwear - Miami, FL",
+      "caption": ""
+    }
+  ]
+}

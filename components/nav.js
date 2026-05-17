@@ -71,6 +71,8 @@
   var toggle  = document.getElementById('navToggle');
   var siteNav = document.getElementById('siteNav');
 
+  if (!toggle || !siteNav) return;
+
   toggle.addEventListener('click', function () {
     var open = siteNav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');

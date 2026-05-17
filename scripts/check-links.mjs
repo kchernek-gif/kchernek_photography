@@ -6,6 +6,7 @@ const ROOT = resolve(import.meta.dirname, '..');
 
 const SKIP_SCHEME = /^(https?|mailto|tel|data|javascript):/i;
 const ANCHOR_ONLY = /^#/;
+const VERCEL_INTERNAL = /^\/_vercel\//;
 
 function stripFragment(href) {
   return href.replace(/[?#].*$/, '');
@@ -31,9 +32,32 @@ function resolveHref(href, fromFile) {
   return resolved;
 }
 
-const HREF_RE        = /\bhref\s*=\s*["']([^"']+)["']/gi;
-const SRC_RE         = /\bsrc\s*=\s*["']([^"']+)["']/gi;
-const SCRIPT_LINK_RE = /<(script|link)\b/i;
+const HREF_RE   = /\bhref\s*=\s*["']([^"']+)["']/gi;
+const SRC_RE    = /\bsrc\s*=\s*["']([^"']+)["']/gi;
+const SRCSET_RE = /\bsrcset\s*=\s*["']([^"']+)["']/gi;
+const ASSET_TAG_RE = /<(img|source|script)\b[^>]*>/gi;
+
+function srcsetUrls(value) {
+  return value
+    .split(',')
+    .map(entry => entry.trim().split(/\s+/)[0])
+    .filter(Boolean);
+}
+
+function checkAsset(value, filepath, rel, lineNum, attr) {
+  if (VERCEL_INTERNAL.test(value)) return 0;
+  if (SKIP_SCHEME.test(value) || ANCHOR_ONLY.test(value)) return 0;
+  const target = resolveHref(value, filepath);
+  if (target === null) {
+    fail(`Path traversal or unresolvable`, [`${rel}:${lineNum}  ${attr}="${value}"`]);
+    return 1;
+  }
+  if (!existsSync(target)) {
+    fail(`Broken asset reference`, [`${rel}:${lineNum}  ${attr}="${value}"  →  ${relative(ROOT, target)}`]);
+    return 1;
+  }
+  return 0;
+}
 
 let issues = 0;
 let linksChecked = 0;
@@ -63,20 +87,27 @@ for (const filepath of walkHtml(ROOT)) {
       }
     }
 
-    if (SCRIPT_LINK_RE.test(line)) {
-      SRC_RE.lastIndex = 0;
-      while ((m = SRC_RE.exec(line)) !== null) {
-        const src = m[1].trim();
-        if (SKIP_SCHEME.test(src) || ANCHOR_ONLY.test(src)) continue;
+  }
+
+  let tagMatch;
+  ASSET_TAG_RE.lastIndex = 0;
+  while ((tagMatch = ASSET_TAG_RE.exec(stripped)) !== null) {
+    const tag = tagMatch[0];
+    const lineNum = stripped.slice(0, tagMatch.index).split('\n').length;
+
+    SRC_RE.lastIndex = 0;
+    let m;
+    while ((m = SRC_RE.exec(tag)) !== null) {
+      const src = m[1].trim();
+      linksChecked++;
+      issues += checkAsset(src, filepath, rel, lineNum, 'src');
+    }
+
+    SRCSET_RE.lastIndex = 0;
+    while ((m = SRCSET_RE.exec(tag)) !== null) {
+      for (const src of srcsetUrls(m[1])) {
         linksChecked++;
-        const target = resolveHref(src, filepath);
-        if (target === null) {
-          fail(`Path traversal or unresolvable`, [`${rel}:${i + 1}  src="${src}"`]);
-          issues++;
-        } else if (!existsSync(target)) {
-          fail(`Broken asset reference`, [`${rel}:${i + 1}  src="${src}"  →  ${relative(ROOT, target)}`]);
-          issues++;
-        }
+        issues += checkAsset(src, filepath, rel, lineNum, 'srcset');
       }
     }
   }

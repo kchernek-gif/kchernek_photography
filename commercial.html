@@ -57,8 +57,42 @@
     }
 
     /* ── Capabilities ── */
-    .capabilities-section {
-      margin-bottom: 60px;
+    .commercial-lead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+      grid-template-areas:
+        "header media"
+        "copy media";
+      gap: clamp(32px, 5vw, 64px);
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .commercial-lead .page-header {
+      grid-area: header;
+      margin-bottom: 0;
+    }
+
+    .commercial-lead .capabilities-section {
+      grid-area: copy;
+      margin-bottom: 0;
+    }
+
+    .commercial-lead-media {
+      grid-area: media;
+    }
+
+    .commercial-lead-media picture,
+    .commercial-supporting-pair picture {
+      display: block;
+      background-color: var(--tint-warm);
+    }
+
+    .commercial-lead-media img,
+    .commercial-supporting-pair img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .capabilities-list {
@@ -80,6 +114,56 @@
       color: var(--text-primary);
       padding-top: 24px;
       border-top: 1px solid var(--border);
+    }
+
+    .commercial-lead-cta {
+      margin-top: 32px;
+    }
+
+    .commercial-supporting-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 60px;
+    }
+
+    /* Recent brand work */
+    .brand-work-section {
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
+      margin: 60px 0;
+    }
+
+    .brand-work-intro {
+      max-width: 60ch;
+      margin-bottom: 32px;
+    }
+
+    .brand-work-intro p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-primary);
+    }
+
+    .brand-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .brand-work-grid picture {
+      display: block;
+      background-color: var(--tint-warm);
+    }
+
+    .brand-work-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .brand-work-wide {
+      grid-column: 1 / -1;
     }
 
     /* ── Process ── */
@@ -167,6 +251,16 @@
     }
 
     /* ── Mobile ── */
+    @media (max-width: 800px) {
+      .commercial-lead {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "media"
+          "copy";
+      }
+    }
+
     @media (max-width: 640px) {
       .process-step {
         grid-template-columns: 28px 1fr;
@@ -178,8 +272,18 @@
         align-items: flex-start;
         gap: 16px;
       }
+
+      .brand-work-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+      }
+
+      .commercial-supporting-pair {
+        gap: 4px;
+      }
     }
   </style>
+  <script defer src="/components/analytics.js"></script>
 </head>
 <body>
 
@@ -234,27 +338,206 @@
 
   <main class="page-wrap">
 
-    <div class="page-header">
-      <h1 class="page-title">Commercial &amp; Brand</h1>
-      <p class="page-intro">Photography for brands, lookbooks, and campaigns. Project-based work scoped to your specific needs: product photography, editorial campaign imagery, social content, and event coverage.</p>
+    <div class="commercial-lead">
+      <div class="page-header">
+        <h1 class="page-title">Commercial &amp; Brand</h1>
+        <p class="page-intro">Photography for brands, lookbooks, and campaigns. Project-based work scoped to your specific needs: product photography, editorial campaign imagery, social content, and event coverage.</p>
+      </div>
+
+      <div class="commercial-lead-media">
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-1600w.webp 1600w"
+            sizes="(min-width: 900px) 34vw, 92vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-1600w.jpg 1600w"
+            sizes="(min-width: 900px) 34vw, 92vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-06-1200w.jpg"
+            alt="Close-up of sunscreen product against blue swimwear during a beach brand shoot in Miami, Florida."
+            width="2160" height="2700"
+            fetchpriority="high" decoding="sync">
+        </picture>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="capabilities-section">
+        <h2 class="section-heading">Capabilities</h2>
+        <ul class="capabilities-list">
+          <li>Lookbook and campaign photography</li>
+          <li>Product photography</li>
+          <li>Social media content packages</li>
+          <li>Event and editorial coverage</li>
+          <li>Creative direction available on request</li>
+        </ul>
+        <p class="clients-note">Past work includes content partnerships with Andi Bagus, editorial collaborations with AvalTheBrand, event coverage for FloSports, and corporate portrait work for Walmart.</p>
+
+        <div class="commercial-lead-cta">
+          <a href="contact.html" class="btn-primary">Discuss Your Project &#8594;</a>
+        </div>
+      </div>
     </div>
 
-    <!-- Capabilities -->
-    <div class="capabilities-section">
-      <h2 class="section-heading">Capabilities</h2>
-      <ul class="capabilities-list">
-        <li>Lookbook and campaign photography</li>
-        <li>Product photography</li>
-        <li>Social media content packages</li>
-        <li>Event and editorial coverage</li>
-        <li>Creative direction available on request</li>
-      </ul>
-      <p class="clients-note">Past work includes content partnerships with Andi Bagus, editorial collaborations with AvalTheBrand, event coverage for FloSports, and corporate portrait work for Walmart.</p>
+    <div class="commercial-supporting-pair">
+      <picture>
+        <source type="image/webp" srcset="
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-800w.webp 800w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-1200w.webp 1200w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-1600w.webp 1600w"
+          sizes="(min-width: 640px) 48vw, 46vw">
+        <source type="image/jpeg" srcset="
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-800w.jpg 800w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-1200w.jpg 1200w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-1600w.jpg 1600w"
+          sizes="(min-width: 640px) 48vw, 46vw">
+        <img
+          src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-07-1200w.jpg"
+          alt="Standing model holding sunscreen product with a striped towel during a swimwear brand shoot in Miami, Florida."
+          width="2160" height="2700"
+          loading="lazy" decoding="async">
+      </picture>
+
+      <picture>
+        <source type="image/webp" srcset="
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-800w.webp 800w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-1200w.webp 1200w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-1600w.webp 1600w"
+          sizes="(min-width: 640px) 48vw, 46vw">
+        <source type="image/jpeg" srcset="
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-800w.jpg 800w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-1200w.jpg 1200w,
+            portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-1600w.jpg 1600w"
+          sizes="(min-width: 640px) 48vw, 46vw">
+        <img
+          src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-08-1200w.jpg"
+          alt="Model in blue swimwear with towel and sunscreen product during a beach brand shoot in Miami, Florida."
+          width="2160" height="2700"
+          loading="lazy" decoding="async">
+      </picture>
     </div>
 
-    <div class="page-cta">
-      <a href="contact.html" class="btn-primary">Discuss Your Project &#8594;</a>
-    </div>
+    <!-- Recent Brand Work -->
+    <section class="brand-work-section" aria-labelledby="brand-work-heading">
+      <div class="brand-work-intro">
+        <h2 class="section-heading" id="brand-work-heading">Recent Brand Work</h2>
+        <p>Sunscreen brand swimwear photographed at Crandon Beach in Miami. Product, styling, and campaign context in the same frame.</p>
+      </div>
+
+      <div class="brand-work-grid">
+        <picture class="brand-work-wide">
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-1600w.webp 1600w"
+            sizes="(min-width: 1100px) 1035px, 92vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-1600w.jpg 1600w"
+            sizes="(min-width: 1100px) 1035px, 92vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-09-1200w.jpg"
+            alt="Horizontal beach campaign image for a sunscreen brand shoot at Crandon Beach in Miami, Florida."
+            width="2700" height="1800"
+            loading="lazy" decoding="async">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-1600w.webp 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-1600w.jpg 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-01-1200w.jpg"
+            alt="Model reclining on a striped towel with sunscreen product and visor during a brand shoot at Crandon Beach in Miami, Florida."
+            width="2160" height="2700"
+            loading="lazy" decoding="async">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-1600w.webp 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-1600w.jpg 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-02-1200w.jpg"
+            alt="Sunscreen product and blue visor on a striped towel during a commercial swimwear brand shoot in Miami, Florida."
+            width="2160" height="2700"
+            loading="lazy" decoding="async">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-1600w.webp 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-1600w.jpg 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-03-1200w.jpg"
+            alt="Model seated on a beach towel wearing a blue visor during a sunscreen brand swimwear shoot in Miami, Florida."
+            width="2160" height="2700"
+            loading="lazy" decoding="async">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-1600w.webp 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-1600w.jpg 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-04-1200w.jpg"
+            alt="Close portrait of model in blue swimwear and visor during a beach brand shoot in Miami, Florida."
+            width="2160" height="2700"
+            loading="lazy" decoding="async">
+        </picture>
+
+        <picture>
+          <source type="image/webp" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-800w.webp 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-1200w.webp 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-1600w.webp 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <source type="image/jpeg" srcset="
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-800w.jpg 800w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-1200w.jpg 1200w,
+              portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-1600w.jpg 1600w"
+            sizes="(min-width: 640px) 31vw, 46vw">
+          <img
+            src="portfolio-images/Commercial-Brand/sunscreen-brand-swimwear-miami-florida-dilara-05-1200w.jpg"
+            alt="Model seated on a beach towel with sunscreen product during a commercial swimwear brand shoot in Miami, Florida."
+            width="2160" height="2700"
+            loading="lazy" decoding="async">
+        </picture>
+
+      </div>
+    </section>
 
     <!-- Process -->
     <div class="process-section">

@@ -303,6 +303,7 @@
       .context-disclosure .context-subhead       { display: none; }
     }
   </style>
+  <script defer src="/components/analytics.js"></script>
 </head>
 <body>
 
@@ -406,7 +407,8 @@
         </div>
 
         <!--
-          Formspree endpoint — replace YOUR_FORM_ID with the ID from formspree.io/forms
+          Shared Formspree endpoint. The hidden session_type and _subject fields
+          route this as a Digitals inquiry in the inbox.
         -->
         <form class="contact-form" id="contactForm"
               action="https://formspree.io/f/mlgzqdqv"

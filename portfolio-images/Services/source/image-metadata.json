@@ -1,0 +1,37 @@
+{
+  "shoot": {
+    "folder": "Services",
+    "model": "Color image Carmen, B&W image Hannah",
+    "location": "Studio",
+    "city": "Dallas",
+    "state": "Texas",
+    "date": "2024",
+    "shoot_type": "Test shoot",
+    "wardrobe": "Not specified",
+    "keywords": []
+  },
+  "flags": {
+    "srgb_verified": true,
+    "wardrobe_missing": true
+  },
+  "images": [
+    {
+      "original_filename": "_DSC1498_1_color.jpg",
+      "recommended_filename": "test-shoot-dallas-texas-carmen-01.jpg",
+      "file_size_mb": 3.43,
+      "dimensions": "2160x2700",
+      "alt_text": "Makeup artist preparing model Carmen during a studio test shoot in Dallas, Texas.",
+      "title": "Test Shoot in Dallas, Texas",
+      "caption": ""
+    },
+    {
+      "original_filename": "_DSC2210_bw.jpg",
+      "recommended_filename": "test-shoot-dallas-texas-hannah-02.jpg",
+      "file_size_mb": 1.93,
+      "dimensions": "2160x2700",
+      "alt_text": "Model Hannah on a studio set with lighting equipment during a black and white test shoot in Dallas, Texas.",
+      "title": "Test Shoot in Dallas, Texas",
+      "caption": ""
+    }
+  ]
+}

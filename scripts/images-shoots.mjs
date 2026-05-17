@@ -9,6 +9,8 @@ const FOLDERS = [
   'Editorial_Studio',
   'Studio_Black_White',
   'Flower-Swimwear',
+  'Commercial-Brand',
+  'Services',
 ];
 
 // Prevents generated -800w.jpg / -1200w.jpg / -1600w.jpg from being

@@ -295,6 +295,7 @@
       letter-spacing: 0;
     }
   </style>
+  <script defer src="/components/analytics.js"></script>
 </head>
 <body>
 
@@ -396,8 +397,8 @@
         </div>
 
         <!--
-          Formspree endpoint — replace YOUR_FORM_ID with the ID from formspree.io/forms
-          Use a separate form ID from the Digitals form so inquiries arrive with clear context.
+          Shared Formspree endpoint. The hidden session_type and _subject fields
+          route this as an Editorial Test inquiry in the inbox.
         -->
         <form class="contact-form" id="contactForm"
               action="https://formspree.io/f/mlgzqdqv"

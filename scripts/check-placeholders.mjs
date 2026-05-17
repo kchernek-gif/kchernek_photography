@@ -17,7 +17,16 @@ function isBadSrc(value) {
 }
 
 const SRC_RE     = /\bsrc\s*=\s*["']([^"']+)["']/gi;
+const SRCSET_RE  = /\bsrcset\s*=\s*["']([^"']+)["']/gi;
 const CONTENT_RE = /\bcontent\s*=\s*["']([^"']+)["']/gi;
+const IMAGE_TAG_RE = /<(img|source)\b[^>]*>/gi;
+
+function srcsetUrls(value) {
+  return value
+    .split(',')
+    .map(entry => entry.trim().split(/\s+/)[0])
+    .filter(Boolean);
+}
 
 let issues = 0;
 let imagesChecked = 0;
@@ -31,24 +40,40 @@ for (const filepath of walkHtml(ROOT)) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
-    if (/<img\b/i.test(line)) {
-      let m;
-      SRC_RE.lastIndex = 0;
-      while ((m = SRC_RE.exec(line)) !== null) {
-        imagesChecked++;
-        if (isBadSrc(m[1])) {
-          fail(`Placeholder image src`, [`${rel}:${i + 1}  src="${m[1]}"`]);
-          issues++;
-        }
-      }
-    }
-
     if (/<meta\b/i.test(line) && /(og:image|twitter:image)/i.test(line)) {
       let m;
       CONTENT_RE.lastIndex = 0;
       while ((m = CONTENT_RE.exec(line)) !== null) {
         if (isBadSrc(m[1])) {
           fail(`Placeholder OG/Twitter image`, [`${rel}:${i + 1}  content="${m[1]}"`]);
+          issues++;
+        }
+      }
+    }
+  }
+
+  let tagMatch;
+  IMAGE_TAG_RE.lastIndex = 0;
+  while ((tagMatch = IMAGE_TAG_RE.exec(stripped)) !== null) {
+    const tag = tagMatch[0];
+    const lineNum = stripped.slice(0, tagMatch.index).split('\n').length;
+
+    SRC_RE.lastIndex = 0;
+    let m;
+    while ((m = SRC_RE.exec(tag)) !== null) {
+      imagesChecked++;
+      if (isBadSrc(m[1])) {
+        fail(`Placeholder image src`, [`${rel}:${lineNum}  src="${m[1]}"`]);
+        issues++;
+      }
+    }
+
+    SRCSET_RE.lastIndex = 0;
+    while ((m = SRCSET_RE.exec(tag)) !== null) {
+      for (const src of srcsetUrls(m[1])) {
+        imagesChecked++;
+        if (isBadSrc(src)) {
+          fail(`Placeholder image srcset`, [`${rel}:${lineNum}  srcset="${src}"`]);
           issues++;
         }
       }

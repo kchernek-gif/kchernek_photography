@@ -50,6 +50,32 @@
   <link rel="stylesheet" href="../styles.css">
   <style>
     /* ── Offer cards ── */
+    .model-dev-wrap {
+      padding-top: clamp(28px, 3vw, 44px);
+    }
+
+    .model-dev-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 34ch);
+      align-items: end;
+      gap: 20px clamp(28px, 5vw, 72px);
+      margin-bottom: clamp(16px, 2vw, 24px);
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .model-dev-header .page-title {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      margin-bottom: 0;
+    }
+
+    .model-dev-header .page-intro {
+      max-width: none;
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -192,6 +218,12 @@
     }
 
     .info-note a:hover { color: var(--secondary-navy); }
+    .info-note a:active { color: var(--secondary-navy-hover); }
+    .info-note a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     /* ── FAQ ── */
     .faq-section {
@@ -253,6 +285,12 @@
     }
 
     .faq-closing a:hover { color: var(--secondary-navy); }
+    .faq-closing a:active { color: var(--secondary-navy-hover); }
+    .faq-closing a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     /* Remove page-wrap bottom padding — bridge margin-bottom controls gap to bar */
     .page-wrap { padding-bottom: 0; }
@@ -286,10 +324,24 @@
 
     /* ── Mobile ── */
     @media (max-width: 640px) {
+      .model-dev-wrap { padding-top: 28px; }
+      .model-dev-header {
+        display: block;
+        margin-bottom: 16px;
+      }
+      .model-dev-header .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+      .model-dev-header .page-intro {
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
       .options-grid { grid-template-columns: 1fr; gap: 32px; }
       .info-grid    { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
+  <script defer src="/components/analytics.js"></script>
 </head>
 <body>
 
@@ -342,7 +394,12 @@
     <!-- END shared:nav -->
   </header>
 
-  <main class="page-wrap">
+  <main class="page-wrap model-dev-wrap">
+    <div class="page-header model-dev-header">
+      <h1 class="page-title">Model Development</h1>
+      <p class="page-intro">Choose a session: digitals or editorial test.</p>
+    </div>
+
     <div class="options-grid">
 
       <div class="session-option">
@@ -386,13 +443,14 @@
 
     </div>
 
-    <p class="page-bridge">Newer to modeling? The details below cover booking, what to bring, and common questions.</p>
-
   </main>
 
   <details class="page-details" id="modelDevDetails">
       <summary class="page-details-summary">
-        <span class="page-details-label">The Details &#8212; How It Works</span>
+        <span>
+          <span class="page-details-label">The Details &#8212; How It Works</span>
+          <span class="page-details-hint">Newer to modeling? Booking, prep, and common questions are inside.</span>
+        </span>
         <span class="page-details-chevron" aria-hidden="true">
           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -400,8 +458,8 @@
         </span>
       </summary>
       <div class="page-details-content">
-        <h1 class="page-title">Model Development</h1>
-        <p class="page-intro">Sessions designed for models building their portfolios. Whether you&#8217;re submitting to agencies, refreshing your book, or developing editorial range, the work below is built to give you images that hold up.</p>
+        <h2 class="page-title">Model Development Details</h2>
+        <p class="page-intro">Booking, prep, delivery, and common questions for model development sessions.</p>
         <div class="info-section">
           <div class="info-grid">
 
