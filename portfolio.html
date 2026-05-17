@@ -105,20 +105,21 @@
     /* ── Lead shoot: full-width ── */
     .portfolio-lead {
       display: block;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     /* ── Supporting shoots: 3-column ── */
     .category-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 32px;
     }
 
     /* ── Mobile ── */
     @media (max-width: 640px) {
-      .portfolio-lead { margin-bottom: 40px; }
-      .category-grid { grid-template-columns: 1fr; gap: 40px; }
+      .portfolio-lead { margin-bottom: 32px; }
+      .category-grid { grid-template-columns: 1fr; gap: 32px; }
+      .category-thumb { aspect-ratio: 4 / 3; }
     }
 
     /* ── Tablet: 3-col still works, but tighten gap ── */
@@ -183,7 +184,7 @@
 
     <div class="page-header">
       <h1 class="page-title">Portfolio</h1>
-      <p class="page-intro">Selected fashion, swimwear, editorial, and studio portrait work from Dallas, Fort Worth, Los Angeles, and Miami.</p>
+      <p class="page-intro">Fashion and lifestyle work from Dallas, Los Angeles, and Miami.</p>
     </div>
 
     <!-- Lead shoot — rotate to newest / strongest work as portfolio grows -->

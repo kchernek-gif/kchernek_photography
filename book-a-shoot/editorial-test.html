@@ -394,8 +394,6 @@
 
           <p class="context-body">Editorial tests are for models building creative range. Where digitals show who you are, editorial tests show what you can do. Sessions are planned in advance with shared mood references, wardrobe direction, and shot list. Output is portfolio-grade editorial work — fully retouched and ready for your book.</p>
 
-          <p class="context-tailored">Tailored for expanding portfolio range and creating editorial work that holds up commercially.</p>
-
           <h2 class="context-subhead">What&#8217;s included</h2>
           <ul class="context-list">
             <li>2-hour session</li>
@@ -464,16 +462,19 @@
               id="instagram"
               name="instagram"
               placeholder="@handle"
-              maxlength="100"
+              maxlength="31"
+              pattern="@?[A-Za-z0-9_.]{1,30}"
+              aria-describedby="instagram-hint"
             >
+            <small id="instagram-hint" class="field-note" style="margin-top:4px">Handle only, no full URL needed.</small>
           </div>
 
           <div class="form-field">
-            <label for="direction">Describe the aesthetic or direction you&#8217;re going for</label>
+            <label for="direction">Aesthetic direction</label>
             <textarea
               id="direction"
               name="aesthetic_direction"
-              placeholder="What look are you trying to add to your book? Reference brands, photographers, or describe the vibe."
+              placeholder="What look are you working toward? Reference brands, photographers, or describe the concept."
               maxlength="2000"
               required
             ></textarea>

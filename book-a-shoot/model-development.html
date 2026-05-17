@@ -89,6 +89,8 @@
       gap: clamp(20px, 3vw, 36px);
       align-items: stretch;
       margin: 0;
+      border-top: 1px solid var(--border);
+      padding-top: clamp(20px, 3vw, 36px);
     }
 
     .model-proof figure {
@@ -136,16 +138,11 @@
     }
 
     .session-option {
-      border: 1px solid var(--border);
-      background-color: var(--tint-warm);
-      padding: clamp(20px, 2.5vw, 36px) clamp(24px, 3.5vw, 44px);
+      border-top: 2px solid var(--text-primary);
+      background-color: transparent;
+      padding: clamp(20px, 2.5vw, 36px) 0;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.15s var(--ease-out);
-    }
-
-    .session-option:hover {
-      border-color: var(--text-secondary);
     }
 
     .option-label {
@@ -520,7 +517,7 @@
             loading="lazy"
             decoding="async">
         </picture>
-        <figcaption>Digitals: clean, direct. Natural light and simple looks.</figcaption>
+        <figcaption>Digitals: clean, direct, agency-ready.</figcaption>
       </figure>
 
       <figure>

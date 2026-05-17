@@ -66,6 +66,9 @@
     /* ── Bio copy ── */
     .about-body {
       padding-top: 4px;
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
     }
 
     .about-body p {
@@ -92,7 +95,10 @@
       color: var(--secondary-navy);
     }
 
-    .about-cta { max-width: 560px; }
+    .about-cta {
+      margin-top: auto;
+      padding-top: 32px;
+    }
 
     @media (max-width: 768px) {
       .about-layout {
@@ -185,11 +191,11 @@
         <p>I&#8217;ve shot for brands and publications including Walmart, FloSports, Andi Bagus, and AvalTheBrand. My editorial work has been published across more than a dozen independent fashion magazines.</p>
 
         <p>I&#8217;m based in Irving and shoot throughout DFW. I also run <a href="https://www.meetup.com/dfw-photo-walks" target="_blank" rel="noopener noreferrer">DFW Photowalks</a>, a community group for local models and photographers building their books together.</p>
-      </div>
-    </div>
 
-    <div class="about-cta page-cta">
-      <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
+        <div class="about-cta">
+          <a href="contact.html" class="btn-primary">Let&#8217;s Connect &#8594;</a>
+        </div>
+      </div>
     </div>
 
   </main>
