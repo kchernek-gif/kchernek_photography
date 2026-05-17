@@ -57,7 +57,7 @@ These reflect current direction. Departing requires explicit user approval and a
 - Warm-neutral palette with Campaign Denim as the only accent.
 - Sharp corners across containers, images, and cards. Subtle radius (2-4px max) only on small form inputs.
 - Flat-by-default surfaces. No decorative shadows on cards. Two allowed shadows: scroll-state header, form input contrast.
-- Motion limited to opacity, GPU-composited transform, IntersectionObserver-driven fades. No GSAP, no scroll-driven flying entries, no spring/bounce.
+- Motion stays calm and purposeful, but may use small GPU-composited transforms when they improve spatial clarity, press feedback, image presentation, navigation polish, or perceived quality. No GSAP, scroll-jacking, decorative parallax, spring/bounce, or SaaS-style flying entries.
 - Em-dash policy per the DESIGN_SYSTEM.md > Em-dash policy section.
 - Noto Sans single-family typography system.
 
@@ -66,7 +66,7 @@ These reflect current direction. Departing requires explicit user approval and a
 These are the current implementation but are open to refinement. Propose alternatives as options; don't reject as violations.
 
 - Specific spacing values, line heights, letter spacings, and the type scale.
-- Homepage composition (single hero, two CTAs, no intermediate bands).
+- Homepage composition (hero-led, image-forward, two clear CTAs). Current structure is a default, not a lock; refinements may add subtle carousel affordances or stronger image sequencing when they preserve campaign feel.
 - Specific copy in CONTENT.md, beyond the voice rules.
 - Portfolio gallery layout density and grid choices.
 - Microinteraction timings and hover-state details.
@@ -110,7 +110,7 @@ The audit script (`scripts/check-placeholders.mjs`) does not flag these because 
 
 ### Carousel Pattern
 
-A horizontal image strip with native CSS scroll-snap, peek-from-edge spacing, and no auto-advance. Used on the homepage between the hero and footer. Reusable on any page where photography should land as variety and invitation rather than a single hero.
+A horizontal image strip with native CSS scroll-snap, peek-from-edge spacing, and optional slow auto-advance. Used on the homepage between the hero and footer. Reusable on any page where photography should land as variety and invitation rather than a single hero.
 
 **Mechanics (current implementation):**
 - Container is full-bleed (no horizontal page padding) so partial images peek from the viewport edges
@@ -122,16 +122,16 @@ A horizontal image strip with native CSS scroll-snap, peek-from-edge spacing, an
 - Image aspect ratio is preserved per source (no forced cropping)
 - Images use existing `<picture>` markup with WebP+JPG sources per the portfolio sub-page convention
 
-**What's not in the current implementation (deferred to future phases):**
-- Auto-advance (would require a small JS layer ~30 lines)
-- Dot indicators or progress markers
-- Keyboard arrow navigation (the natural scroll behavior is keyboard-accessible via Tab + arrow keys on Mac, but explicit arrow controls could be added)
-- Pause-on-hover (related to auto-advance)
+**Allowed refinements:**
+- Slow auto-advance when it is disabled for `prefers-reduced-motion`, pauses on hover/focus/manual interaction, pauses after manual interaction, and never feels like an ad carousel
+- Subtle progress or slide-count affordances when they clarify the experience without adding UI clutter
+- Keyboard arrow navigation when explicit controls are visible
+- Image-specific focal positioning for desktop and mobile crops
 - Lazy-loading non-active images (browser handles natively for `loading="lazy"` attributes)
 
 **Where to use this pattern:**
 - Homepage (current implementation)
-- Model Development page — inside or below the "Details" collapse, NOT above the cards (the page is bottom-of-funnel)
+- Model Development page — as a proof row before or near package selection, or inside/below the "Details" collapse when conversion focus matters more than visual proof
 - Services page — alongside or instead of alternating image/text blocks, when category-specific imagery becomes available
 - Brand Work page — alongside a separate brand-logo strip (when client logo permissions land)
 
@@ -511,6 +511,10 @@ Bad references:
 * overproduced GSAP demos
 
 Motion exists to support elegance, not demand attention.
+
+Current page structures are defaults, not locks. When a page feels too informational, visually bare, or insufficiently photographic, it may be rebalanced with additional image-led sections, proof rows, or stronger composition. The result must still preserve anti-pigeonhole positioning, crawlable HTML, campaign-commercial tone, and photography as the dominant visual element.
+
+Motion is allowed when it improves spatial clarity, interaction feedback, image presentation, or perceived quality. Opacity remains the default, but small transforms, clip-path reveals, color changes, and border transitions are acceptable when they are brief, calm, interruptible where practical, and implemented with accessibility in mind.
 
 ---
 
@@ -1034,4 +1038,3 @@ If rules conflict, prioritize in this order:
 The site should ultimately feel like:
 
 > a contemporary fashion/lifestyle photographer capable of handling real commercial work — not a template, not a magazine, and not a startup landing page.
-

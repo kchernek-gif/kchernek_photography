@@ -84,7 +84,7 @@ This system explicitly rejects: SaaS landing-page patterns, literary fashion pub
 - Warm neutrals throughout; Campaign Denim is the only accent and it earns every appearance
 - Sharp edges and flat surfaces — no radius on cards, images, or containers
 - Large light headings paired with small bold uppercase labels
-- Motion defaults to opacity-only fades; translating, flying, and bouncing require explicit user approval
+- Motion defaults to calm opacity and small GPU-composited transform polish; flying, bouncing, scroll-jacking, and decorative parallax require explicit user approval
 - Forms and booking flows feel like a creative brief, not a software subscription
 
 ## 2. Colors: The Warm Studio Palette
@@ -160,7 +160,7 @@ Campaign Denim on sharp-cornered rectangles. Full-width within their container w
 - **Shape:** Sharp corners (border-radius: 0). No softening.
 - **Primary:** Campaign Denim background (`#1E2A38`), white text, 16px top/bottom padding, 28px left/right. Font: weight 700, 0.68rem, uppercase, letter-spacing 0.18em.
 - **Hover:** Campaign Denim Hover (`#2A3A4C`), 0.2s ease transition on background-color only.
-- **Active:** `scale(0.99)` transform — maximum compression 0.99, never below 0.95.
+- **Active:** `scale(0.98)` transform — tactile but restrained, never below 0.95.
 - **Focus:** 2px solid Campaign Denim outline, 2px offset.
 - **Disabled:** opacity 0.55, cursor not-allowed.
 - **Hero CTA (ghost variant):** White text, no background, border-bottom `1px solid rgba(255,255,255,0.5)`. On hover: border-color transitions to full white. Used only overlaid on the hero image.
@@ -183,7 +183,7 @@ Centered masthead above a bordered nav row. Desktop: horizontal links at 0.6rem 
 - **Hover:** Campaign Denim, 0.2s ease.
 - **Active:** Campaign Denim, same as hover.
 - **Focus:** 2px solid Campaign Denim outline, 2px offset.
-- **Dropdown:** Pre-Dawn Linen background, Warm Border, shadow-warm shadow. Items: 0.6rem / weight 700 / uppercase. Hover: Tint Warm background + Campaign Denim text. Keyboard-accessible: Escape closes, click-outside closes.
+- **Dropdown:** Pre-Dawn Linen background, Warm Border, shadow-warm shadow. Items: 0.6rem / weight 700 / uppercase. Opens with anchored opacity + subtle scale/transform polish, not a large slide. Hover: Tint Warm background + Campaign Denim text. Keyboard-accessible: Escape closes, click-outside closes.
 - **Mobile:** Hamburger with animated bars (translateY + rotate on open). Full-width overlay below nav row. All touch targets minimum 44px.
 
 ### Portfolio Gallery Grid
@@ -235,7 +235,7 @@ Used for dedicated booking flows (Digitals and Editorial Test). Context panel le
 - **Don't** use rounded cards, soft decorative shadows, or nested cards. The shadcn/ui and Stripe-pricing aesthetic is an explicit anti-reference.
 - **Avoid** creating isolated CTA sections between the hero and the footer on the homepage; the current composition carries both CTAs inside the hero. Departing requires explicit user approval.
 - **Don't** use all-caps weight-700 labels for service names or package names. Those get the sentence-case weight-300 or weight-400 headline treatment.
-- **Don't** animate translateY. The fly-in-from-below pattern is SaaS scroll-choreography. Default to opacity-only fades.
+- **Don't** use fly-in-from-below choreography. Tiny origin-aware transforms for dropdowns, mobile nav, image reveals, and press feedback are allowed when they stay calm and serve spatial clarity.
 - **Don't** set `will-change: transform` globally on gallery thumbnails. Scope it to hover; every thumbnail getting its own GPU layer on page load is a memory cost without any benefit.
 - **Don't** use `transition-all`. Specify exact properties: `transition: background-color 0.2s ease`, `transition: opacity 0.6s ease`, etc.
 - **Don't** use em dashes outside their defined contexts. See DESIGN_SYSTEM.md > Em-dash policy.

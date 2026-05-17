@@ -174,6 +174,8 @@ Confident-commercial. Restrained but not austere. Should feel like a polished br
 **Yes:**
 - Subtle fade-in on image lazy-load (200-300ms)
 - Hover state: subtle color shift (warm-neutral → navy), 150-200ms ease-out
+- Tiny GPU-composited scale or origin-aware transform when it improves press feedback, dropdown clarity, mobile nav polish, or image presentation
+- Slow, interruptible carousel auto-advance when disabled for reduced motion and paused on hover/focus/manual interaction
 - Crossfade in lightbox
 - Sticky header with subtle background treatment on scroll
 - `prefers-reduced-motion` respected on every animation
@@ -200,7 +202,7 @@ Confident-commercial. Restrained but not austere. Should feel like a polished br
 Every link, button, form input, and clickable element must have:
 
 1. **Default state** — base styling from design system
-2. **Hover state** — color shift to navy or subtle weight change (not scale-up, not shadow change)
+2. **Hover state** — color shift to navy, subtle weight change, or tiny image/control transform where it serves the interaction (not shadow change)
 3. **Focus-visible state** — visible focus ring using `--secondary-navy`, 2px outline with 2px offset
 4. **Active state** — slight darkening or compression (scale 0.98 max, never below 0.95)
 5. **Disabled state** — reduced opacity (0.5), no hover behavior
