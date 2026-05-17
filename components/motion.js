@@ -41,6 +41,12 @@
     intervalId = null;
   }
 
+  function setInitialCarouselPosition() {
+    var amount = getStepAmount();
+    if (!amount || track.scrollLeft > 0) return;
+    track.scrollTo({ left: amount, behavior: 'auto' });
+  }
+
   document.querySelectorAll('.carousel-arrow').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var dir = btn.classList.contains('carousel-arrow--prev') ? -1 : 1;
@@ -64,7 +70,10 @@
     startAutoAdvance();
   });
 
-  startAutoAdvance();
+  window.requestAnimationFrame(function () {
+    setInitialCarouselPosition();
+    startAutoAdvance();
+  });
 }());
 
 /* Scroll-triggered section fade-in — Intersection Observer */
