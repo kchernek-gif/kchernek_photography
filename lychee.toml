@@ -20,7 +20,7 @@ exclude_path = [
 # Root directory for resolving root-relative links (e.g. /about.html).
 # Without this, lychee cannot convert /path to a file URI when scanning
 # local HTML files directly.
-base = "."
+root_dir = "."
 
 # Seconds before a request times out
 timeout = 20
