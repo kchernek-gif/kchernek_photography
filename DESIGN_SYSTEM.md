@@ -300,10 +300,25 @@ The photography should provide most of the emotional color.
   --text-secondary:    #6B6359;  /* Warm medium brown — buttons, card headers, prices */
   --text-muted:        #706A63;  /* Warm tan-gray — taglines, captions, metadata */
   --border:            rgba(42, 38, 34, 0.14);  /* Subtle warm brown border */
-  --secondary-navy:    #1E2A38;  /* Deep warm navy — link hovers, button accents, dividers */
-  --secondary-navy-hover: #2A3A4C;  /* Slightly lighter navy for hover states */
+  --secondary-navy:        #1E2A38;  /* Deep warm navy — CTA buttons, link hovers, dividers */
+  --secondary-navy-hover:  #2A3A4C;  /* Slightly lighter navy for hover states */
+  --secondary-navy-soft:   #4A5E72;  /* Editorial accent navy — labels, subheads, italic accent lines */
+  --secondary-navy-tint:   rgba(30, 42, 56, 0.06);  /* Subtle navy wash — section/badge backgrounds */
 }
 ```
+
+### Navy ramp
+
+The site has three levels of navy usage:
+
+- **`--secondary-navy` (`#1E2A38`)** — CTA navy. Primary button fill, link hovers, focus rings, dividers. High-contrast conversion accent. Never changes.
+- **`--secondary-navy-hover` (`#2A3A4C`)** — CTA hover state only.
+- **`--secondary-navy-soft` (`#4A5E72`)** — Editorial accent navy. A lighter, slightly desaturated step in the ramp. Used for small uppercase labels, section subheads, italic "tailored for" lines, the site tagline, and other typography doing decorative-but-not-conversion work. Contrast against `--background` is ~5.6:1 — WCAG AA passing for normal-size text and large text. **Not for CTAs, not for body text.**
+- **`--secondary-navy-tint` (`rgba(30, 42, 56, 0.06)`)** — Very light navy wash. For section backgrounds or badge fills where a faint cool cast is wanted without a hard panel edge. Use sparingly.
+
+**Relationship to the warm palette.** The site's foundation stays warm (background, body text, primary text, borders). The navy variants are deliberate cool accents that give specific elements editorial snap. The CTA navy and hover are unchanged — high-contrast conversion accent. The soft and tint variants live one step lighter, doing typography-and-structure accent work only.
+
+**Note on `.impeccable/design.json`.** Component snippets in that file reference `#9A9088` (a lighter step in the chalk-dust warm ramp) for labels and placeholders. With the introduction of `--secondary-navy-soft`, the navy-soft token is the preferred label color. The `#9A9088` value is a deprecated alternate to be sunset over time. Future Impeccable runs should reference `var(--secondary-navy-soft)`, not the literal hex.
 
 ## Color Guidance
 

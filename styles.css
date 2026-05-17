@@ -49,6 +49,15 @@
   --shadow-warm:    rgba(42, 38, 34, 0.08);
   --secondary-navy:        #1E2A38;
   --secondary-navy-hover:  #2A3A4C;
+  /* Lighter editorial-accent step in the navy ramp.
+     Used for small uppercase labels, section subheads, italic accent lines,
+     and other typography that should read cool against the warm base
+     without competing with the CTA navy. */
+  --secondary-navy-soft:   #4A5E72;
+  /* Subtle navy wash for section backgrounds and badge backgrounds.
+     At 6% alpha against the warm background, it barely registers — just
+     enough to read as "slightly cooler" without becoming a hard panel. */
+  --secondary-navy-tint:   rgba(30, 42, 56, 0.06);
   --text-on-dark:          #FFFFFF;
   --font-family:    'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width:      1035px;
@@ -188,7 +197,7 @@ body::before {
   font-weight: 400;
   letter-spacing: 0.48em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--secondary-navy-soft);
   margin-top: 8px;
 }
 
@@ -849,7 +858,7 @@ details[open] .page-details-chevron {
 .context-tailored {
   font-size: 0.875rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--secondary-navy-soft);
   margin: 0 0 32px 0;
   font-style: italic;
 }
@@ -859,7 +868,7 @@ details[open] .page-details-chevron {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--secondary-navy-soft);
   margin: 32px 0 16px 0;
 }
 
@@ -874,7 +883,7 @@ details[open] .page-details-chevron {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: var(--text-primary);
+  color: var(--secondary-navy-soft);
   margin: 0 0 8px 0;
 }
 
@@ -914,7 +923,7 @@ details[open] .page-details-chevron {
 .addon-name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--secondary-navy-soft);
   margin-bottom: 4px;
 }
 
@@ -975,7 +984,7 @@ details[open] .page-details-chevron {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--secondary-navy-soft);
   margin-bottom: 18px;
 }
 
