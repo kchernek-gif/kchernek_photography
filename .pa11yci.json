@@ -1,0 +1,19 @@
+{
+  "default": {
+    "standard": "WCAG2A",
+    "timeout": 30000,
+    "wait": 500,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    }
+  },
+  "threshold": 10,
+  "urls": [
+    "http://localhost:3000/",
+    "http://localhost:3000/portfolio.html",
+    "http://localhost:3000/services.html",
+    "http://localhost:3000/commercial.html",
+    "http://localhost:3000/book-a-shoot/model-development.html",
+    "http://localhost:3000/contact.html"
+  ]
+}

@@ -16,7 +16,11 @@
     "images:carousel": "node scripts/images-carousel.mjs",
     "images:portfolio": "node scripts/images-portfolio.mjs",
     "images:shoots": "node scripts/images-shoots.mjs",
-    "images:all": "node scripts/images-hero.mjs && node scripts/images-carousel.mjs && node scripts/images-portfolio.mjs && node scripts/images-shoots.mjs"
+    "images:all": "node scripts/images-hero.mjs && node scripts/images-carousel.mjs && node scripts/images-portfolio.mjs && node scripts/images-shoots.mjs",
+    "ci:lighthouse": "lhci autorun",
+    "ci:a11y": "pa11y-ci --config .pa11yci.json",
+    "ci:links": "lychee --config lychee.toml --verbose '**/*.html' '**/*.md'",
+    "ci:quality": "npm run ci:lighthouse && npm run ci:a11y"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +29,10 @@
   "dependencies": {
     "puppeteer": "^24.42.0",
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0",
+    "pa11y-ci": "^3.1.0",
+    "wait-on": "^8.0.0"
   }
 }

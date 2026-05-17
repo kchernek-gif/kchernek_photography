@@ -1,0 +1,30 @@
+# lychee.toml – Lychee link checker configuration
+# Lychee is a Rust binary. Install: https://github.com/lycheeverse/lychee#installation
+# Or run via GitHub Actions (see .github/workflows/site-quality.yml).
+
+# Regex patterns for URLs to skip
+exclude = [
+  "^https?://localhost",
+  "^https?://127\\.0\\.0\\.1",
+  # Google verification file (not a real external link)
+  "google[a-z0-9]+\\.html",
+]
+
+# File/directory paths to skip when scanning
+exclude_path = [
+  "node_modules",
+  "temporary screenshots",
+]
+
+# Seconds before a request times out
+timeout = 20
+
+# Retries on transient failures
+max_retries = 3
+
+# Max parallel requests
+max_concurrency = 10
+
+# Accept these HTTP status codes as valid
+# (301/302 are permanent/temporary redirects that resolve correctly)
+accept = [200, 201, 204, 206, 301, 302, 307, 308]

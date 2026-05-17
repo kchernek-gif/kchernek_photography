@@ -1,0 +1,66 @@
+name: Site Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Quality checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ── Existing repo checks ─────────────────────────────────────────────
+      - name: Existing audit scripts
+        run: npm run audit
+        continue-on-error: true
+
+      # ── Start local server (required by Lighthouse CI and Pa11y CI) ──────
+      - name: Start local server
+        run: node serve.mjs &
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000 --timeout 30000
+
+      # ── Lighthouse CI ─────────────────────────────────────────────────────
+      # Scores performance, accessibility, best-practices, and SEO for each
+      # page. Thresholds are set to 'warn' so issues are reported but the
+      # workflow does not fail. Reports upload to temporary-public-storage.
+      - name: Lighthouse CI
+        run: npx lhci autorun
+        env:
+          # Optional: add LHCI_GITHUB_APP_TOKEN in repo secrets to get
+          # inline PR status checks from the Lighthouse CI GitHub App.
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        continue-on-error: true
+
+      # ── Pa11y CI ──────────────────────────────────────────────────────────
+      # Detects specific WCAG accessibility violations per page.
+      # threshold: 10 means the step fails only if >10 errors are found on
+      # any single page; otherwise issues are reported without blocking.
+      - name: Pa11y CI
+        run: npx pa11y-ci --config .pa11yci.json
+        continue-on-error: true
+
+      # ── Lychee link check ─────────────────────────────────────────────────
+      # Scans HTML and Markdown files for broken internal and external links.
+      # fail: false means broken links are reported but do not fail the job.
+      - name: Lychee link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config lychee.toml --verbose --no-progress '**/*.html' '**/*.md'
+          fail: false
