@@ -228,7 +228,7 @@
     .btn-cta {
       display: inline-block;
       background-color: var(--secondary-navy);
-      color: #fff;
+      color: var(--text-on-dark);
       font-family: var(--font-family);
       font-size: 0.68rem;
       font-weight: 700;
@@ -313,17 +313,17 @@
         <a href="/about.html">About</a>
 
         <div class="nav-dropdown" id="ddBooking">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
-            <a href="/book-a-shoot/model-development.html">Model Development</a>
             <a href="/commercial.html">Commercial &amp; Brand</a>
+            <a href="/book-a-shoot/model-development.html">Model Development</a>
           </div>
         </div>
 
         <div class="nav-dropdown" id="ddConnect">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
@@ -336,7 +336,7 @@
     <!-- END shared:nav -->
   </header>
 
-  <main class="page-wrap">
+  <main id="main-content" class="page-wrap">
 
     <div class="commercial-lead">
       <div class="page-header">
@@ -623,7 +623,7 @@
     <!-- END shared:footer -->
   </footer>
 
-  <script src="/components/nav.js"></script>
-  <script src="/components/motion.js"></script>
+  <script src="/components/nav.js" defer></script>
+  <script src="/components/motion.js" defer></script>
 </body>
 </html>

@@ -62,7 +62,12 @@
       transition: color 0.15s var(--ease-out);
     }
 
-    .contact-intro a:hover { color: var(--secondary-navy); }
+    .contact-intro a:hover         { color: var(--secondary-navy); }
+    .contact-intro a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     /* ── Form ── */
     .contact-form {
@@ -119,11 +124,43 @@
       min-height: 148px;
     }
 
+    .form-field select {
+      font-family: var(--font-family);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      background-color: var(--surface);
+      border: 1px solid var(--text-secondary);
+      border-radius: 0;
+      padding: 11px 38px 11px 14px;
+      transition: border-color 0.15s var(--ease-out);
+      appearance: none;
+      width: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 6 5-6' stroke='%236B6359' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 12px 8px;
+      cursor: pointer;
+    }
+
+    .form-field select:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      border-color: var(--secondary-navy);
+      box-shadow: none;
+    }
+
+    .field-note {
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
     .btn-submit {
       display: block;
       width: 100%;
       background-color: var(--secondary-navy);
-      color: #fff;
+      color: var(--text-on-dark);
       font-family: var(--font-family);
       font-size: 0.68rem;
       font-weight: 700;
@@ -176,7 +213,12 @@
       transition: color 0.15s var(--ease-out);
     }
 
-    .form-success-body a:hover { color: var(--secondary-navy); }
+    .form-success-body a:hover         { color: var(--secondary-navy); }
+    .form-success-body a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     .form-error {
       display: none;
@@ -191,11 +233,24 @@
       text-decoration: none;
     }
 
-    .form-error a:hover { color: var(--secondary-navy); }
+    .form-error a:hover         { color: var(--secondary-navy); }
+    .form-error a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     .btn-submit[disabled] {
       opacity: 0.55;
       cursor: not-allowed;
+    }
+
+    .form-required-note {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
     }
 
     @keyframes fadeInForm {
@@ -233,17 +288,17 @@
         <a href="/about.html">About</a>
 
         <div class="nav-dropdown" id="ddBooking">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
-            <a href="/book-a-shoot/model-development.html">Model Development</a>
             <a href="/commercial.html">Commercial &amp; Brand</a>
+            <a href="/book-a-shoot/model-development.html">Model Development</a>
           </div>
         </div>
 
         <div class="nav-dropdown" id="ddConnect">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
@@ -256,7 +311,7 @@
     <!-- END shared:nav -->
   </header>
 
-  <main class="page-wrap">
+  <main id="main-content" class="page-wrap">
 
     <div class="page-header">
       <h1 class="page-title">Let's Connect</h1>
@@ -314,10 +369,22 @@
         </div>
 
         <div class="form-field">
+          <label for="inquiry_type">Type of inquiry <span class="field-note">(optional)</span></label>
+          <select id="inquiry_type" name="inquiry_type">
+            <option value="" disabled selected>Select one</option>
+            <option value="Model development — digitals or test shoot">Model development — digitals or test shoot</option>
+            <option value="Brand or commercial project">Brand or commercial project</option>
+            <option value="Events, BTS, or other">Events, BTS, or other</option>
+            <option value="General question">General question</option>
+          </select>
+        </div>
+
+        <div class="form-field">
           <label for="message">Message</label>
           <textarea
             id="message"
             name="message"
+            placeholder="Describe your project — shoot type, timeline, and any references or context that helps."
             maxlength="4000"
             required
           ></textarea>
@@ -365,8 +432,8 @@
     <!-- END shared:footer -->
   </footer>
 
-  <script src="/components/nav.js"></script>
-  <script src="/components/motion.js"></script>
+  <script src="/components/nav.js" defer></script>
+  <script src="/components/motion.js" defer></script>
   <script>
     (function () {
       var form    = document.getElementById('contactForm');

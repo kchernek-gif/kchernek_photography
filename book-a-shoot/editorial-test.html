@@ -243,7 +243,12 @@
       transition: color 0.15s var(--ease-out);
     }
 
-    .form-success-body a:hover { color: var(--secondary-navy); }
+    .form-success-body a:hover         { color: var(--secondary-navy); }
+    .form-success-body a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     .form-error {
       display: none;
@@ -325,17 +330,17 @@
         <a href="/about.html">About</a>
 
         <div class="nav-dropdown" id="ddBooking">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
-            <a href="/book-a-shoot/model-development.html">Model Development</a>
             <a href="/commercial.html">Commercial &amp; Brand</a>
+            <a href="/book-a-shoot/model-development.html">Model Development</a>
           </div>
         </div>
 
         <div class="nav-dropdown" id="ddConnect">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
@@ -348,7 +353,7 @@
     <!-- END shared:nav -->
   </header>
 
-  <main class="page-wrap">
+  <main id="main-content" class="page-wrap">
 
     <div class="page-header">
       <h1 class="page-title">Book an Editorial Test</h1>
@@ -372,7 +377,7 @@
 
           <p class="context-tailored">Tailored for expanding portfolio range and creating editorial work that holds up commercially.</p>
 
-          <h3 class="context-subhead">What&#8217;s included</h3>
+          <h2 class="context-subhead">What&#8217;s included</h2>
           <ul class="context-list">
             <li>2-hour session</li>
             <li>Professional hair &amp; makeup</li>
@@ -568,8 +573,8 @@
     <!-- END shared:footer -->
   </footer>
 
-  <script src="/components/nav.js"></script>
-  <script src="/components/motion.js"></script>
+  <script src="/components/nav.js" defer></script>
+  <script src="/components/motion.js" defer></script>
   <script>
     (function () {
       var disc = document.querySelector('.context-disclosure');

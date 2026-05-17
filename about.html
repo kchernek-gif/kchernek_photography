@@ -51,8 +51,8 @@
     /* ── Two-column layout: portrait left, bio right ── */
     .about-layout {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 0 72px;
+      grid-template-columns: min(340px, 40%) 1fr;
+      gap: 0 clamp(32px, 5vw, 72px);
       align-items: start;
       margin-bottom: 48px;
     }
@@ -84,7 +84,13 @@
       transition: color 0.15s var(--ease-out);
     }
 
-    .about-body a:hover { color: var(--secondary-navy); }
+    .about-body a:hover         { color: var(--secondary-navy); }
+    .about-body a:active        { color: var(--secondary-navy-hover); }
+    .about-body a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
 
     .about-cta { max-width: 560px; }
 
@@ -130,17 +136,17 @@
         <a href="/about.html">About</a>
 
         <div class="nav-dropdown" id="ddBooking">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Book a Shoot <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
-            <a href="/book-a-shoot/model-development.html">Model Development</a>
             <a href="/commercial.html">Commercial &amp; Brand</a>
+            <a href="/book-a-shoot/model-development.html">Model Development</a>
           </div>
         </div>
 
         <div class="nav-dropdown" id="ddConnect">
-          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
             Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
           </button>
           <div class="nav-dropdown-menu">
@@ -153,7 +159,7 @@
     <!-- END shared:nav -->
   </header>
 
-  <main class="page-wrap">
+  <main id="main-content" class="page-wrap">
 
     <div class="page-header">
       <h1 class="page-title">The part where I talk about myself.</h1>
@@ -216,7 +222,7 @@
     <!-- END shared:footer -->
   </footer>
 
-  <script src="/components/nav.js"></script>
-  <script src="/components/motion.js"></script>
+  <script src="/components/nav.js" defer></script>
+  <script src="/components/motion.js" defer></script>
 </body>
 </html>
