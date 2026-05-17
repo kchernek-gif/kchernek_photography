@@ -58,16 +58,23 @@
       overflow: hidden;
     }
 
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        rgba(42, 38, 34, 0.42) 0%,
+        rgba(42, 38, 34, 0.18) 34%,
+        rgba(42, 38, 34, 0) 62%
+      );
     }
 
     .hero-links {
       position: absolute;
+      z-index: 12;
       bottom: 40px;
       left: 40px;
       right: 40px;
@@ -100,7 +107,6 @@
 
     @media (max-width: 640px) {
       .hero { height: 65dvh; }
-      .hero-img { object-position: 24% top; }
       .hero-links { left: 20px; right: 20px; bottom: 28px; }
       .hero-cta { min-height: 44px; display: inline-flex; align-items: center; padding: 0; }
     }
@@ -162,38 +168,7 @@
 
   <h1 class="sr-only">Keith Chernek Photography — DFW Commercial Fashion &amp; Lifestyle Photographer</h1>
 
-  <section class="hero">
-    <picture>
-      <source
-        type="image/webp"
-        srcset="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1200w.webp 1200w,
-                portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1800w.webp 1800w,
-                portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.webp 2400w"
-        sizes="100vw"
-      >
-      <source
-        type="image/jpeg"
-        srcset="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1200w.jpg 1200w,
-                portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1800w.jpg 1800w,
-                portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.jpg 2400w"
-        sizes="100vw"
-      >
-      <img
-        src="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.jpg"
-        alt="Model in black swimwear at golden hour overlooking Los Angeles skyline, commercial fashion campaign"
-        class="hero-img"
-        width="2880"
-        height="1920"
-        fetchpriority="high"
-      >
-    </picture>
-    <div class="hero-links">
-      <a href="portfolio.html" class="hero-cta">View Portfolio &#8594;</a>
-      <a href="book-a-shoot/model-development.html" class="hero-cta">Book a Shoot &#8594;</a>
-    </div>
-  </section>
-
-  <section class="homepage-carousel" aria-label="Featured work">
+  <section class="hero homepage-carousel hero-carousel" aria-label="Featured work">
 
     <button class="carousel-arrow carousel-arrow--prev" aria-label="Previous image" aria-controls="carouselTrack">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
@@ -201,7 +176,32 @@
 
     <div class="carousel-track" id="carouselTrack">
 
-      <!-- 1: Taylor, LA editorial portrait -->
+      <!-- 1: Alexia, LA golden hour hero -->
+      <picture class="carousel-item">
+        <source
+          type="image/webp"
+          srcset="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1200w.webp 1200w,
+                  portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1800w.webp 1800w,
+                  portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.webp 2400w"
+          sizes="100vw"
+        >
+        <source
+          type="image/jpeg"
+          srcset="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1200w.jpg 1200w,
+                  portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-1800w.jpg 1800w,
+                  portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.jpg 2400w"
+          sizes="100vw"
+        >
+        <img
+          src="portfolio-images/hero/2024-alexia-los-angeles-golden-hour-hero-2400w.jpg"
+          alt="Model in black swimwear at golden hour overlooking Los Angeles skyline, commercial fashion campaign"
+          width="2880"
+          height="1920"
+          fetchpriority="high"
+        >
+      </picture>
+
+      <!-- 2: Taylor, LA editorial portrait -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-taylor-los-angeles-editorial-portrait-1200w.webp 1200w,
@@ -218,7 +218,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 2: Heloise cowgirl swimwear, LA -->
+      <!-- 3: Heloise cowgirl swimwear, LA -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/Cowgirl-Swimwear/cowgirl-swimwear-los-angeles-california-heloise-07-800w.webp 800w,
@@ -235,7 +235,7 @@
           loading="lazy" decoding="async" width="1200" height="1600">
       </picture>
 
-      <!-- 3: Carmen, studio cowgirl, Dallas 2024 -->
+      <!-- 4: Carmen, studio cowgirl, Dallas 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-carmen-studio-cowgirl-dallas-1200w.webp 1200w,
@@ -252,7 +252,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 4: Valentina, Houston studio editorial B&W 2024 -->
+      <!-- 5: Valentina, Houston studio editorial B&W 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-valentina-houston-studio-editorial-1200w.webp 1200w,
@@ -269,7 +269,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 5: Hannah, outdoor editorial 2024 -->
+      <!-- 6: Hannah, outdoor editorial 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-hannah-outdoor-editorial-1200w.webp 1200w,
@@ -286,7 +286,7 @@
           loading="lazy" decoding="async" width="1200" height="1553">
       </picture>
 
-      <!-- 6: Hannah, studio test 2024 -->
+      <!-- 7: Hannah, studio test 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-hannah-studio-test-1200w.webp 1200w,
@@ -303,7 +303,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 7: Goldstein House group, Los Angeles 2024 -->
+      <!-- 8: Goldstein House group, Los Angeles 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-goldstein-house-los-angeles-group-1200w.webp 1200w,
@@ -320,7 +320,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 8: Lauren, flower swimwear, Dallas -->
+      <!-- 9: Lauren, flower swimwear, Dallas -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/Flower-Swimwear/swimwear-poolside-dallas-texas-lauren-11-800w.webp 800w,
@@ -337,7 +337,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 9: Valentina, denim detail B&W, Houston 2024 -->
+      <!-- 10: Valentina, denim detail B&W, Houston 2024 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2024-valentina-houston-denim-detail-1200w.webp 1200w,
@@ -354,7 +354,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 10: Kalie, studio B&W, Dallas -->
+      <!-- 11: Kalie, studio B&W, Dallas -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-11-800w.webp 800w,
@@ -371,7 +371,7 @@
           loading="lazy" decoding="async" width="1200" height="1500">
       </picture>
 
-      <!-- 11: Julia, editorial studio, LA -->
+      <!-- 12: Julia, editorial studio, LA -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/Editorial_Studio/editorial-studio-los-angeles-california-julia-09-800w.webp 800w,
@@ -388,7 +388,7 @@
           loading="lazy" decoding="async" width="1200" height="1600">
       </picture>
 
-      <!-- 12: Giovanna, Guess, LA 2025 -->
+      <!-- 13: Giovanna, Guess, LA 2025 -->
       <picture class="carousel-item">
         <source type="image/webp"
           srcset="portfolio-images/carousel/2025-giovanna-guess-los-angeles-1200w.webp 1200w,
@@ -410,6 +410,11 @@
     <button class="carousel-arrow carousel-arrow--next" aria-label="Next image" aria-controls="carouselTrack">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
+
+    <div class="hero-links">
+      <a href="portfolio.html" class="hero-cta">View Portfolio &#8594;</a>
+      <a href="book-a-shoot/model-development.html" class="hero-cta">Book a Shoot &#8594;</a>
+    </div>
 
   </section>
 

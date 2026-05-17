@@ -763,6 +763,26 @@ footer {
   object-position: center top;
 }
 
+.hero-carousel .carousel-track {
+  height: 100%;
+  gap: 0;
+  scroll-padding-inline: 0;
+}
+
+.hero-carousel .carousel-item {
+  width: 100vw;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.hero-carousel .carousel-item img {
+  object-position: center top;
+}
+
+.hero-carousel .carousel-arrow {
+  z-index: 11;
+}
+
 /* ── Carousel arrows ── */
 .carousel-arrow {
   position: absolute;
@@ -807,11 +827,24 @@ footer {
     width: 85vw;
     height: 70dvh;
   }
+  .hero-carousel .carousel-item {
+    width: 100vw;
+    height: 100%;
+  }
   .carousel-track {
     scroll-padding-inline: 7.5vw;
   }
+  .hero-carousel .carousel-track {
+    scroll-padding-inline: 0;
+  }
   .carousel-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-carousel .carousel-item:first-child img {
+    object-position: 24% top;
   }
 }
 

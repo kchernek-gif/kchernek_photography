@@ -42,6 +42,7 @@
   }
 
   function setInitialCarouselPosition() {
+    if (carousel.classList.contains('hero-carousel')) return;
     var amount = getStepAmount();
     if (!amount || track.scrollLeft > 0) return;
     track.scrollTo({ left: amount, behavior: 'auto' });
