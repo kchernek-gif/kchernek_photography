@@ -80,15 +80,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: clamp(20px, 3vw, 36px);
-      margin-bottom: 60px;
+      margin-bottom: clamp(20px, 3vw, 36px);
     }
 
     .model-proof {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: clamp(8px, 1vw, 14px);
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(20px, 3vw, 36px);
       align-items: stretch;
-      margin: 0 0 clamp(28px, 4vw, 48px);
+      margin: 0;
     }
 
     .model-proof figure {
@@ -454,58 +454,6 @@
       <p class="page-intro">Choose a session: digitals or editorial test.</p>
     </div>
 
-    <section class="model-proof" aria-label="Model development session examples">
-      <figure>
-        <picture>
-          <source
-            type="image/webp"
-            srcset="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-800w.webp 800w,
-                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.webp 1200w,
-                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1600w.webp 1600w"
-            sizes="(max-width: 640px) 92vw, 45vw">
-          <source
-            type="image/jpeg"
-            srcset="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-800w.jpg 800w,
-                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.jpg 1200w,
-                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1600w.jpg 1600w"
-            sizes="(max-width: 640px) 92vw, 45vw">
-          <img
-            src="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.jpg"
-            alt="Model in black and white studio portrait during Dallas editorial test shoot"
-            width="1200"
-            height="1600"
-            loading="eager"
-            decoding="async">
-        </picture>
-        <figcaption>Editorial test: range, styling, direction.</figcaption>
-      </figure>
-
-      <figure>
-        <picture>
-          <source
-            type="image/webp"
-            srcset="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.webp 800w,
-                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.webp 1200w,
-                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.webp 1600w"
-            sizes="(max-width: 640px) 92vw, 42vw">
-          <source
-            type="image/jpeg"
-            srcset="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.jpg 800w,
-                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg 1200w,
-                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.jpg 1600w"
-            sizes="(max-width: 640px) 92vw, 42vw">
-          <img
-            src="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg"
-            alt="Makeup artist preparing model Carmen during a Dallas model development session"
-            width="1200"
-            height="1500"
-            loading="eager"
-            decoding="async">
-        </picture>
-        <figcaption>Digitals and tests start with a clear plan.</figcaption>
-      </figure>
-    </section>
-
     <div class="options-grid">
 
       <div class="session-option">
@@ -548,6 +496,58 @@
       </div>
 
     </div>
+
+    <section class="model-proof" aria-label="Model development session examples">
+      <figure>
+        <picture>
+          <source
+            type="image/webp"
+            srcset="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.webp 800w,
+                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.webp 1200w,
+                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.webp 1600w"
+            sizes="(max-width: 640px) 92vw, 45vw">
+          <source
+            type="image/jpeg"
+            srcset="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-800w.jpg 800w,
+                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg 1200w,
+                    ../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1600w.jpg 1600w"
+            sizes="(max-width: 640px) 92vw, 45vw">
+          <img
+            src="../portfolio-images/Services/test-shoot-dallas-texas-carmen-01-1200w.jpg"
+            alt="Makeup artist preparing model during a Dallas digitals session"
+            width="1200"
+            height="1500"
+            loading="lazy"
+            decoding="async">
+        </picture>
+        <figcaption>Digitals: clean, direct. Natural light and simple looks.</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source
+            type="image/webp"
+            srcset="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-800w.webp 800w,
+                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.webp 1200w,
+                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1600w.webp 1600w"
+            sizes="(max-width: 640px) 92vw, 45vw">
+          <source
+            type="image/jpeg"
+            srcset="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-800w.jpg 800w,
+                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.jpg 1200w,
+                    ../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1600w.jpg 1600w"
+            sizes="(max-width: 640px) 92vw, 45vw">
+          <img
+            src="../portfolio-images/Studio_Black_White/studio-editorial-black-white-dallas-texas-kalie-03-1200w.jpg"
+            alt="Model in black and white studio portrait during Dallas editorial test shoot"
+            width="1200"
+            height="1600"
+            loading="lazy"
+            decoding="async">
+        </picture>
+        <figcaption>Editorial test: range, styling, direction.</figcaption>
+      </figure>
+    </section>
 
   </main>
 
