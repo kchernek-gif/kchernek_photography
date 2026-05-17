@@ -64,7 +64,7 @@
       display: grid;
       grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
       gap: clamp(28px, 5vw, 64px);
-      align-items: start;
+      align-items: stretch;
     }
 
     .services-panel--reverse {
@@ -79,6 +79,15 @@
       min-width: 0;
       border-top: 2px solid var(--text-primary);
       padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-media picture {
+      flex: 1;
+      min-height: 320px;
+      overflow: hidden;
+      display: block;
     }
 
     .service-media picture,
@@ -88,8 +97,7 @@
     }
 
     .service-media img {
-      aspect-ratio: 4 / 5;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       background-color: var(--tint-warm);
     }
@@ -198,7 +206,12 @@
         order: 0;
       }
 
+      .service-media picture {
+        flex: none;
+      }
+
       .service-media img {
+        height: auto;
         aspect-ratio: 5 / 6;
       }
     }
@@ -270,7 +283,7 @@
   <main id="main-content" class="page-wrap">
 
     <div class="page-header">
-      <h1 class="page-title">Photography &amp; Creative Services</h1>
+      <h1 class="page-title">Services</h1>
       <p class="page-intro">Commercial fashion and lifestyle photography based in Dallas&#8211;Fort Worth. I work with models building their books, brands building their visuals, and creative collaborators with a clear vision.</p>
     </div>
 
