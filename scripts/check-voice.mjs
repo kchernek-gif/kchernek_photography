@@ -26,8 +26,15 @@ const findings = [];
 for (const filepath of walkHtml(ROOT)) {
   const rel = relative(ROOT, filepath);
   const content = readFile(filepath);
-  // Strip tags so patterns only match visible prose, not attribute values or tag names
-  const text = content.replace(/<[^>]+>/g, ' ');
+  // Strip <style>, <script>, and HTML comments entirely (contents and tags)
+  // so CSS property values, JS string literals, and dev notes inside comments
+  // don't trigger voice patterns. Then strip remaining individual tags so the
+  // patterns only match visible prose.
+  const text = content
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<[^>]+>/g, ' ');
   const lines = text.split('\n');
 
   for (const { label, re } of CHECKS) {
