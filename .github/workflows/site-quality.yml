@@ -29,6 +29,13 @@ jobs:
         run: npm run audit
         continue-on-error: true
 
+      # ── Chrome sandbox workaround ─────────────────────────────────────────
+      # Ubuntu 24.04 restricts unprivileged user namespaces via AppArmor,
+      # which prevents Chrome from starting unless --no-sandbox is set OR
+      # the kernel flag is relaxed. We do both for maximum compatibility.
+      - name: Allow Chrome user namespaces (Ubuntu 24.04 AppArmor workaround)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       # ── Start local server (required by Lighthouse CI and Pa11y CI) ──────
       - name: Start local server
         run: node serve.mjs &
