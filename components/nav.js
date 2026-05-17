@@ -19,20 +19,20 @@
   header.querySelectorAll('.site-nav a[href]').forEach(function (link) {
     try {
       var linkPath = new URL(link.href, location.origin).pathname;
-      if (linkPath === path) link.classList.add('active');
+      if (linkPath === path) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
     } catch (e) { /* external links */ }
   });
 
   // Portfolio sub-pages: mark Portfolio link active
   if (path.startsWith('/portfolio/')) {
     var portfolioLink = header.querySelector('a[href="/portfolio.html"]');
-    if (portfolioLink) portfolioLink.classList.add('active');
-  }
-
-  // Book a Shoot sub-pages: mark Book a Shoot dropdown trigger active
-  if (path.startsWith('/book-a-shoot/')) {
-    var bookingTrigger = header.querySelector('#ddBooking .nav-dropdown-trigger');
-    if (bookingTrigger) bookingTrigger.classList.add('active');
+    if (portfolioLink) {
+      portfolioLink.classList.add('active');
+      portfolioLink.setAttribute('aria-current', 'true');
+    }
   }
 
   // Mark dropdown trigger active when any child is active
