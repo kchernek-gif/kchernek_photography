@@ -46,7 +46,43 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .contact-body {
-      max-width: 60ch;
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.58fr);
+      gap: clamp(36px, 5vw, 72px);
+      align-items: start;
+      max-width: none;
+    }
+
+    .contact-copy {
+      max-width: 58ch;
+    }
+
+    .contact-proof {
+      margin: 0;
+      border-top: 2px solid var(--text-primary);
+      padding-top: 18px;
+    }
+
+    .contact-proof picture,
+    .contact-proof img {
+      display: block;
+      width: 100%;
+    }
+
+    .contact-proof img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .contact-proof figcaption {
+      margin-top: 12px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.45;
+      text-transform: uppercase;
+      color: var(--secondary-navy-soft);
     }
 
     .contact-intro {
@@ -171,11 +207,12 @@
       border: none;
       border-radius: 0;
       cursor: pointer;
-      transition: background-color 0.15s var(--ease-out);
+      transition: background-color 0.15s var(--ease-out),
+                  transform 0.12s var(--ease-emil-out);
     }
 
     .btn-submit:hover         { background-color: var(--secondary-navy-hover); }
-    .btn-submit:active        { transform: scale(0.99); transition: transform 0.08s var(--ease-out); }
+    .btn-submit:active        { transform: scale(0.98); }
     .btn-submit:focus-visible {
       outline: 2px solid var(--secondary-navy);
       outline-offset: 2px;
@@ -257,6 +294,19 @@
       from { opacity: 0; }
       to   { opacity: 1; }
     }
+
+    @media (max-width: 768px) {
+      .contact-body {
+        grid-template-columns: 1fr;
+      }
+      .contact-proof {
+        order: -1;
+        max-width: 520px;
+      }
+      .contact-proof img {
+        aspect-ratio: 16 / 10;
+      }
+    }
   </style>
   <script defer src="/components/analytics.js"></script>
 </head>
@@ -319,6 +369,7 @@
 
     <div class="contact-body">
 
+      <div class="contact-copy">
       <p class="contact-intro">For inquiries, project discussions, or to plan a shoot, reach out using the form below or directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.<br><br>Based in Dallas&#8211;Fort Worth. Available throughout DFW and for travel.</p>
 
       <!-- Success state — shown after submission, form hidden -->
@@ -400,6 +451,33 @@
       </form>
 
       <p class="response-note" id="responseNote">Response within 48 hours.</p>
+
+      </div>
+
+      <figure class="contact-proof">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="portfolio-images/Services/test-shoot-dallas-texas-hannah-02-800w.webp 800w,
+                    portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.webp 1200w,
+                    portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1600w.webp 1600w"
+            sizes="(max-width: 768px) 92vw, 34vw">
+          <source
+            type="image/jpeg"
+            srcset="portfolio-images/Services/test-shoot-dallas-texas-hannah-02-800w.jpg 800w,
+                    portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.jpg 1200w,
+                    portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1600w.jpg 1600w"
+            sizes="(max-width: 768px) 92vw, 34vw">
+          <img
+            src="portfolio-images/Services/test-shoot-dallas-texas-hannah-02-1200w.jpg"
+            alt="Model standing in studio with lighting equipment during a Dallas test shoot"
+            width="1200"
+            height="1500"
+            loading="lazy"
+            decoding="async">
+        </picture>
+        <figcaption>Studio, location, or campaign scope. Start with the brief.</figcaption>
+      </figure>
 
     </div>
   </main>
