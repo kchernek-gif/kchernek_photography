@@ -93,11 +93,18 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       padding: 14px 0;
       white-space: nowrap;
-      transition: border-color 0.15s var(--ease-out);
+      transition: border-color 0.15s var(--ease-out),
+                  opacity 0.15s var(--ease-out),
+                  transform 0.12s var(--ease-emil-out);
     }
 
-    .hero-cta:hover         { border-color: var(--text-on-dark); }
-    .hero-cta:active        { opacity: 0.7; }
+    @media (hover: hover) and (pointer: fine) {
+      .hero-cta:hover {
+        border-color: var(--text-on-dark);
+        transform: translateY(-1px);
+      }
+    }
+    .hero-cta:active        { opacity: 0.76; transform: scale(0.98); }
     .hero-cta:focus-visible {
       outline: 2px solid var(--text-on-dark);
       outline-offset: 4px;

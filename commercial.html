@@ -80,6 +80,8 @@
 
     .commercial-lead-media {
       grid-area: media;
+      border-top: 2px solid var(--text-primary);
+      padding-top: 14px;
     }
 
     .commercial-lead-media picture,
@@ -93,6 +95,12 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    .commercial-lead-media img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .capabilities-list {
@@ -240,11 +248,12 @@
       border-radius: 0;
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background-color 0.15s var(--ease-out);
+      transition: background-color 0.15s var(--ease-out),
+                  transform 0.12s var(--ease-emil-out);
     }
 
     .btn-cta:hover         { background-color: var(--secondary-navy-hover); }
-    .btn-cta:active        { transform: scale(0.99); transition: transform 0.08s var(--ease-out); }
+    .btn-cta:active        { transform: scale(0.98); }
     .btn-cta:focus-visible {
       outline: 2px solid var(--secondary-navy);
       outline-offset: 2px;

@@ -119,7 +119,7 @@
       e.target.classList.add('visible');
       io.unobserve(e.target);
     });
-  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.07, rootMargin: '0px 0px 360px 0px' });
 
   // Portfolio shoot pages: release GPU layer after each thumbnail hover transition
   document.querySelectorAll('.project-thumb img').forEach(function (img) {

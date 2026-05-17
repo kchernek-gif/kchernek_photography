@@ -57,7 +57,7 @@
 
     /* Lead shoot: landscape crop for campaign-page presence */
     .category-thumb--wide {
-      aspect-ratio: 3 / 2;
+      aspect-ratio: 16 / 9;
     }
 
     .category-thumb img {
@@ -66,12 +66,14 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: transform 0.42s var(--ease-emil-out);
     }
 
-    .category-link:hover .category-thumb img {
-      will-change: transform;
-      transform: scale(1.04);
+    @media (hover: hover) and (pointer: fine) {
+      .category-link:hover .category-thumb img {
+        will-change: transform;
+        transform: scale(1.035);
+      }
     }
 
     .category-link:focus-visible {
@@ -99,7 +101,7 @@
     /* ── Lead shoot: full-width ── */
     .portfolio-lead {
       display: block;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
     /* ── Supporting shoots: 3-column ── */
