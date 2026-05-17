@@ -118,7 +118,7 @@
     .context-back:hover { color: var(--secondary-navy); }
 
     .booking-proof {
-      margin: 20px 0 0;
+      margin: 24px 0 0;
       border-top: 1px solid var(--border);
       padding-top: 20px;
     }
@@ -127,9 +127,9 @@
     .booking-proof img { display: block; width: 100%; }
 
     .booking-proof img {
-      max-height: 160px;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center 8%;
+      object-position: center center;
     }
 
     @media (max-width: 768px) {
@@ -420,27 +420,28 @@
 
           <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
 
-          <figure class="booking-proof">
-            <picture>
-              <source type="image/webp"
-                srcset="../portfolio-images/carousel/2024-hannah-studio-test-1200w.webp 1200w,
-                        ../portfolio-images/carousel/2024-hannah-studio-test-1800w.webp 1800w"
-                sizes="45vw">
-              <source type="image/jpeg"
-                srcset="../portfolio-images/carousel/2024-hannah-studio-test-1200w.jpg 1200w,
-                        ../portfolio-images/carousel/2024-hannah-studio-test-1800w.jpg 1800w"
-                sizes="45vw">
-              <img
-                src="../portfolio-images/carousel/2024-hannah-studio-test-1200w.jpg"
-                alt="Model Hannah in studio digitals session, clean white background, DFW"
-                width="1200"
-                height="1500"
-                loading="lazy"
-                decoding="async">
-            </picture>
-          </figure>
-
         </div>
+
+        <figure class="booking-proof">
+          <picture>
+            <source type="image/webp"
+              srcset="../portfolio-images/carousel/2024-hannah-studio-test-1200w.webp 1200w,
+                      ../portfolio-images/carousel/2024-hannah-studio-test-1800w.webp 1800w"
+              sizes="45vw">
+            <source type="image/jpeg"
+              srcset="../portfolio-images/carousel/2024-hannah-studio-test-1200w.jpg 1200w,
+                      ../portfolio-images/carousel/2024-hannah-studio-test-1800w.jpg 1800w"
+              sizes="45vw">
+            <img
+              src="../portfolio-images/carousel/2024-hannah-studio-test-1200w.jpg"
+              alt="Model Hannah in studio digitals session, clean white background, DFW"
+              width="1200"
+              height="1500"
+              loading="lazy"
+              decoding="async">
+          </picture>
+        </figure>
+
       </details>
 
       <!-- Right column: form -->
