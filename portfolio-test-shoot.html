@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Portfolio Shoot | Keith Chernek Photography | DFW Commercial Fashion Photographer</title>
+  <meta name="description" content="Inquire about a portfolio shoot with Keith Chernek. Planned, styled sessions for models building their book — what the industry calls a test shoot or agency test. Based in DFW.">
+  <link rel="icon" href="/brand_assets/cropped_Black.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Keith Chernek">
+  <meta property="og:title" content="Book a Portfolio Shoot — Keith Chernek">
+  <meta property="og:description" content="Planned, styled portfolio shoots for models building their book. Based in Dallas-Fort Worth.">
+  <meta property="og:url" content="https://kchernek.com/portfolio-test-shoot.html">
+  <meta property="og:image" content="https://kchernek.com/portfolio-images/share/og-default-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book a Portfolio Shoot — Keith Chernek">
+  <meta name="twitter:description" content="Planned, styled portfolio shoots for models building their book. Based in Dallas-Fort Worth.">
+  <meta name="twitter:image" content="https://kchernek.com/portfolio-images/share/og-default-1200x630.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Portfolio Shoot",
+    "description": "Planned, styled portfolio shoots for models building their book — what the industry calls a test shoot. Based in DFW.",
+    "url": "https://kchernek.com/portfolio-test-shoot.html",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Keith Chernek Photography",
+      "url": "https://kchernek.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Irving",
+        "addressRegion": "TX",
+        "postalCode": "75039",
+        "addressCountry": "US"
+      },
+      "areaServed": "Dallas-Fort Worth, TX"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "600",
+      "priceCurrency": "USD",
+      "priceSpecification": {"@type": "PriceSpecification", "minPrice": "600"}
+    }
+  }
+  </script>
+  <link rel="dns-prefetch" href="https://instagram.com">
+  <link rel="dns-prefetch" href="https://www.threads.com">
+  <link rel="dns-prefetch" href="https://meetup.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap"></noscript>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .inquiry-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+      align-items: start;
+    }
+
+    /* ── Left: context disclosure ── */
+    .context-disclosure { display: block; }
+    .context-summary    { display: none; }
+    .context-chevron    { transition: transform 0.2s var(--ease-out); flex-shrink: 0; }
+
+    .session-context {
+      position: sticky;
+      top: 120px;
+    }
+
+    .context-price {
+      font-size: 1.85rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .context-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .context-list {
+      list-style: none;
+      font-size: 0.875rem;
+      line-height: 2.0;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+
+    .context-list li::before {
+      content: '\2014\00A0';
+      color: var(--text-muted);
+    }
+
+    .context-back {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s var(--ease-out);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .context-back:hover { color: var(--secondary-navy); }
+
+    .booking-proof {
+      margin-top: 48px;
+      max-width: 380px;
+    }
+
+    .booking-proof picture,
+    .booking-proof img { display: block; width: 100%; }
+
+    .booking-proof img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    @media (max-width: 768px) {
+      .booking-proof { display: none; }
+    }
+
+    /* ── Right: form ── */
+    .inquiry-form-wrap {
+      border-top: 2px solid var(--text-primary);
+      padding-top: 28px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-field label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: var(--font-family);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      background-color: var(--surface);
+      border: 1px solid var(--text-secondary);
+      border-radius: 0;
+      padding: 11px 14px;
+      transition: border-color 0.15s var(--ease-out);
+      appearance: none;
+      width: 100%;
+    }
+
+    .form-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B6359'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: var(--text-muted);
+      opacity: 1;
+    }
+
+    .form-field input:focus-visible,
+    .form-field select:focus-visible,
+    .form-field textarea:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      border-color: var(--secondary-navy);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background-color: var(--secondary-navy);
+      color: #fff;
+      font-family: var(--font-family);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background-color 0.15s var(--ease-out),
+                  transform 0.12s var(--ease-emil-out);
+    }
+
+    .btn-submit:hover         { background-color: var(--secondary-navy-hover); }
+    .btn-submit:active        { transform: scale(0.98); }
+    .btn-submit:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+    }
+
+    .btn-submit[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+    @keyframes fadeInForm {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .form-success {
+      display: none;
+      padding: 8px 0 40px;
+    }
+
+    .form-success-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .form-success-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+    }
+
+    .form-success-body a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s var(--ease-out);
+    }
+
+    .form-success-body a:hover         { color: var(--secondary-navy); }
+    .form-success-body a:focus-visible {
+      outline: 2px solid var(--secondary-navy);
+      outline-offset: 2px;
+      color: var(--secondary-navy);
+    }
+
+    .form-error {
+      display: none;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-top: 12px;
+    }
+
+    .form-error a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .response-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .inquiry-layout { grid-template-columns: 1fr; gap: 0; }
+      .inquiry-form-wrap { order: -1; margin-bottom: 40px; }
+      .session-context  { position: static; }
+      .context-summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        cursor: pointer;
+        list-style: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .context-summary::-webkit-details-marker { display: none; }
+      .context-disclosure[open] .context-chevron { transform: rotate(180deg); }
+      .context-disclosure[open] .session-context { padding-top: 24px; }
+      .context-disclosure .context-subhead       { display: none; }
+    }
+
+    .field-note {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  </style>
+  <script defer src="/components/analytics.js"></script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <!-- BEGIN shared:nav -->
+    <div class="masthead">
+      <div class="masthead-inner">
+        <a href="/" class="logo-link">
+          <img src="/brand_assets/cropped_Black.png" alt="" class="logo-img" aria-hidden="true">
+          <span class="site-name">Keith Chernek</span>
+        </a>
+        <p class="site-tagline">Fashion &#8212; Lifestyle &#8212; DFW</p>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/model-development.html">Model Development</a>
+        <a href="/commercial.html">Commercial &amp; Brand</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+
+        <div class="nav-dropdown" id="ddConnect">
+          <button class="nav-dropdown-trigger" aria-expanded="false">
+            Connect <span class="dropdown-arrow" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/contact.html">Get in Touch</a>
+            <a href="https://meetup.com/dfwphotowalks" target="_blank" rel="noopener noreferrer">DFW Photowalks &#8599;</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- END shared:nav -->
+  </header>
+
+  <main id="main-content" class="page-wrap">
+
+    <div class="page-header">
+      <h1 class="page-title">Book a Portfolio Shoot</h1>
+    </div>
+
+    <div class="inquiry-layout">
+
+      <!-- Left column: what's included + context -->
+      <details class="context-disclosure" open>
+        <summary class="context-summary">
+          <span class="context-summary-label">What&#8217;s included</span>
+          <svg class="context-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <div class="session-context">
+
+          <div class="context-price">Starting at $600</div>
+
+          <p class="context-body">A portfolio shoot is a planned, styled session designed to build your book — not a client job, built entirely for you. Where digitals show who you are, a portfolio shoot shows what you can do: range, direction, creative concept. The industry calls this a test shoot or agency test. Sessions are built around shared mood references, a planned wardrobe, and a clear shot list. Output is fully retouched and agency-ready.</p>
+
+          <h2 class="context-subhead">What&#8217;s included</h2>
+
+          <ul class="context-list">
+            <li>2-hour session</li>
+            <li>Professional hair &amp; makeup</li>
+            <li>3&#8211;4 styled looks with planned wardrobe</li>
+            <li>Location-based (studio, outdoor, or chosen environment)</li>
+            <li>Pre-shoot planning call with mood references</li>
+            <li>15 fully retouched images</li>
+            <li>Online proof gallery</li>
+          </ul>
+
+          <a href="model-development.html" class="context-back">&#8592; Back to Model Development</a>
+
+        </div>
+      </details>
+
+      <!-- Right column: form -->
+      <div class="inquiry-form-wrap">
+
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <p class="form-success-heading">Inquiry sent.</p>
+          <p class="form-success-body">I&#8217;ll be in touch within 48 hours to set up a planning conversation. If you need to reach me directly: <a href="mailto:keith@kchernek.com">keith@kchernek.com</a></p>
+        </div>
+
+        <!--
+          Shared Formspree endpoint. The hidden session_type and _subject fields
+          route this as an Editorial Test inquiry in the inbox.
+        -->
+        <form class="contact-form" id="contactForm"
+              action="https://formspree.io/f/mlgzqdqv"
+              method="POST">
+
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_subject" value="Portfolio Shoot Inquiry — kchernek.com">
+          <input type="hidden" name="_next" value="https://kchernek.com/portfolio-test-shoot.html?success=1">
+          <input type="hidden" name="session_type" value="Portfolio Shoot">
+
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              maxlength="100"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="instagram">Instagram <span class="field-note">(optional, helps with aesthetic planning)</span></label>
+            <input
+              type="text"
+              id="instagram"
+              name="instagram"
+              placeholder="@handle"
+              maxlength="31"
+              pattern="@?[A-Za-z0-9_.]{1,30}"
+              aria-describedby="instagram-hint"
+            >
+            <small id="instagram-hint" class="field-note" style="margin-top:4px">Handle only, no full URL needed.</small>
+          </div>
+
+          <div class="form-field">
+            <label for="direction">Aesthetic direction</label>
+            <textarea
+              id="direction"
+              name="aesthetic_direction"
+              placeholder="What look are you working toward? Reference brands, photographers, or describe the concept."
+              maxlength="2000"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="location">Location preference</label>
+            <select id="location" name="location_preference" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="Studio">Studio</option>
+              <option value="Outdoor DFW">Outdoor DFW</option>
+              <option value="Open to suggestions">Open to suggestions</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="hmu">Hair &amp; Makeup</label>
+            <select id="hmu" name="hmu_preference" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="Yes, I'll use the included pro HMU">Yes, I&#8217;ll use the included pro HMU</option>
+              <option value="I'll handle my own HMU">I&#8217;ll handle my own HMU</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-addons">
+            <h3 class="addons-heading">Optional add-ons (we&#8217;ll talk through these)</h3>
+            <p class="addons-intro">These are optional. Check anything you&#8217;d like to discuss — final scope and quote get confirmed together before any deposit.</p>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonHour" name="addons[]" value="Additional Hour (approx $150)">
+              <label for="addonHour">
+                <span class="addon-name">Additional hour</span>
+                <span class="addon-desc">Extra time for more setups or styling experimentation. Approx $150.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonLocation" name="addons[]" value="Additional Location (approx $100)">
+              <label for="addonLocation">
+                <span class="addon-name">Additional location</span>
+                <span class="addon-desc">Adds a second shooting location with travel between. Approx $100, may vary by distance.</span>
+              </label>
+            </div>
+
+            <div class="addon-option">
+              <input type="checkbox" id="addonWardrobe" name="addons[]" value="Pre-shoot Wardrobe Consultation (approx $75)">
+              <label for="addonWardrobe">
+                <span class="addon-name">Pre-shoot wardrobe consultation</span>
+                <span class="addon-desc">One-on-one call to plan looks, mood references, and styling direction before shoot day. Approx $75.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="dates">Preferred date range <span class="field-note">(optional)</span></label>
+            <input
+              type="text"
+              id="dates"
+              name="preferred_dates"
+              placeholder="e.g. any weekend in July, specific date, flexible"
+              maxlength="200"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="notes">Anything else I should know? <span class="field-note">(optional)</span></label>
+            <textarea
+              id="notes"
+              name="notes"
+              placeholder="Questions, specific requirements, context about where you are in your career, etc."
+              maxlength="2000"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Inquiry</button>
+
+          <p class="form-error" id="formError" role="alert">
+            Something went wrong. Email me directly at <a href="mailto:keith@kchernek.com">keith@kchernek.com</a>.
+          </p>
+
+        </form>
+
+        <p class="response-note" id="responseNote">Response within 48 hours.</p>
+
+      </div>
+    </div>
+
+    <figure class="booking-proof">
+      <picture>
+        <source type="image/webp"
+          srcset="../portfolio-images/carousel/2024-valentina-houston-studio-editorial-1200w.webp 1200w,
+                  ../portfolio-images/carousel/2024-valentina-houston-studio-editorial-1800w.webp 1800w"
+          sizes="380px">
+        <source type="image/jpeg"
+          srcset="../portfolio-images/carousel/2024-valentina-houston-studio-editorial-1200w.jpg 1200w,
+                  ../portfolio-images/carousel/2024-valentina-houston-studio-editorial-1800w.jpg 1800w"
+          sizes="380px">
+        <img
+          src="../portfolio-images/carousel/2024-valentina-houston-studio-editorial-1200w.jpg"
+          alt="Model Valentina in editorial test session, Houston studio, black and white"
+          width="1200"
+          height="1500"
+          loading="lazy"
+          decoding="async">
+      </picture>
+    </figure>
+
+  </main>
+
+  <footer>
+    <!-- BEGIN shared:footer -->
+    <p class="footer-tagline">DFW commercial fashion and lifestyle photography</p>
+
+    <div class="footer-social">
+      <a href="https://instagram.com/kchernek" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://www.threads.com/@kchernek" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="footer-contact">
+      <a href="mailto:keith@kchernek.com">keith@kchernek.com</a><br>
+      Irving, TX 75039
+    </div>
+
+    <p class="footer-copy">&copy; 2026 Keith Chernek. All rights reserved.</p>
+    <!-- END shared:footer -->
+  </footer>
+
+  <script src="/components/nav.js" defer></script>
+  <script src="/components/motion.js" defer></script>
+  <script>
+    (function () {
+      var disc = document.querySelector('.context-disclosure');
+      if (disc) {
+        var mq = window.matchMedia('(max-width: 768px)');
+        function syncDisc(e) {
+          if (e.matches) { disc.removeAttribute('open'); }
+          else            { disc.setAttribute('open', ''); }
+        }
+        syncDisc(mq);
+        mq.addEventListener('change', syncDisc);
+      }
+    }());
+
+    (function () {
+      var form    = document.getElementById('contactForm');
+      var success = document.getElementById('formSuccess');
+      var error   = document.getElementById('formError');
+      var note    = document.getElementById('responseNote');
+      var btn     = form ? form.querySelector('.btn-submit') : null;
+
+      if (!form || !btn) return;
+
+      if (window.location.search.indexOf('success=1') !== -1) {
+        form.style.display = 'none';
+        note.style.display = 'none';
+        success.style.display = 'block';
+        return;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        error.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (res) {
+            if (res.ok) {
+              form.style.display = 'none';
+              note.style.display = 'none';
+              success.style.display = 'block';
+              success.style.animation = 'fadeInForm 0.3s var(--ease-out, cubic-bezier(0.22,1,0.36,1)) forwards';
+            } else {
+              throw new Error('failed');
+            }
+          })
+          .catch(function () {
+            error.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Send Inquiry';
+          });
+      });
+    }());
+  </script>
+</body>
+</html>
