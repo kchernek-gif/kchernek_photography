@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://kchernek.com/sitemap.xml
+llms.txt: https://kchernek.com/llms.txt
